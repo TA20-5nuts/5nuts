@@ -2,10 +2,11 @@ import os
 
 from flask import Flask
 from flask import render_template
-from flask import send_from_directory
 from flask import make_response
+from flask_cors import CORS
 # app = Flask(__name__)
 app = Flask(__name__, static_folder="templates/static")
+CORS(app)
 
 
 @app.route("/")
@@ -22,7 +23,6 @@ def favicon():
 def test():
     response = {"result": "result data"}
     return make_response(response, 200)
-    # return Response(jsonify(response), mimetype="application/json")
 
 
 if __name__ == "__main__":
