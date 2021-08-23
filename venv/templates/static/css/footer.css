@@ -28,9 +28,9 @@
 }
 
 #team {
-    display: flex;
+  display: flex;
 }
 
 .member {
-    width: 120px;
+  width: 120px;
 }
