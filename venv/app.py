@@ -2,7 +2,7 @@ import os
 
 from flask import Flask
 from flask import render_template
-from flask import make_response
+from flask import make_response, send_from_directory
 from flask_cors import CORS
 # app = Flask(__name__)
 app = Flask(__name__, static_folder="templates/static")
