@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="15f3b066-c818-4e67-9aaf-05778c9c97b9" name="Changes" comment="First commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv/runtime.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +33,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="advanced.settings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
