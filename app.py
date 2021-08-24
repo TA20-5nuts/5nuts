@@ -14,12 +14,12 @@ def home():
     return render_template('views/Home.html')
 
 
-@app.route('/favicon.ico')
+@application.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, "templates"), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
-@app.route("/test")
+@application.route("/test")
 def test():
     response = {"result": "result data"}
     return make_response(response, 200)
