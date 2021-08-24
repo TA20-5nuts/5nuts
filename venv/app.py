@@ -2,7 +2,7 @@ import os
 
 from flask import Flask
 from flask import render_template
-from flask import make_response, send_from_directory
+from flask import make_response, send_from_directory, redirect
 from flask_cors import CORS
 # app = Flask(__name__)
 app = Flask(__name__, static_folder="templates/static")
@@ -10,6 +10,10 @@ CORS(app)
 
 
 @app.route("/")
+def root():
+    return redirect("/home", code=302)
+
+@app.route("/home")
 def home():
     return render_template('views/Home.html')
 

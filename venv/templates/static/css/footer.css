@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-.logo {
+/* .logo {
   height: 100px;
   width: 100px;
 }
@@ -25,7 +25,7 @@
   border-radius: 50%;
   width: 75px;
   height: 75px;
-}
+} */
 
 #team {
   display: flex;

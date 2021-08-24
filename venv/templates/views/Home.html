@@ -3,11 +3,54 @@
   <script src="{{url_for('static', filename='js/Head.js')}}"></script>
 
   <body class="container">
-    <script src="{{url_for('static', filename='js/Header.js')}}"></script>
+    <!-- <script src="{{url_for('static', filename='js/Header.js')}}"></script> -->
+
+    <div id="header">
+      <div class="header-item-left">
+        <div id="logo">
+          <img src="../static/team-logo.png" alt="logo" class="logo" />
+        </div>
+        <div>
+          <a href="/home" class="header-link"><h5>5 Nuts</h5></a>
+        </div>
+      </div>
+      <div class="header-item-center"></div>
+      <div class="header-item-right">
+        <div class="header-item">
+          <h5>
+            <a class="header-link" href="/introduction"
+              ><i class="fas fa-info"></i> Allergy</a
+            >
+          </h5>
+        </div>
+        <div class="header-item">
+          <h5>
+            <a class="header-link" href="/resources"
+              ><i class="fas fa-book-open"></i> Resources</a
+            >
+          </h5>
+        </div>
+        <div class="header-item">
+          <h5>
+            <a class="header-link" href="/quiz"
+              ><i class="fas fa-diagnoses"></i> Quiz</a
+            >
+          </h5>
+        </div>
+        <div class="header-item">
+          <h5>
+            <a class="header-link" href="/game"
+              ><i class="fas fa-puzzle-piece"></i> Game</a
+            >
+          </h5>
+        </div>
+      </div>
+    </div>
 
     <div id="main-content">
       <div class="content-block">
         <div class="content-block-item content-block-item-left">
+          <h4 style="text-align: center">BE SAFE | BE HEALTHY</h4>
           <p>
             <strong>Five nuts</strong> focuses on popularising the knowledge of
             food allergies, along with related medical knowledge and first aid
@@ -32,6 +75,13 @@
       <script src="{{url_for('static', filename='js/Click.js')}}"></script>
     </div>
 
-    <script src="{{url_for('static', filename='js/Footer.js')}}"></script>
+    <!-- <script src="{{url_for('static', filename='js/Footer.js')}}"></script> -->
+
+    <div id="footer" class="container">
+      <div id="copyright">
+        <span>Copyright &copy; </span>
+        <strong>5 Nuts - BE SAFE, BE HEALTHY</strong>
+      </div>
+    </div>
   </body>
 </html>

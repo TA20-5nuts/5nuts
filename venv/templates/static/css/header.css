@@ -3,15 +3,23 @@
   display: flex;
   align-items: center;
   margin: 0.75rem;
+  vertical-align: middle;
 }
 
 .header-item-left {
-  flex: 0.35;
+  flex: 0.3;
   display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  padding: 0.3rem;
 }
 
 .header-item-center {
-  flex: 0.15;
+  flex: 0.2;
   display: flex;
 }
 
@@ -27,5 +35,8 @@
 
 .header-link {
   text-decoration: none;
-  /* color: black; */
+}
+
+.header-link:active {
+  color: #000000;
 }
