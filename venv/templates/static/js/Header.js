@@ -1,20 +1,23 @@
 function importHeader() {
   document.write(`
   <div id="header">
-  <div class="header-item-left"><h5>5 Nuts - BE SAFE, BE HEALTHY</h5></div>
-  <div class="header-item-center"></div>
-  <div class="header-item-right">
-    <div class="header-item"><h5>Allergy</h5></div>
-    <div class="header-item"><h5>Quiz</h5></div>
-    <div class="header-item"><h5>Resources</h5></div>
-    <div class="header-item"><h5>Game</h5></div>
-  </div>
-  <!-- <nav class="d-flex justify-content-evenly">
-    <h1>Feature 1</h1>
-    <h1>Feature 2</h1>
-    <h1>Feature 3</h1>
-  </nav> -->
-  </div>
+      <div class="header-item-left"><h5>5 Nuts - BE SAFE, BE HEALTHY</h5></div>
+      <div class="header-item-center"></div>
+      <div class="header-item-right">
+        <div class="header-item">
+          <h5><a class="header-link" href="/introduction"><i class="fas fa-info"></i> Allergy</a></h5>
+        </div>
+        <div class="header-item">
+          <h5><a class="header-link" href="/quiz"><i class="fas fa-diagnoses"></i> Quiz</a></h5>
+        </div>
+        <div class="header-item">
+          <h5><a class="header-link" href="/resources"><i class="fas fa-book-open"></i> Resources</a></h5>
+        </div>
+        <div class="header-item">
+          <h5><a class="header-link" href="/game"><i class="fas fa-puzzle-piece"></i> Game</a></h5>
+        </div>
+      </div>
+    </div>
     `);
 }
 

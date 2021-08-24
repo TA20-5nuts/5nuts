@@ -13,6 +13,10 @@ CORS(app)
 def home():
     return render_template('views/Home.html')
 
+@app.route("/introduction")
+def introduction():
+    return render_template('views/Introduction.html')
+
 
 @app.route('/favicon.ico')
 def favicon():

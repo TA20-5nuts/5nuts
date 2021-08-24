@@ -2,6 +2,7 @@
   margin-top: 3px;
   display: flex;
   align-items: center;
+  margin: 0.75rem;
 }
 
 .header-item-left {
@@ -22,4 +23,9 @@
 .header-item {
   flex: 1;
   justify-content: space-evenly;
+}
+
+.header-link {
+  text-decoration: none;
+  /* color: black; */
 }
