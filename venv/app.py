@@ -4,6 +4,7 @@ from flask import Flask
 from flask import render_template
 from flask import make_response, send_from_directory, redirect
 from flask_cors import CORS
+
 # app = Flask(__name__)
 app = Flask(__name__, static_folder="templates/static")
 CORS(app)
@@ -16,7 +17,8 @@ def root():
 
 @app.route('/favicon.ico')
 def favicon():
-    return send_from_directory(os.path.join(app.root_path, "templates"), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+    return send_from_directory(os.path.join(app.root_path, "templates"), 'favicon.ico',
+                               mimetype='image/vnd.microsoft.icon')
 
 
 @app.route("/home")
