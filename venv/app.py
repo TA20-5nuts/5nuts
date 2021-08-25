@@ -13,18 +13,35 @@ CORS(app)
 def root():
     return redirect("/home", code=302)
 
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, "templates"), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+
 @app.route("/home")
 def home():
     return render_template('views/Home.html')
+
 
 @app.route("/introduction")
 def introduction():
     return render_template('views/Introduction.html')
 
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, "templates"), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+@app.route("/resources")
+def resources():
+    return render_template('views/Resources.html')
+
+
+@app.route("/quiz")
+def quiz():
+    return render_template('views/Quiz.html')
+
+
+@app.route("/game")
+def game():
+    return render_template('views/Game.html')
 
 
 @app.route("/test")
