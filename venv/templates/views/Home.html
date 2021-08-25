@@ -1,51 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script src="{{url_for('static', filename='js/Head.js')}}"></script>
+  <head>
+    <script src="{{url_for('static', filename='js/Head.js')}}"></script>
+  </head>
 
   <body class="container">
-    <!-- <script src="{{url_for('static', filename='js/Header.js')}}"></script> -->
-
-    <div id="header">
-      <div class="header-item-left">
-        <div id="logo">
-          <img src="../static/team-logo.png" alt="logo" class="logo" />
-        </div>
-        <div>
-          <a href="/home" class="header-link"><h5>5 Nuts</h5></a>
-        </div>
-      </div>
-      <div class="header-item-center"></div>
-      <div class="header-item-right">
-        <div class="header-item">
-          <h5>
-            <a class="header-link" href="/introduction"
-              ><i class="fas fa-info"></i> Allergy</a
-            >
-          </h5>
-        </div>
-        <div class="header-item">
-          <h5>
-            <a class="header-link" href="/resources"
-              ><i class="fas fa-book-open"></i> Resources</a
-            >
-          </h5>
-        </div>
-        <div class="header-item">
-          <h5>
-            <a class="header-link" href="/quiz"
-              ><i class="fas fa-diagnoses"></i> Quiz</a
-            >
-          </h5>
-        </div>
-        <div class="header-item">
-          <h5>
-            <a class="header-link" href="/game"
-              ><i class="fas fa-puzzle-piece"></i> Game</a
-            >
-          </h5>
-        </div>
-      </div>
-    </div>
+    <script src="{{url_for('static', filename='js/Header.js')}}"></script>
 
     <div id="main-content">
       <div class="content-block">
@@ -68,11 +28,7 @@
         </div>
       </div>
 
-      <button
-        onclick="sendTestRequest()"
-        class="btn btn-primary"
-        type="button"
-      >
+      <button onclick="sendTestRequest()" class="btn btn-primary" type="button">
         Quiz
       </button>
       <span id="response"></span>
