@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script src="{{url_for('static', filename='js/Head.js')}}"></script>
+
+  <body class="container">
+    <script src="{{url_for('static', filename='js/Header.js')}}"></script>
+
+    <div id="main-content">
+      <div class="content-block">
+        <div class="content-block-item content-block-item-left">
+          <p>
+            <strong>Five nuts</strong> focuses on popularising the knowledge of
+            food allergies, along with related medical knowledge and first aid
+            methods, so as to help Victorian residents better understand the
+            potential health risks of food allerigies and raise the awareness
+            for prevention.
+          </p>
+        </div>
+        <div class="content-block-item content-block-item-right">
+          <img
+            src="../static/img/fae_cooking_at_home-0b25dc85.jpeg"
+            alt="Allgery"
+          />
+        </div>
+      </div>
+
+      <button onclick="sendTestRequest()" class="btn btn-primary" type="button">
+        Quiz
+      </button>
+      <span id="response"></span>
+      <script src="{{url_for('static', filename='js/Click.js')}}"></script>
+    </div>
+
+    <script src="{{url_for('static', filename='js/Footer.js')}}"></script>
+  </body>
+</html>
