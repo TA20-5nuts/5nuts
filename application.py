@@ -3,25 +3,20 @@ import os
 from flask import Flask
 from flask import render_template
 from flask import make_response, send_from_directory, redirect, jsonify
+
 from model import FoodData
-# from flask_cors import CORS
-from flask import make_response, send_from_directory, redirect
 
 from flask_cors import CORS
 
 # app = Flask(__name__)
 application = app = Flask(__name__, static_folder="templates/static")
-CORS(app)
+CORS(application)
 
 
 @application.route("/")
 def root():
     return redirect("/home", code=302)
 
-@application.route("/", methods = ['POST'])
-def rootPost():
-    result = FoodData().get_web_links()
-    return jsonify({'return':str(result)})
 
 @application.route('/favicon.ico')
 def favicon():
@@ -58,6 +53,12 @@ def game():
 def test():
     response = {"result": "result data"}
     return make_response(response, 200)
+
+
+@application.route("/api/food-data")
+def foodData():
+    result = FoodData().get_web_links()
+    return jsonify({'return': str(result)})
 
 
 if __name__ == "__main__":
