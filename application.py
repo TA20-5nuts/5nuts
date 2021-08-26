@@ -1,9 +1,9 @@
 import os
-import csv
 
 from flask import Flask
 from flask import render_template
-from flask import make_response, send_from_directory, redirect
+from flask import make_response, send_from_directory, redirect, jsonify
+from model import FoodData
 # from flask_cors import CORS
 
 # app = Flask(__name__)
@@ -15,6 +15,10 @@ application = app = Flask(__name__, static_folder="templates/static")
 def root():
     return redirect("/home", code=302)
 
+@application.route("/", methods = ['POST'])
+def rootPost():
+    result = FoodData().get_web_links()
+    return jsonify({'return':str(result)})
 
 @application.route('/favicon.ico')
 def favicon():
@@ -55,3 +59,4 @@ def test():
 
 if __name__ == "__main__":
     application.run(debug=True)
+    # API()
