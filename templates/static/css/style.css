@@ -1,6 +1,14 @@
+html {
+  height: 100%;
+}
+
 body {
   text-align: center;
   background-color: #f8cb74;
+  position: relative;
+  margin: 0;
+  padding-bottom: 3rem;
+  min-height: 100%;
 }
 
 p {

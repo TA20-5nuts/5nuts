@@ -22,7 +22,7 @@ function parseData(list) {
   let theadData = list[0];
   let tbodyData = list.slice(1);
 
-  let articleSection = document.getElementById("root-page-articles");
+  let articleSection = document.getElementById("articles");
   let table = document.createElement("table");
   table.setAttribute("class", "table caption-top table-striped table-hover fade-in-down");
 
