@@ -1,4 +1,5 @@
 import os
+import csv
 
 from flask import Flask
 from flask import render_template
@@ -51,6 +52,13 @@ def test():
     response = {"result": "result data"}
     return make_response(response, 200)
 
+def readCSV():
+    f = open("./.data/WebLinks.csv", "r", encoding='utf-8-sig')
+    reader = csv.reader(f)
+    weblinks_info = []
+    for row in reader:
+        weblinks_info.append(row)
+    f.close
 
 if __name__ == "__main__":
     application.run(debug=True)
