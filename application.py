@@ -58,7 +58,7 @@ def test():
 @application.route("/api/food-data")
 def foodData():
     result = FoodData().get_web_links()
-    return jsonify({'return': str(result)})
+    return jsonify({'articles_data': result})
 
 
 if __name__ == "__main__":

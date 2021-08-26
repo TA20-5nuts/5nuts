@@ -39,6 +39,10 @@ img {
   animation: fadeInDown 3s;
 }
 
+.margin-top {
+  margin-top: 0.5rem;
+}
+
 /* animation */
 @keyframes fadeIn {
   from {
