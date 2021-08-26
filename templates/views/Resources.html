@@ -21,16 +21,18 @@
       <button class="btn btn-primary content-block-item-left-sub"><span>Fish</span></button>
     </div>
 
-    <div class="content-block-item content-block-item-center">
-      <img src="../static/img/allergy-data.jpg" alt=""/>
-    </div>
+    <!--    <div class="content-block-item content-block-item-center">-->
+    <!--      <img src="../static/img/allergy-data.jpg" alt=""/>-->
+    <!--    </div>-->
 
     <div class="content-block-item content-block-item-right">
-      <!--      right-->
       <div id="pie-chart" style="width: 100%; height: 300%">pie-chart</div>
       <script type="text/javascript" src="../static/js/ResourcePage/charts.js"></script>
     </div>
   </div>
+
+  <div class="content-block margin-top" id="root-page-articles"></div>
+  <script src="{{url_for('static', filename='js/ResourcePage/articles.js')}}"></script>
 </div>
 
 <script src="{{url_for('static', filename='js/Footer.js')}}"></script>

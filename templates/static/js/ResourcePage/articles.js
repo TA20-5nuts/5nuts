@@ -5,14 +5,18 @@ function getRootPageArticles() {
   })
   .then((data) => {
     let articles = data.articles_data;
-    console.log(articles);
-    console.log(typeof articles);
+    // console.log(articles);
+    // console.log(typeof articles);
 
     parseData(articles);
   })
   .catch((err) => console.log(err));
 }
 
+/**
+ * parse list to table format
+ * @param list table data
+ */
 function parseData(list) {
   // separate table head and table body
   let theadData = list[0];
@@ -20,7 +24,7 @@ function parseData(list) {
 
   let articleSection = document.getElementById("root-page-articles");
   let table = document.createElement("table");
-  table.setAttribute("class", "table caption-top fade-in-down");
+  table.setAttribute("class", "table caption-top table-striped table-hover fade-in-down");
 
   let caption = table.createCaption();
   caption.innerHTML = "<strong>Useful Articles</strong>";
@@ -32,7 +36,6 @@ function parseData(list) {
   let tbody = createTableBody(tbodyData);
   table.appendChild(tbody);
 
-  console.log(table);
   articleSection.appendChild(table);
 }
 
@@ -79,6 +82,7 @@ function createTableRow(data, thead) {
         let aHref = document.createTextNode(text);
         a.appendChild(aHref)
         a.href = text;
+        a.setAttribute("target", "_blank");
         td.appendChild(a);
       } else {
         td.appendChild(document.createTextNode(text));
