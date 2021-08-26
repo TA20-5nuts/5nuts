@@ -6,11 +6,11 @@ from flask import make_response, send_from_directory, redirect, jsonify
 
 from model import FoodData
 
-# from flask_cors import CORS
+from flask_cors import CORS
 
 # app = Flask(__name__)
 application = app = Flask(__name__, static_folder="templates/static")
-# CORS(application)
+CORS(application)
 
 
 @application.route("/")
