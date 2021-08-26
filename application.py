@@ -2,15 +2,12 @@ import os
 
 from flask import Flask
 from flask import render_template
-<<<<<<< HEAD
 from flask import make_response, send_from_directory, redirect, jsonify
 from model import FoodData
 # from flask_cors import CORS
-=======
 from flask import make_response, send_from_directory, redirect
 
 from flask_cors import CORS
->>>>>>> f9195fdc329f4d2af09f42847d692a8d8c67e458
 
 # app = Flask(__name__)
 application = app = Flask(__name__, static_folder="templates/static")
