@@ -26,11 +26,3 @@
   width: 75px;
   height: 75px;
 } */
-
-#team {
-  display: flex;
-}
-
-.member {
-  width: 120px;
-}

@@ -55,12 +55,16 @@ def test():
     return make_response(response, 200)
 
 
-@application.route("/api/food-data")
-def foodData():
+@application.route("/api/web-link")
+def webLink():
     result = FoodData().get_web_links()
-    return jsonify({'return': str(result)})
+    return jsonify({'articles_data': result})
+
+@application.route("/api/food-avoided")
+def foodAvoided():
+    result = FoodData().get_food_avoided()
+    return jsonify({'articles_data': result})
 
 
 if __name__ == "__main__":
     application.run(debug=True)
-    # API()

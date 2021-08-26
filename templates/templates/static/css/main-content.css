@@ -32,11 +32,15 @@ img {
 }
 
 .fade-in-up {
-  animation: fadeInUp 3s;
+  animation: fadeInUp 2s;
 }
 
 .fade-in-down {
-  animation: fadeInDown 3s;
+  animation: fadeInDown 2s;
+}
+
+.margin-top {
+  margin-top: 0.5rem;
 }
 
 /* animation */
