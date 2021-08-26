@@ -1,5 +1,5 @@
 function getRootPageArticles() {
-  fetch("http://127.0.0.1:5000/api/food-data")
+  fetch("http://127.0.0.1:5000/api/web-link")
   .then((res) => {
     return res.json();
   })
