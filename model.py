@@ -1,3 +1,4 @@
+import csv
 class FoodData:
     def __init__(self):
         self.food_name = food_name
@@ -11,6 +12,15 @@ class FoodData:
 
     def get_stat_data(self):
         return self.stat_data
+
+    def get_web_links(self):
+        f = open("./.data/WebLinks.csv", "r", encoding='utf-8-sig')
+        reader = csv.reader(f)
+        weblinks_info = []
+        for row in reader:
+            weblinks_info.append(row)
+        f.close
+        return self.weblinks_info
 
 class QuizData:
 
