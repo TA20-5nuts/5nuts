@@ -1,5 +1,5 @@
 function getRootPageArticles() {
-  fetch("http://127.0.0.1:5000/api/food-data")
+  fetch("http://127.0.0.1:5000/api/web-link")
   .then((res) => {
     return res.json();
   })
@@ -22,7 +22,7 @@ function parseData(list) {
   let theadData = list[0];
   let tbodyData = list.slice(1);
 
-  let articleSection = document.getElementById("root-page-articles");
+  let articleSection = document.getElementById("articles");
   let table = document.createElement("table");
   table.setAttribute("class", "table caption-top table-striped table-hover fade-in-down");
 

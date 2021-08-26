@@ -60,6 +60,7 @@ def webLink():
     result = FoodData().get_web_links()
     return jsonify({'articles_data': result})
 
+
 @application.route("/api/food-avoided")
 def foodAvoided():
     result = FoodData().get_food_avoided()
