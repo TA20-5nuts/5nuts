@@ -3,10 +3,56 @@
 <head>
   <script src="{{url_for('static', filename='js/Head.js')}}"></script>
 </head>
-<body class="container">
-<script src="{{url_for('static', filename='js/Header.js')}}"></script>
+<body>
+<!--<script src="{{url_for('static', filename='js/Header.js')}}"></script>-->
+<div id="header" class="sticky-top">
+  <div class="header-item-left">
+    <nav class="navbar">
+      <a class="navbar-brand" href="/home"
+         style="margin-right: 0 !important;">
+        <img src="../static/team-logo-transparent.png" alt="logo" class="logo d-inline-block align-text-top"/>
+      </a>
+      <a class="nav-link active" href="/home"
+         style="padding: 0 !important;"><h5>Nuts&Dairy</h5></a>
+    </nav>
+  </div>
+
+  <div class="header-item-center"></div>
+
+  <div class="header-item-right">
+    <nav class="navbar current-active">
+      <a class="nav-link" href="/home"
+         style="padding: 0 !important;"><h5>Home</h5></a>
+    </nav>
+    <nav class="navbar">
+      <a class="nav-link" href="/introduction"
+         style="padding: 0 !important;"><h5>Allergy</h5></a>
+    </nav>
+    <nav class="navbar">
+      <a class="nav-link" href="/resources"
+         style="padding: 0 !important;"><h5>Resource</h5></a>
+    </nav>
+    <nav class="navbar">
+      <a class="nav-link" href="/quiz"
+         style="padding: 0 !important;"><h5 class="current-active">Quiz</h5></a>
+    </nav>
+  </div>
+</div>
 
 <h1>Coming Soon...</h1>
+<div>
+  1. Have you searched or learned about food allergies before?
+  a. yes b. no
+  <br>
+  2. Do you or someone in your family suffer from allergies?
+  a. Myself b. children
+  <br>
+  3. which part you want to know more?
+  a. Food allergens b. symptoms c. test d. treatment
+  <br>
+  4. which part you want to know more for your children?
+  a. Education b. experience share c. recipe d. common scene protective
+</div>
 
 <script src="{{url_for('static', filename='js/Footer.js')}}"></script>
 </body>
