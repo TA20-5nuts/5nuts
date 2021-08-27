@@ -23,6 +23,9 @@ function parseData(list) {
   let theadData = list[0];
   let tbodyData = list.slice(1);
 
+  // let div = document.createElement("div");
+  // div.setAttribute("style", "width: 90%");
+
   let articleSection = document.getElementById("articles");
   let table = document.createElement("table");
   table.setAttribute("class", "table caption-top table-striped table-hover fade-in-down");
@@ -37,6 +40,7 @@ function parseData(list) {
   let tbody = createTableBody(tbodyData);
   table.appendChild(tbody);
 
+  // div.appendChild(table);
   articleSection.appendChild(table);
 }
 

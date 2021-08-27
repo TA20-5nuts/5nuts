@@ -42,17 +42,17 @@
 
 
 <div id="main-content">
-  <div class="content-block">
+  <div class="content-block container">
     <div class="content-block-item content-block-item-left">
       <strong>The 8 major Food items that cause Allergies:</strong>
-      <button class="btn btn-primary content-block-item-left-sub"><span>Tree Nuts</span></button>
-      <button class="btn btn-primary content-block-item-left-sub"><span>Eggs</span></button>
-      <button class="btn btn-primary content-block-item-left-sub"><span>Milk</span></button>
-      <button class="btn btn-primary content-block-item-left-sub"><span>Peanuts</span></button>
-      <button class="btn btn-primary content-block-item-left-sub"><span>Shellfish</span></button>
-      <button class="btn btn-primary content-block-item-left-sub"><span>Soybeans</span></button>
-      <button class="btn btn-primary content-block-item-left-sub"><span>Wheat</span></button>
-      <button class="btn btn-primary content-block-item-left-sub"><span>Fish</span></button>
+      <button class="btn btn-primary content-block-item-left-sub disabled"><span>Tree Nuts</span></button>
+      <button class="btn btn-primary content-block-item-left-sub disabled"><span>Eggs</span></button>
+      <button class="btn btn-primary content-block-item-left-sub disabled"><span>Milk</span></button>
+      <button class="btn btn-primary content-block-item-left-sub disabled"><span>Peanuts</span></button>
+      <button class="btn btn-primary content-block-item-left-sub disabled"><span>Shellfish</span></button>
+      <button class="btn btn-primary content-block-item-left-sub disabled"><span>Soybeans</span></button>
+      <button class="btn btn-primary content-block-item-left-sub disabled"><span>Wheat</span></button>
+      <button class="btn btn-primary content-block-item-left-sub disabled"><span>Fish</span></button>
     </div>
 
     <!--    <div class="content-block-item content-block-item-center">-->
@@ -64,14 +64,19 @@
     </div>
   </div>
 
-  <div class="content-block margin-top">
-    <div id="bar-chart" style="width: 100%; height: 300%" class="content-block-item">
-      bar-chart
+  <div class="content-block margin-top container"
+  >
+    <div class="content-block-item">
+      <div id="bar-chart" style="width: 100%; height: 300%" class="content-block-item">
+        bar-chart
+      </div>
     </div>
   </div>
 
-  <div class="content-block margin-top" id="articles"></div>
-  <script src="{{url_for('static', filename='js/ResourcePage/articles.js')}}"></script>
+  <div class="content-block margin-top">
+    <div class="content-block-item container" id="articles"></div>
+    <script src="{{url_for('static', filename='js/ResourcePage/articles.js')}}"></script>
+  </div>
 </div>
 
 <script type="text/javascript" src="../static/js/ResourcePage/charts.js"></script>
