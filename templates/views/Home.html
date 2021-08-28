@@ -6,6 +6,7 @@
   <script src="../static/js/HomePage/quiz.js"></script>
 
   <link href="../static/css/modalQuiz.css" rel="stylesheet">
+  <link href="../static/css/flip.css" rel="stylesheet">
 </head>
 
 <body>
@@ -151,59 +152,56 @@
   </div>
 
   <div class="content-block">
-    <div class="content-block-item"
-         style="color: #652A0E">
-      <h3>The Problem</h3>
-      <p>
-        Australia has one of the highest rates of food allergies in the world. Accordingly, nuts and dairy
-        allergies top
-        the chart with increase in cases amongst your children living in Victoria.
-      </p>
-      <br/>
+    <div class="content-block-item">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="content-block-item flip-title-text"
+                 style="color: #652A0E">
+              <h3>The Problem</h3>
+              <br/>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="content-block-item"
+                 style="color: #652A0E;">
+              <p>
+                Australia has one of the highest rates of food allergies in the world. Accordingly, nuts and dairy
+                allergies top
+                the chart with increase in cases amongst your children living in Victoria.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="content-block-item"
-         style="color: #652A0E;">
-      <h3>The Solution</h3>
-      <p>
-        <strong>Five nuts</strong> focuses on popularising the knowledge of
-        food allergies, along with related medical knowledge and first aid
-        methods, to help Victorian residents better understand the
-        potential health risks of food allergies and raise the awareness
-        for prevention.
-      </p>
+    <div class="content-block-item">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="content-block-item flip-title-text"
+                 style="color: #652A0E">
+              <h3>The Solution</h3>
+              <br/>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="content-block-item"
+                 style="color: #652A0E;">
+              <p>
+                <strong>Five nuts</strong> focuses on popularising the knowledge of
+                food allergies, along with related medical knowledge and first aid
+                methods, to help Victorian residents better understand the
+                potential health risks of food allergies and raise the awareness
+                for prevention.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!--    <div class="content-block">-->
-  <!--      <div class="content-block-item">-->
-  <!--        <h3 style="text-align: center">Want to know where you stand?</h3>-->
-  <!--        <button class="btn btn-primary"-->
-  <!--                style="margin: 0 auto; display: block">-->
-  <!--          Quiz-->
-  <!--        </button>-->
-  <!--      </div>-->
-  <!--    </div>-->
-</div>
-
-<!--  <div class="content-block fade-in" style="flex-direction: column; margin: 0.75rem;">-->
-<!--    <div class="content-block-item">-->
-<!--      <h3>It’s not only your Child. Don’t Blame them or their genetics.</h3>-->
-<!--    </div>-->
-<!--    <div class="content-block-item"><h4>Overview</h4></div>-->
-<!--    <div class="content-block-item">-->
-<!--      <p>-->
-<!--        Australia has one of the highest rates of food allergies in the world. Accordingly, nuts and dairy allergies top-->
-<!--        the chart with increase in cases amongst your children living in Victoria.-->
-<!--      </p>-->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--  <div class="content-block margin-top" id="root-page-articles"></div>-->
-<!--  <script src="{{url_for('static', filename='js/HomePage/articles.js')}}"></script>-->
-
-<!--  <script src="{{url_for('static', filename='js/Click.js')}}"></script>-->
-<!--  <script src="../static/js/Click.js"></script>-->
 </div>
 
 <script src="{{url_for('static', filename='js/Footer.js')}}"></script>
