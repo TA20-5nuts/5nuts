@@ -22,6 +22,7 @@
 /* Modal Body */
 .modal-body {
   margin: 1rem;
+  /*background-color: #F5DEB3;*/
 }
 
 /* Modal Footer */
@@ -34,7 +35,7 @@
 /* Modal Content */
 .modal-content {
   position: relative;
-  background-color: #fefefe;
+  background-color: #F5DEB3;
   margin: auto;
   padding: 0;
   border: 1px solid #888;
