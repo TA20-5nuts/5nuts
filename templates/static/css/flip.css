@@ -33,14 +33,14 @@
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  background-color: #add8e6;
+  background-color: #f8cb74;
   color: black;
 }
 
 /* Style the back side */
 .flip-card-back {
-  background-color: #48bf91;
-  color: white;
+  background-color: #F5AD5B;
+  color: #ffffff;
   transform: rotateY(180deg);
 }
 

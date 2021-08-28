@@ -31,6 +31,15 @@ img {
 
 .content {
   /*margin: 0.75rem;*/
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
+}
+
+.vl {
+  border-left: 6px solid #f8cb74;
+  min-height: 95px;
+  position: relative;
+  text-align: left;
+  /*left: 50%;*/
+  /*top: 0;*/
 }
