@@ -3,6 +3,9 @@
 <head>
   <script src="{{url_for('static', filename='js/Head.js')}}"></script>
   <script src="../static/js/password.js"></script>
+  <script src="../static/js/HomePage/quiz.js"></script>
+
+  <link href="../static/css/modalQuiz.css" rel="stylesheet">
 </head>
 
 <body>
@@ -74,9 +77,67 @@
          style="margin-top: 50vh">
       <h3 style="text-align: center; color: #fff;">Want to know where you stand?</h3>
       <button class="btn btn-primary"
-              style="margin: 0 auto; display: block">
+              style="margin: 0 auto; display: block"
+              onclick="openQuiz()">
         Learn More <i class="fas fa-caret-right"></i>
       </button>
+
+      <div id="modalQuiz" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Answer these question to know where you stand</h4>
+          </div>
+          <div class="modal-body">
+            <span>1. Have you searched or learned about food allergies before?</span>
+            <br>
+            <input type="radio" id="q1-a" name="q1" value="yes">
+            <label for="q1-a">a. Yes</label>
+            <input type="radio" id="q1-b" name="q1" value="no">
+            <label for="q1-b">b. No</label>
+          </div>
+          <hr>
+          <div class="modal-body">
+            <span>2. Do you or someone in your family suffer from allergies?</span>
+            <br>
+            <input type="radio" id="q2-a" name="q2" value="myself">
+            <label for="q2-a">a. Myself</label>
+            <input type="radio" id="q2-b" name="q2" value="children">
+            <label for="q2-b">b. Children</label>
+          </div>
+          <hr>
+          <div class="modal-body">
+            <span>3. Which part do you want to know more?</span>
+            <br>
+            <input type="radio" id="q3-a" name="q3" value="food allergens">
+            <label for="q3-a">a. Food Allergens</label>
+            <input type="radio" id="q3-b" name="q3" value="symptoms">
+            <label for="q3-b">b. Symptoms</label>
+            <input type="radio" id="q3-c" name="q3" value="test">
+            <label for="q3-c">c. Test</label>
+            <input type="radio" id="q3-d" name="q3" value="treatment">
+            <label for="q3-d">d. Treatment</label>
+          </div>
+          <hr>
+          <div class="modal-body">
+            <span>4. Which part do you want to know more about your children?</span>
+            <br>
+            <input type="radio" id="q4-a" name="q4" value="education">
+            <label for="q4-a">a. Education</label>
+            <input type="radio" id="q4-b" name="q4" value="sharing experience">
+            <label for="q4-b">b. Sharing Experience</label>
+            <input type="radio" id="q4-c" name="q4" value="find recipes">
+            <label for="q4-c">c. Find Recipes</label>
+            <input type="radio" id="q4-d" name="q4" value="common protective methods">
+            <label for="q4-d">d. Common Protective Methods</label>
+          </div>
+          <hr>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="closeQuiz()">Close</button>
+            <button class="btn btn-warning" onclick="checkResult()">Submit</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
