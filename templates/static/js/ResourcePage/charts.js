@@ -59,13 +59,18 @@ function drawBarChart() {
 
   option = {
     title: {
-      text: "Type of food avoided for cultural, religious or ethical reasons (age groups)",
+      text: "Type of food avoided for cultural, religious or ethical reasons (proportional percentage of people in each age group)\n",
       left: "center"
     },
     legend: {
       top: 30
     },
-    tooltip: {},
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'shadow'
+      }
+    },
     dataset: {
       source: [
         ['product', '2-18', '19-30'],
@@ -93,10 +98,18 @@ function drawBarChart() {
     // to a column of dataset.source by default.
     series: [
       {
-        type: 'bar'
+        type: 'bar',
+        label: {
+          show: true,
+          position: 'top'
+        }
       },
       {
-        type: 'bar'
+        type: 'bar',
+        label: {
+          show: true,
+          position: 'top'
+        }
       }
     ]
   };
