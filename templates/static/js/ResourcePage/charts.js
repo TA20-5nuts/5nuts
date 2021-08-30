@@ -15,7 +15,7 @@ function drawPieChart() {
     },
     legend: {
       orient: 'vertical',
-      left: "10%"
+      left: "5%"
     },
     series: [
       {
