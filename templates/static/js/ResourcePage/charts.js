@@ -81,7 +81,7 @@ function drawBarChart() {
         ['Haram', 0.6, 0.7],
         ['Beef', 0.8, 3.5],
         ['Eggs', 0.3, 1.2],
-        ['All animation products', 0.1, 0.5],
+        ['All animal products', 0.1, 0.5],
         ['Other', 0.4, 1.2]
       ]
     },

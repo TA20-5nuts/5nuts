@@ -32,7 +32,7 @@ function parseData(list) {
   table.setAttribute("class", "table caption-top table-striped table-hover fade-in-down");
 
   let caption = table.createCaption();
-  caption.innerHTML = "<strong>Useful Articles</strong>";
+  caption.innerHTML = "<strong>Check out few blogs and articles to adapt to the new situation.</strong>";
   table.appendChild(caption);
 
   let thead = createTableHead(theadData);
