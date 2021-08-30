@@ -13,12 +13,20 @@ function checkResult() {
   let q4Ans = document.getElementsByName("q4");
   for (let i = 0; i < q4Ans.length; i++) {
     if (i === 0 && q4Ans[i].checked) {
-      window.location.replace("/resources");
+      window.location.assign("/resources");
       return;
     }
   }
   let quiz = document.getElementById("modalQuiz");
   quiz.style.display = "none";
+
+  let origin = window.location.origin;
+  let path = window.location.pathname;
+
+  let infoSection = "#info-section";
+  let location = origin + path + infoSection;
+
+  window.location.assign(location);
 }
 
 function clearAns() {
