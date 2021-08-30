@@ -1,6 +1,6 @@
 function getRootPageArticles() {
   // fetch("http://127.0.0.1:5000/api/web-link") // development
-  fetch("https://5nuts-env.eba-3b7dh5h5.ap-southeast-2.elasticbeanstalk.com/api/web-link") // production
+  fetch("http://5nuts-env.eba-3b7dh5h5.ap-southeast-2.elasticbeanstalk.com/api/web-link") // production
   .then((res) => {
     return res.json();
   })
