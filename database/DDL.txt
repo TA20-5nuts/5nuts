@@ -1,0 +1,48 @@
+CREATE TABLE IF NOT EXISTS food  (
+	public_food_key TEXT(10) NOT NULL PRIMARY KEY,
+	food_name TEXT(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS ingredient (
+	public_food_key TEXT(10) NOT NULL,
+	ingredient_public_food_key TEXT(10) NOT NULL PRIMARY KEY,
+	ingredient_name TEXT(30) NOT NULL,
+	ingredient_weight INTEGER NOT NULL,
+	retention_factor_id INTEGER NOT NULL DEFAULT 0,
+
+	FOREIGN KEY(public_food_key) REFERENCES food(public_food_key)
+);
+
+CREATE TABLE IF NOT EXISTS nutrition (
+	public_food_key TEXT(10) NOT NULL PRIMARY KEY,
+	classification INTEGER(5) NOT NULL,
+	food_name TEXT(20) NOT NULL,
+	energy_with_dietary_fibre INTEGER NOT NULL,
+	energy_without_dietary INTEGER NOT NULL,
+	moisture REAL NOT NULL DEFAULT 0,
+	protein REAL NOT NULL DEFAULT 0,
+	fat REAL NOT NULL DEFAULT 0,
+	dietary_fibre REAL NOT NULL DEFAULT 0,
+	calcium REAL NOT NULL DEFAULT 0,
+	sodium REAL NOT NULL DEFAULT 0,
+	vitamin_b12 REAL NOT NULL DEFAULT 0,
+	vitamin_c REAL NOT NULL DEFAULT 0,
+	vitamin_d3 REAL NOT NULL DEFAULT 0,
+	vitamin_e REAL NOT NULL DEFAULT 0,
+	saturated_fatty_acid_percent REAL NOT NULL DEFAULT 0,
+	saturated_fatty_acid_gram REAL NOT NULL DEFAULT 0,
+
+	FOREIGN KEY(public_food_key) REFERENCES food(public_food_key)
+);
+
+CREATE TABLE IF NOT EXISTS hospitals (
+	id INTEGER NOT NULL,
+	formal_name TEXT(30) NOT NULL,
+	other_name TEXT(30) NOT NULL,
+	emergency_capable INTEGER DEFAULT False NOT NULL,
+	location_address TEXT(30) NOT NULL,
+	Suburb TEXT(20) NOT NULL,
+	postcode INTEGER NOT NULL,
+	category TEXT(10) DEFAULT PUBLIC NOT NULL,
+	agency_type TEXT(20) NOT NULL
+);

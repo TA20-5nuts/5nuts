@@ -1,0 +1,252 @@
+Public Food Key,IngredientPublic Food Key,Ingredient Name,Ingredient Weight (g),Retention Factor ID
+F000247,F003250,"Cream of tartar, dry powder",50,0
+F000247,F000248,"Baking soda (bicarbonate), dry powder",25,0
+F000247,F003989,"Flour, cornflour, from maize & wheat starch",15,0
+F000247,F003998,"Flour, rice",10,0
+F009571,F009577,"Wine, red, shiraz",50,0
+F009571,F009572,"Wine, red, cabernet sauvignon",30,0
+F009571,F009574,"Wine, red, merlot",10,0
+F009571,F009575,"Wine, red, pinot noir",10,0
+F009581,F009582,"Wine, white, chardonnay",60,0
+F009581,F009586,"Wine, white, riesling",5,0
+F009581,F009584,"Wine, white, semillon",15,0
+F009581,F009583,"Wine, white, sauvignon blanc",20,0
+F001068,F001029,"Beverage base, chocolate flavour, added vitamins A, B1, B2, C & D, Ca & Fe (Milo)",20,0
+F001068,F005634,"Milk, cow, fluid, regular fat (3.5% fat)",205,0
+F001064,F005634,"Milk, cow, fluid, regular fat (3.5% fat)",203,2151
+F001064,F001036,"Beverage base, drinking chocolate, unfortified",15,0
+F003017,F003060,"Coffee, instant, dry powder or granules",1.7,0
+F003017,F009527,"Water, tap",190,0
+F003018,F003061,"Coffee, instant, dry powder or granules, decaffeinated",1.7,0
+F003018,F009527,"Water, tap",190,0
+F003036,F003041,"Coffee, espresso, from ground coffee beans",50,0
+F003036,F001036,"Beverage base, drinking chocolate, unfortified",1,0
+F003036,F005634,"Milk, cow, fluid, regular fat (3.5% fat)",155,2151
+F003048,F003041,"Coffee, espresso, from ground coffee beans",50,0
+F003048,F005634,"Milk, cow, fluid, regular fat (3.5% fat)",206,2151
+F003065,F003041,"Coffee, espresso, from ground coffee beans",20,0
+F003065,F009527,"Water, tap",80,0
+F003158,F003130,"Cordial base, 25% citrus fruit juice, regular",61,0
+F003158,F009527,"Water, tap",200,0
+F003160,F003135,"Cordial base, 40% citrus fruit juice, regular",61,0
+F003160,F009527,"Water, tap",200,0
+F003156,F003128,"Cordial base, 5% blackcurrant juice, regular",43.56,0
+F003156,F009527,"Water, tap",167,0
+F004726,F005174,"Lemon, peeled, raw",100,270
+F004729,F005199,"Lime, peeled, raw",100,270
+F001165,F001971,"Butter, plain, no added salt",125,5019
+F001165,F002987,"Coconut, grated & desiccated",56,2203
+F001165,F006143,"Oats, rolled, uncooked",95,352
+F001165,F004007,"Flour, wheat, white, plain",140,301
+F001165,F008976,"Sugar, white, granulated or lump",266,0
+F001165,F000248,"Baking soda (bicarbonate), dry powder",5,0
+F001165,F009527,"Water, tap",20,0
+F001683,F001463,"Bread, from white flour",99,306
+F001683,F006155,"Oil, blend of monounsaturated vegetable oils",0.8,5019
+F001541,F001463,"Bread, from white flour",100,306
+F001467,F001466,"Bread, from white flour, added calcium",100,306
+F001479,F001468,"Bread, from white flour, added fibre",100,306
+F001483,F001482,"Bread, from white flour, added iron",100,306
+F001485,F001484,"Bread, from white flour, added omega-3 polyunsaturates",100,306
+F001544,F001543,"Bread, from white Jackaroo flour, added fibre and vitamins B1 & folate & Fe",100,306
+F001529,F001528,"Bread, from white flour, Italian-style, commercial",100,306
+F001358,F001353,"Bread roll, from white flour",100,306
+F001372,F002414,"Cheese, cheddar, natural, regular fat",20,1
+F001372,F001353,"Bread roll, from white flour",80,0
+F001373,F002414,"Cheese, cheddar, natural, regular fat",20,1
+F001373,F001353,"Bread roll, from white flour",60,0
+F001373,F000231,"Bacon, shortcut, as purchased without rind, fried, no added fat",20,0
+F001597,F001553,"Bread, from wholemeal flour",100,306
+F001573,F001553,"Bread, from wholemeal flour",88,0
+F001573,F008210,"Seed, linseed or flaxseed",3,2203
+F001573,F008215,"Seed, sunflower",2,2203
+F001573,F003230,"Cornmeal (polenta), uncooked",1,301
+F001573,F000379,"Barley, pearl, uncooked",1,358
+F001573,F006143,"Oats, rolled, uncooked",1,352
+F001573,F005692,"Millet, uncooked",1,358
+F001573,F001919,"Buckwheat groats, uncooked",1,358
+F001573,F001929,"Bulgur, uncooked",1,358
+F001573,F004000,"Flour, rye",1,301
+F001576,F001573,"Bread, from wholemeal flour, extra grainy & seeds",100,306
+F001364,F001360,"Bread roll, from wholemeal flour",100,306
+F001548,F001545,"Bread, from white or wholemeal flour, organic",100,306
+F001644,F001621,"Bread, mixed grain",100,306
+F001513,F008210,"Seed, linseed or flaxseed",3,2203
+F001513,F008215,"Seed, sunflower",3,2203
+F001513,F003230,"Cornmeal (polenta), uncooked",1,301
+F001513,F000379,"Barley, pearl, uncooked",2,358
+F001513,F006143,"Oats, rolled, uncooked",1,352
+F001513,F005692,"Millet, uncooked",1,358
+F001513,F004000,"Flour, rye",2,301
+F001513,F001919,"Buckwheat groats, uncooked",1,358
+F001513,F001929,"Bulgur, uncooked",2,358
+F001513,F009535,"Wheat bran, unprocessed, uncooked",2,301
+F001513,F001463,"Bread, from white flour",85,0
+F001514,F001513,"Bread, from white flour, extra grainy & seeds",100,306
+F001368,F001365,"Bread roll, mixed grain",100,306
+F001672,F001671,"Bread, from white flour, Turkish",100,306
+F001458,F001457,"Bread, from white flour, added dried fruit",100,306
+F001600,F001353,"Bread roll, from white flour",82,306
+F001600,F007879,"Salt, table, non-iodised",0.2,0
+F001600,F006322,"Parsley, curly, fresh, raw",0.3,3001
+F001600,F001973,"Butter, plain, salted",15,5019
+F001600,F004193,"Garlic, peeled, fresh, raw",3,3771
+F001601,F001973,"Butter, plain, salted",10,5019
+F001601,F001353,"Bread roll, from white flour",85,301
+F001601,F004193,"Garlic, peeled, fresh, raw",5,3771
+F001609,F001603,"Bread, gluten free",100,306
+F001451,F001450,"Bread, from rye flour, sour dough",100,306
+F001939,F009527,"Water, tap",26,0
+F001939,F008976,"Sugar, white, granulated or lump",9.3,0
+F001939,F009606,"Yeast, dry powder",1,0
+F001939,F004006,"Flour, wheat, white, high protein or bread making flour",50,301
+F001939,F006155,"Oil, blend of monounsaturated vegetable oils",4,5019
+F001939,F005712,Mixed dried fruit,12,251
+F001939,F001971,"Butter, plain, no added salt",1.5,5019
+F001939,F007878,"Salt, table, iodised",0.7,0
+F005898,F005896,"Muffin, English style, from white flour",100,306
+F005897,F005898,"Muffin, English style, from white flour, toasted",85.7,0
+F005897,F005712,Mixed dried fruit,14,0
+F005897,F002963,"Cinnamon, dried, ground",0.3,0
+F008272,F000248,"Baking soda (bicarbonate), dry powder",5,0
+F008272,F002980,Cocoa powder,18,0
+F008272,F008976,"Sugar, white, granulated or lump",210,0
+F008272,F003729,"Egg, chicken, whole, raw",96,101
+F008272,F007879,"Salt, table, non-iodised",1.5,0
+F008272,F004007,"Flour, wheat, white, plain",140,301
+F008272,F006116,"Nut, walnut, raw, unsalted",55,2201
+F008272,F009351,"Vanilla, artificial or imitation",4.75,0
+F008272,F001973,"Butter, plain, salted",125,5019
+F002102,F008976,"Sugar, white, granulated or lump",262.5,0
+F002102,F003729,"Egg, chicken, whole, raw",144,101
+F002102,F004009,"Flour, wheat, white, self-raising",210,301
+F002102,F000248,"Baking soda (bicarbonate), dry powder",3,0
+F002102,F002963,"Cinnamon, dried, ground",3,0
+F002102,F004210,"Ginger, dried, ground",1,0
+F002102,F006116,"Nut, walnut, raw, unsalted",55,2201
+F002102,F002276,"Carrot, mature, peeled, fresh, raw",350,3451
+F002102,F008983,Sultana,72,251
+F002102,F001973,"Butter, plain, salted",150,5019
+F002101,F002102,"Cake, carrot, homemade, uniced",80,0
+F002101,F008981,"Sugar, white, icing mixture",13.1,0
+F002101,F009351,"Vanilla, artificial or imitation",1.4,0
+F002101,F001973,"Butter, plain, salted",2.7,0
+F002101,F009527,"Water, tap",2.8,0
+F002112,F004009,"Flour, wheat, white, self-raising",200,301
+F002112,F008976,"Sugar, white, granulated or lump",100,0
+F002112,F003729,"Egg, chicken, whole, raw",102,101
+F002112,F002980,Cocoa powder,50,0
+F002112,F005634,"Milk, cow, fluid, regular fat (3.5% fat)",125,2152
+F002112,F001973,"Butter, plain, salted",120,5019
+F002111,F002112,"Cake, chocolate, homemade, uniced",80,0
+F002111,F008981,"Sugar, white, icing mixture",13.1,0
+F002111,F002980,Cocoa powder,1,0
+F002111,F001973,"Butter, plain, salted",2.7,0
+F002111,F009527,"Water, tap",2.8,0
+F002150,F000050,"Alcoholic beverage, spirit, approximately 30% v/v, all (Brandy, Gin, Rum, Vodka and Whisky), cooked",160,0
+F002150,F004739,"Juice, orange, commercial",131,270
+F002150,F004009,"Flour, wheat, white, self-raising",33.75,301
+F002150,F004007,"Flour, wheat, white, plain",202.5,301
+F002150,F003729,"Egg, chicken, whole, raw",150,101
+F002150,F001973,"Butter, plain, salted",200,5019
+F002150,F003496,"Date, dried",160,251
+F002150,F005712,Mixed dried fruit,1000,251
+F002150,F006081,"Nut, almond, with skin, raw, unsalted",42.5,2203
+F002150,F000248,"Baking soda (bicarbonate), dry powder",2.268,0
+F002165,F008976,"Sugar, white, granulated or lump",75,0
+F002165,F004007,"Flour, wheat, white, plain",45,301
+F002165,F003729,"Egg, chicken, whole, raw",260,101
+F002165,F002921,"Chocolate, dark, high cocoa solids",300,0
+F002165,F009351,"Vanilla, artificial or imitation",5,0
+F002165,F000247,"Baking powder, dry powder",5,0
+F002165,F001973,"Butter, plain, salted",250,5019
+F002164,F002921,"Chocolate, dark, high cocoa solids",15,0
+F002164,F003270,"Cream, thickened, regular fat (approximately 35%)",5,0
+F002164,F002165,"Cake, mud, dark chocolate, homemade, uniced",80,0
+F002171,F001973,"Butter, plain, salted",125,5019
+F002171,F008976,"Sugar, white, granulated or lump",160,0
+F002171,F003729,"Egg, chicken, whole, raw",110,101
+F002171,F004009,"Flour, wheat, white, self-raising",300,301
+F002171,F005634,"Milk, cow, fluid, regular fat (3.5% fat)",125,2152
+F002171,F007879,"Salt, table, non-iodised",0.4,0
+F002170,F002171,"Cake, plain butter cake, homemade, uniced",80,0
+F002170,F008981,"Sugar, white, icing mixture",13.1,0
+F002170,F009351,"Vanilla, artificial or imitation",1.4,0
+F002170,F001973,"Butter, plain, salted",2.7,0
+F002170,F009527,"Water, tap",2.8,0
+F002177,F003270,"Cream, thickened, regular fat (approximately 35%)",12.5,0
+F002177,F004600,"Jam, berry",12.5,0
+F002177,F002178,"Cake, sponge, plain, commercial, uniced, unfilled",75,0
+F003575,F003573,"Doughnut, dusted with cinnamon & sugar",90,0
+F003575,F004600,"Jam, berry",10,0
+F006298,F003729,"Egg, chicken, whole, raw",48,103
+F006298,F004007,"Flour, wheat, white, plain",140,304
+F006298,F001973,"Butter, plain, salted",18,5019
+F006298,F005634,"Milk, cow, fluid, regular fat (3.5% fat)",250,2151
+F007507,F009527,"Water, tap",375,0
+F007507,F008976,"Sugar, white, granulated or lump",225,0
+F007507,F004009,"Flour, wheat, white, self-raising",200,301
+F007507,F002980,Cocoa powder,25,0
+F007507,F001973,"Butter, plain, salted",10,5019
+F007507,F005634,"Milk, cow, fluid, regular fat (3.5% fat)",375,2153
+F007512,F005712,Mixed dried fruit,500,255
+F007512,F003331,"Currant, dried",150,255
+F007512,F008983,Sultana,150,255
+F007512,F003248,"Cranberry, dried, sweetened",150,255
+F007512,F000050,"Alcoholic beverage, spirit, approximately 30% v/v, all (Brandy, Gin, Rum, Vodka and Whisky), cooked",95,0
+F007512,F008969,"Sugar, brown",200,0
+F007512,F003729,"Egg, chicken, whole, raw",204,101
+F007512,F004009,"Flour, wheat, white, self-raising",180,302
+F007512,F006118,"Nutmeg, dried, ground",1.3,0
+F007512,F002963,"Cinnamon, dried, ground",1.3,0
+F007512,F004210,"Ginger, dried, ground",1.3,0
+F007512,F001541,"Bread, from white flour, toasted",250,302
+F007512,F001973,"Butter, plain, salted",250,5019
+F007529,F000248,"Baking soda (bicarbonate), dry powder",4.5,0
+F007529,F003496,"Date, dried",170,251
+F007529,F009527,"Water, tap",300,0
+F007529,F008976,"Sugar, white, granulated or lump",170,0
+F007529,F003729,"Egg, chicken, whole, raw",96,101
+F007529,F004009,"Flour, wheat, white, self-raising",170,301
+F007529,F008969,"Sugar, brown",200,0
+F007529,F009351,"Vanilla, artificial or imitation",2.4,0
+F007529,F003270,"Cream, thickened, regular fat (approximately 35%)",120,2153
+F007529,F001973,"Butter, plain, salted",190,5019
+F008174,F004009,"Flour, wheat, white, self-raising",500,301
+F008174,F008976,"Sugar, white, granulated or lump",28,0
+F008174,F007879,"Salt, table, non-iodised",0.4,0
+F008174,F003729,"Egg, chicken, whole, raw",25,101
+F008174,F005634,"Milk, cow, fluid, regular fat (3.5% fat)",321.25,2152
+F008174,F001973,"Butter, plain, salted",70,5019
+F008172,F008173,"Scone, plain, commercial",73,0
+F008172,F005712,Mixed dried fruit,26.5,0
+F008172,F006118,"Nutmeg, dried, ground",0.5,0
+F008176,F004009,"Flour, wheat, white, self-raising",325,301
+F008176,F008976,"Sugar, white, granulated or lump",35,0
+F008176,F003729,"Egg, chicken, whole, raw",50,101
+F008176,F005634,"Milk, cow, fluid, regular fat (3.5% fat)",102,2152
+F008176,F001971,"Butter, plain, no added salt",40,5019
+F008176,F007554,"Pumpkin, peeled, fresh, boiled, drained",150,3451
+F008278,F004007,"Flour, wheat, white, plain",135,301
+F008278,F008969,"Sugar, brown",100,0
+F008278,F002987,"Coconut, grated & desiccated",23,2203
+F008278,F005582,"Milk, cow, canned, sweetened, condensed, regular",400,2152
+F008278,F009049,"Syrup, golden",56,0
+F008278,F002921,"Chocolate, dark, high cocoa solids",150,0
+F008278,F006165,"Oil, copha",9,5019
+F008278,F001973,"Butter, plain, salted",185,5019
+F001918,F009527,"Water, tap",750,0
+F001918,F001919,"Buckwheat groats, uncooked",190,302
+F007156,F006143,"Oats, rolled, uncooked",35,352
+F007156,F005634,"Milk, cow, fluid, regular fat (3.5% fat)",192,2151
+F000378,F000379,"Barley, pearl, uncooked",220,302
+F000378,F009527,"Water, tap",1000,0
+F003227,F003230,"Cornmeal (polenta), uncooked",325,302
+F003227,F009527,"Water, tap",750,0
+F003235,F003239,"Couscous, uncooked",100,302
+F003235,F009527,"Water, tap",125,0
+F005690,F005692,"Millet, uncooked",200,302
+F005690,F009527,"Water, tap",500,0
+F007164,F006143,"Oats, rolled, uncooked",124,352
+F007164,F009527,"Water, tap",832.5,0
+F007598,F007599,"Quinoa, white, uncooked",60,0
