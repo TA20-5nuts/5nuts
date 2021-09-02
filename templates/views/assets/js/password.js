@@ -8,5 +8,3 @@ function verify() {
     } while (password != "admin123");
   }
 }
-
-verify();
