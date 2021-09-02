@@ -20,7 +20,7 @@ class FoodData:
         reader = csv.reader(f)
         for row in reader:
             self.weblinks_info.append(row)
-        f.close
+        f.close()
         return self.weblinks_info
 
     def get_food_avoided(self):
@@ -28,7 +28,7 @@ class FoodData:
         reader = csv.reader(f)
         for row in reader:
             self.food_avoided.append(row)
-        f.close
+        f.close()
         return self.food_avoided
 
 class QuizData:

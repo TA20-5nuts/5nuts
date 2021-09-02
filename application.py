@@ -9,7 +9,7 @@ from model import FoodData
 from flask_cors import CORS
 
 # app = Flask(__name__)
-application = app = Flask(__name__, static_folder="templates/static")
+application = app = Flask(__name__, static_folder="templates/views/assets")
 CORS(application)
 
 
@@ -26,27 +26,27 @@ def favicon():
 
 @application.route("/home")
 def home():
-    return render_template('views/Home.html')
+    return render_template('views/index.html')
 
 
 @application.route("/introduction")
 def introduction():
-    return render_template('views/Introduction.html')
+    return render_template('views/introduction.html')
 
 
 @application.route("/resources")
 def resources():
-    return render_template('views/Resources.html')
+    return render_template('views/resources.html')
 
 
 @application.route("/quiz")
 def quiz():
-    return render_template('views/Quiz.html')
+    return render_template('views/quiz.html')
 
 
 @application.route("/game")
 def game():
-    return render_template('views/Game.html')
+    return render_template('views/game.html')
 
 
 @application.route("/test")
