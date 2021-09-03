@@ -1,11 +1,13 @@
 import sqlite3
+import csv
 
 from database import Database
 
 
 class FoodData:
     def __init__(self):
-        pass
+        self.weblinks_info = []
+        self.food_avoided = []
 
     def get_nutrition_info(self):
         result = Database().search('nutrition')
