@@ -118,4 +118,4 @@ function drawBarChart() {
 }
 
 drawPieChart();
-drawBarChart();
+// drawBarChart();
