@@ -7,11 +7,11 @@ from flask import make_response, send_from_directory, redirect, jsonify
 from model import FoodData
 from model import Hospital
 
-from flask_cors import CORS
+# from flask_cors import CORS
 
 # app = Flask(__name__)
 application = app = Flask(__name__, static_folder="templates/views/assets")
-CORS(application)
+# CORS(application)
 
 # def dbConnection():
 #     connection = None
