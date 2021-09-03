@@ -35,6 +35,8 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <script src="assets/js/quiz-page/quiz.js"></script>
 </head>
 
 <body>
@@ -110,11 +112,11 @@
   <section id="quiz" class="why-us">
     <div class="container" data-aos="fade-up">
 
-      <form id="quiz-form">
+      <div id="quiz-form">
         <div class="row mb-3">
           <div class="col-lg-12 d-flex align-items-stretch">
             <div class="content" style="width: 100%">
-              <h4>1. Kids with food allergies can stay safe at school by bringing lunch from home.</h4>
+              <h4>1. Bring lunches from home can keep you kids stay away from food allergy?</h4>
               <div>
                 <input name="q1" type="radio" id="q1-true" value="true" required>
                 <label for="q1-true">True</label>
@@ -146,7 +148,8 @@
         <div class="row mb-3">
           <div class="col-lg-12 d-flex align-items-stretch">
             <div class="content" style="width: 100%">
-              <h4>3. Milk allergy and lactose intolerance are the same thing.</h4>
+              <h4>3. It is okay to not reading ingredients list again if you have been purchased the food several
+                times.</h4>
               <div>
                 <input name="q3" type="radio" id="q3-true" value="true" required>
                 <label for="q3-true">True</label>
@@ -158,12 +161,93 @@
             </div>
           </div>
         </div>
-        <button type="submit">Submit</button>
-      </form>
 
-      <div class="text-center">
-        <a href="/resources" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+        <div class="row mb-3">
+          <div class="col-lg-12 d-flex align-items-stretch">
+            <div class="content" style="width: 100%">
+              <h4>4. How quickly do most children develop a severe allergic reaction to food?</h4>
+              <div>
+                <input name="q4" type="radio" id="q4-a" value="true" required>
+                <label for="q4-a">1 Hour</label>
+              </div>
+              <div>
+                <input name="q4" type="radio" id="q4-b" value="true">
+                <label for="q4-b">2 Hours</label>
+              </div>
+              <div>
+                <input name="q4" type="radio" id="q4-c" value="true">
+                <label for="q4-c">Several hour later</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-lg-12 d-flex align-items-stretch">
+            <div class="content" style="width: 100%">
+              <h4>5. Can your child be cured by over-the-counter medication if you child eats the foods and gets
+                hives?</h4>
+              <div>
+                <input name="q5" type="radio" id="q5-true" value="true" required>
+                <label for="q5-true">True</label>
+              </div>
+              <div>
+                <input name="q5" type="radio" id="q5-false" value="true">
+                <label for="q5-false">False</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-lg-12 d-flex align-items-stretch">
+            <div class="content" style="width: 100%">
+              <h4>6. What should you do if your child has a swollen tongue and difficulty breathing after eating?</h4>
+              <div>
+                <input name="q6" type="radio" id="q6-a" value="true" required>
+                <label for="q6-a">Drive them to the hospital</label>
+              </div>
+              <div>
+                <input name="q6" type="radio" id="q6-b" value="true">
+                <label for="q6-b">Call 000</label>
+              </div>
+              <div>
+                <input name="q6" type="radio" id="q6-c" value="true">
+                <label for="q6-c">Give them an epinephrine injection</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-lg-12 d-flex align-items-stretch">
+            <div class="content" style="width: 100%">
+              <h4>7. Which of the following foods are most likely to cause a severe allergic reaction?</h4>
+              <div>
+                <input name="q7" type="radio" id="q7-a" value="true" required>
+                <label for="q7-a">Wheat</label>
+              </div>
+              <div>
+                <input name="q7" type="radio" id="q7-b" value="true">
+                <label for="q7-b">Shellfish</label>
+              </div>
+              <div>
+                <input name="q7" type="radio" id="q7-c" value="true">
+                <label for="q7-c">Tree Nuts</label>
+              </div>
+              <div>
+                <input name="q7" type="radio" id="q7-d" value="true">
+                <label for="q7-d">All of above</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="getSelected()" class="btn btn-success">Submit</button>
       </div>
+      <!--      <div class="text-center">-->
+      <!--        <a href="/resources" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>-->
+      <!--      </div>-->
 
     </div>
   </section><!-- End Why Us Section -->
