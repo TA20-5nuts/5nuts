@@ -1,16 +1,7 @@
 import sqlite3
 
-connection = sqlite3.connect('database\\nutsndairy.db')
+connection = sqlite3.connect('./database/nutsndairy.db')
 cursor = connection.cursor()
-query = "SELECT * from hospitals"
-cursor.execute(query)
-results = cursor.fetchall()
-x= []
-for r in results:
-    x.append(r)
-print(x)
-cursor.close()
-connection.close()
 
 
 class FoodData:
@@ -21,7 +12,7 @@ class FoodData:
         self.ingredients_info = []
         self.nutrition_info = []
 
-    def get_nutrition_info(self, food_name):
+    def get_nutrition_info(self):
         query = "SELECT * from nutrition"
         cursor.execute(query)
         results = cursor.fetchall()
@@ -81,4 +72,6 @@ class Hospital:
         cursor.close()
         connection.close()
         return self.hospitals
+        # cursor.close()
+        # connection.close()
 

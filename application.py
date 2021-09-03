@@ -7,11 +7,19 @@ from flask import make_response, send_from_directory, redirect, jsonify
 from model import FoodData
 from model import Hospital
 
-# from flask_cors import CORS
+from flask_cors import CORS
 
 # app = Flask(__name__)
 application = app = Flask(__name__, static_folder="templates/views/assets")
-# CORS(application)
+CORS(application)
+
+# def dbConnection():
+#     connection = None
+#     try:
+#         connection = sqlite3.connect('database\\nutsndairy.db')
+#     except sqlite3.error as e:
+#         print(e)
+#     return connection
 
 
 @application.route("/")
@@ -69,24 +77,30 @@ def foodAvoided():
 
 @application.route("/api/food-info")
 def foodInfo():
-    result = FoodData().get_food_info()
-    return jsonify({'articles_data': result})
+    with app.app_context():
+        result = FoodData().get_food_info()
+        return jsonify({'articles_data': result})
 
 @application.route("/api/ingredients-info")
 def ingredientsInfo():
-    result = FoodData().get_ingredients_info()
-    return jsonify({'articles_data': result})
+    with app.app_context():
+        result = FoodData().get_ingredients_info()
+        print(result)
+        return jsonify({'articles_data': result})
 
 @application.route("/api/nutrition-info")
 def nutritionInfo():
-    result = FoodData().get_nutrition_info()
-    return jsonify({'articles_data': result})
+    with app.app_context():
+        result = FoodData().get_nutrition_info()
+        return jsonify({'articles_data': result})
 
 @application.route("/api/hospitals-data")
 def hospitalsData():
-    result = Hospital().get_hospital_data()
-    return jsonify({'articles_data': result})
+    with app.app_context():
+        result = Hospital().get_hospital_data()
+        return jsonify({'articles_data': result})
 
 
 if __name__ == "__main__":
+    # ingredientsInfo()
     application.run(debug=True)
