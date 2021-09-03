@@ -1,5 +1,7 @@
 import sqlite3
 
+from database import Database
+
 connection = sqlite3.connect('./database/nutsndairy.db')
 cursor = connection.cursor()
 
@@ -58,6 +60,7 @@ class FoodData:
         f.close()
         return self.food_avoided
 
+
 class Hospital:
 
     def __init__(self):
@@ -74,4 +77,3 @@ class Hospital:
         return self.hospitals
         # cursor.close()
         # connection.close()
-
