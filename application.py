@@ -5,12 +5,13 @@ from flask import render_template
 from flask import make_response, send_from_directory, redirect, jsonify
 
 from model import FoodData
+from model import Hospital
 
-from flask_cors import CORS
+# from flask_cors import CORS
 
 # app = Flask(__name__)
 application = app = Flask(__name__, static_folder="templates/views/assets")
-CORS(application)
+# CORS(application)
 
 
 @application.route("/")
@@ -64,6 +65,26 @@ def webLink():
 @application.route("/api/food-avoided")
 def foodAvoided():
     result = FoodData().get_food_avoided()
+    return jsonify({'articles_data': result})
+
+@application.route("/api/food-info")
+def foodInfo():
+    result = FoodData().get_food_info()
+    return jsonify({'articles_data': result})
+
+@application.route("/api/ingredients-info")
+def ingredientsInfo():
+    result = FoodData().get_ingredients_info()
+    return jsonify({'articles_data': result})
+
+@application.route("/api/nutrition-info")
+def nutritionInfo():
+    result = FoodData().get_nutrition_info()
+    return jsonify({'articles_data': result})
+
+@application.route("/api/hospitals-data")
+def hospitalsData():
+    result = Hospital().get_hospital_data()
     return jsonify({'articles_data': result})
 
 

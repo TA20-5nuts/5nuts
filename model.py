@@ -1,19 +1,55 @@
-import csv
+import sqlite3
+
+connection = sqlite3.connect('database\\nutsndairy.db')
+cursor = connection.cursor()
+query = "SELECT * from hospitals"
+cursor.execute(query)
+results = cursor.fetchall()
+x= []
+for r in results:
+    x.append(r)
+print(x)
+cursor.close()
+connection.close()
+
+
 class FoodData:
     def __init__(self):
         self.weblinks_info = []
         self.food_avoided = []
-    #     self.food_name = food_name
-    #     self.food_info = food_info
-    #
-    # def set_food_name(self, food_name):
-    #     pass
-    #
-    # def get_food_info(self):
-    #     return self.food_info
-    #
-    # def get_stat_data(self):
-    #     return self.stat_data
+        self.food_info = []
+        self.ingredients_info = []
+        self.nutrition_info = []
+
+    def get_nutrition_info(self, food_name):
+        query = "SELECT * from nutrition"
+        cursor.execute(query)
+        results = cursor.fetchall()
+        for r in results:
+            self.nutrition_info.append(r)
+        cursor.close()
+        connection.close()
+        return self.nutrition_info
+
+    def get_food_info(self):
+        query = "SELECT * from food"
+        cursor.execute(query)
+        results = cursor.fetchall()
+        for r in results:
+            self.food_info.append(r)
+        cursor.close()
+        connection.close()
+        return self.food_info
+
+    def get_ingredients_info(self):
+        query = "SELECT * from ingredient"
+        cursor.execute(query)
+        results = cursor.fetchall()
+        for r in results:
+            self.ingredients_info.append(r)
+        cursor.close()
+        connection.close()
+        return self.ingredients_info
 
     def get_web_links(self):
         f = open("./.data/WebLinks.csv", "r", encoding='utf-8-sig')
@@ -31,16 +67,18 @@ class FoodData:
         f.close()
         return self.food_avoided
 
-class QuizData:
+class Hospital:
 
     def __init__(self):
-        self.quiz_form = quiz_form
+        self.hospitals = []
 
-    def set_quiz_form(self):
-        pass
-
-    def get_quiz_form(self):
-        return self.quiz_form
-# def get_food_name(self):
-    #     return self.food_name
+    def get_hospital_data(self):
+        query = "SELECT * from hospitals"
+        cursor.execute(query)
+        results = cursor.fetchall()
+        for r in results:
+            self.hospitals.append(r)
+        cursor.close()
+        connection.close()
+        return self.hospitals
 
