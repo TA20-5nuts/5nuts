@@ -64,37 +64,37 @@ def test():
     return make_response(response, 200)
 
 
-@application.route("/api/web-link")
+@application.route("/api/web-link", methods = ['POST', 'GET'])
 def webLink():
     result = FoodData().get_web_links()
     return jsonify({'articles_data': result})
 
 
-@application.route("/api/food-avoided")
+@application.route("/api/food-avoided", methods = ['POST', 'GET'])
 def foodAvoided():
     result = FoodData().get_food_avoided()
     return jsonify({'articles_data': result})
 
-@application.route("/api/food-info")
+@application.route("/api/food-info", methods = ['POST', 'GET'])
 def foodInfo():
     with app.app_context():
         result = FoodData().get_food_info()
         return jsonify({'articles_data': result})
 
-@application.route("/api/ingredients-info")
+@application.route("/api/ingredients-info", methods = ['POST', 'GET'])
 def ingredientsInfo():
     with app.app_context():
         result = FoodData().get_ingredients_info()
         print(result)
         return jsonify({'articles_data': result})
 
-@application.route("/api/nutrition-info")
+@application.route("/api/nutrition-info", methods = ['POST', 'GET'])
 def nutritionInfo():
     with app.app_context():
         result = FoodData().get_nutrition_info()
         return jsonify({'articles_data': result})
 
-@application.route("/api/hospitals-data")
+@application.route("/api/hospitals-data", methods = ['POST', 'GET'])
 def hospitalsData():
     with app.app_context():
         result = Hospital().get_hospital_data()
