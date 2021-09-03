@@ -2,47 +2,22 @@ import sqlite3
 
 from database import Database
 
-connection = sqlite3.connect('./database/nutsndairy.db')
-cursor = connection.cursor()
-
 
 class FoodData:
     def __init__(self):
-        self.weblinks_info = []
-        self.food_avoided = []
-        self.food_info = []
-        self.ingredients_info = []
-        self.nutrition_info = []
+        pass
 
     def get_nutrition_info(self):
-        query = "SELECT * from nutrition"
-        cursor.execute(query)
-        results = cursor.fetchall()
-        for r in results:
-            self.nutrition_info.append(r)
-        cursor.close()
-        connection.close()
-        return self.nutrition_info
+        result = Database().search('nutrition')
+        return result
 
     def get_food_info(self):
-        query = "SELECT * from food"
-        cursor.execute(query)
-        results = cursor.fetchall()
-        for r in results:
-            self.food_info.append(r)
-        cursor.close()
-        connection.close()
-        return self.food_info
+        result = Database().search('food')
+        return result
 
     def get_ingredients_info(self):
-        query = "SELECT * from ingredient"
-        cursor.execute(query)
-        results = cursor.fetchall()
-        for r in results:
-            self.ingredients_info.append(r)
-        cursor.close()
-        connection.close()
-        return self.ingredients_info
+        result = Database().search('ingredient')
+        return result
 
     def get_web_links(self):
         f = open("./.data/WebLinks.csv", "r", encoding='utf-8-sig')
@@ -64,16 +39,8 @@ class FoodData:
 class Hospital:
 
     def __init__(self):
-        self.hospitals = []
+        pass
 
     def get_hospital_data(self):
-        query = "SELECT * from hospitals"
-        cursor.execute(query)
-        results = cursor.fetchall()
-        for r in results:
-            self.hospitals.append(r)
-        cursor.close()
-        connection.close()
-        return self.hospitals
-        # cursor.close()
-        # connection.close()
+        result = Database().search('hospitals')
+        return result
