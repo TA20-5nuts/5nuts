@@ -122,7 +122,7 @@
                 <label for="q1-true">True</label>
               </div>
               <div>
-                <input name="q1" type="radio" id="q1-false" value="true">
+                <input name="q1" type="radio" id="q1-false" value="false">
                 <label for="q1-false">False</label>
               </div>
             </div>
@@ -138,7 +138,7 @@
                 <label for="q2-true">True</label>
               </div>
               <div>
-                <input name="q2" type="radio" id="q2-false" value="true">
+                <input name="q2" type="radio" id="q2-false" value="false">
                 <label for="q2-false">False</label>
               </div>
             </div>
@@ -155,7 +155,7 @@
                 <label for="q3-true">True</label>
               </div>
               <div>
-                <input name="q3" type="radio" id="q3-false" value="true">
+                <input name="q3" type="radio" id="q3-false" value="false">
                 <label for="q3-false">False</label>
               </div>
             </div>
@@ -167,15 +167,15 @@
             <div class="content" style="width: 100%">
               <h4>4. How quickly do most children develop a severe allergic reaction to food?</h4>
               <div>
-                <input name="q4" type="radio" id="q4-a" value="true" required>
+                <input name="q4" type="radio" id="q4-a" value="a" required>
                 <label for="q4-a">1 Hour</label>
               </div>
               <div>
-                <input name="q4" type="radio" id="q4-b" value="true">
+                <input name="q4" type="radio" id="q4-b" value="b">
                 <label for="q4-b">2 Hours</label>
               </div>
               <div>
-                <input name="q4" type="radio" id="q4-c" value="true">
+                <input name="q4" type="radio" id="q4-c" value="c">
                 <label for="q4-c">Several hour later</label>
               </div>
             </div>
@@ -192,7 +192,7 @@
                 <label for="q5-true">True</label>
               </div>
               <div>
-                <input name="q5" type="radio" id="q5-false" value="true">
+                <input name="q5" type="radio" id="q5-false" value="false">
                 <label for="q5-false">False</label>
               </div>
             </div>
@@ -204,15 +204,15 @@
             <div class="content" style="width: 100%">
               <h4>6. What should you do if your child has a swollen tongue and difficulty breathing after eating?</h4>
               <div>
-                <input name="q6" type="radio" id="q6-a" value="true" required>
+                <input name="q6" type="radio" id="q6-a" value="a" required>
                 <label for="q6-a">Drive them to the hospital</label>
               </div>
               <div>
-                <input name="q6" type="radio" id="q6-b" value="true">
+                <input name="q6" type="radio" id="q6-b" value="b">
                 <label for="q6-b">Call 000</label>
               </div>
               <div>
-                <input name="q6" type="radio" id="q6-c" value="true">
+                <input name="q6" type="radio" id="q6-c" value="c">
                 <label for="q6-c">Give them an epinephrine injection</label>
               </div>
             </div>
@@ -224,26 +224,38 @@
             <div class="content" style="width: 100%">
               <h4>7. Which of the following foods are most likely to cause a severe allergic reaction?</h4>
               <div>
-                <input name="q7" type="radio" id="q7-a" value="true" required>
+                <input name="q7" type="radio" id="q7-a" value="a" required>
                 <label for="q7-a">Wheat</label>
               </div>
               <div>
-                <input name="q7" type="radio" id="q7-b" value="true">
+                <input name="q7" type="radio" id="q7-b" value="b">
                 <label for="q7-b">Shellfish</label>
               </div>
               <div>
-                <input name="q7" type="radio" id="q7-c" value="true">
+                <input name="q7" type="radio" id="q7-c" value="c">
                 <label for="q7-c">Tree Nuts</label>
               </div>
               <div>
-                <input name="q7" type="radio" id="q7-d" value="true">
+                <input name="q7" type="radio" id="q7-d" value="d">
                 <label for="q7-d">All of above</label>
               </div>
             </div>
           </div>
         </div>
 
-        <button onclick="getSelected()" class="btn btn-success">Submit</button>
+        <div class="row mb-3">
+          <div class="d-flex justify-content-between">
+            <div>
+              <button onclick="getSelected()" class="btn btn-success" id="submit">Submit</button>
+            </div>
+            <div>
+              <h3 id="score">Score: <span id="userScore">0</span> / 7</h3>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-secondary" onclick="resetQuiz()" disabled id="reset">Reset</button>
+        </div>
       </div>
       <!--      <div class="text-center">-->
       <!--        <a href="/resources" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>-->
