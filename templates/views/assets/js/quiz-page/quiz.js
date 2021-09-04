@@ -42,7 +42,7 @@ function getSelected() {
 
   // check answer
   let totalCount = userAnsMap.size;
-  console.log(userAnsMap.size);
+  // console.log(userAnsMap.size);
   let correctCount = checkAnswer(userAnsMap);
 
   // display score
@@ -52,6 +52,9 @@ function getSelected() {
   document.getElementById("reset").disabled = false;
 }
 
+/**
+ * reset quiz form
+ */
 function resetQuiz() {
   let inputNameSet = getInputNameSet();
   for (let tempName of inputNameSet) {
