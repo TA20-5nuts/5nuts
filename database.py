@@ -35,3 +35,26 @@ class Database:
             return cur.fetchall()
         except Error as e:
             print(e)
+
+    def search_ingredients_by_food(self, food_name):
+        query_key = "SELECT public_food_key FROM food WHERE food_name LIKE '%s'"
+        try:
+            cur = self.connection.cursor()
+            args = '%' + food_name + '%'
+            cur.execute(query_key % args)
+            food_key = cur.fetchall()[0][0]
+            query_ingredients = "SELECT * FROM ingredient WHERE public_food_key = '%s'"
+            cur.execute(query_ingredients % food_key)
+            return cur.fetchall()
+        except Error as e:
+            print(e)
+
+    def search_nutrition_by_food(self, food_name):
+        query = "SELECT * FROM nutrition WHERE food_name LIKE '%s'"
+        try:
+            cur = self.connection.cursor()
+            args = '%' + food_name + '%'
+            cur.execute(query %args)
+            return cur.fetchall()
+        except Error as e:
+            print(e)
