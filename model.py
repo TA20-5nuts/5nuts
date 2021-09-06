@@ -5,9 +5,10 @@ from database import Database
 
 
 class FoodData:
-    def __init__(self):
+    def __init__(self, food_name):
         self.weblinks_info = []
         self.food_avoided = []
+        self.food_name = food_name
 
     def get_nutrition_info(self):
         result = Database().search('nutrition')
@@ -20,6 +21,16 @@ class FoodData:
     def get_ingredients_info(self):
         result = Database().search('ingredient')
         return result
+
+    def get_ingredients_by_food(self):
+        if self.food_name is not None:
+            result = Database().search_ingredients_by_food(self.food_name)
+            return result
+
+    def get_nutrition_by_food(self):
+        if self.food_name is not None:
+            result = Database().search_nutrition_by_food(self.food_name)
+            return result
 
     def get_web_links(self):
         f = open("./.data/WebLinks.csv", "r", encoding='utf-8-sig')

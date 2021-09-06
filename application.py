@@ -111,6 +111,19 @@ def hospitalsData():
         return jsonify({'articles_data': result})
 
 
+@application.route("/api/food-ingredients/<food_name>", methods=['POST', 'GET'])
+def foodIngredients(food_name=None):
+    with app.app_context():
+        result = FoodData(food_name).get_ingredients_by_food()
+        return jsonify({'articles_data': result})
+
+
+@application.route("/api/food-nutrition/<food_name>", methods=['POST', 'GET'])
+def foodNutrition(food_name=None):
+    with app.app_context():
+        result = FoodData(food_name).get_nutrition_by_food()
+        return jsonify({'articles_data': result})
+
+
 if __name__ == "__main__":
-    # ingredientsInfo()
     application.run(debug=True)
