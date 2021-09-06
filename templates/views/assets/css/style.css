@@ -1593,4 +1593,19 @@ p {
   color: #5fcf80;
 }
 
-.known-allergen
+.known-allergen .icon-box-active {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  transition: 0.3s;
+  border: 2px solid #5fcf80;
+  border-radius: 4px;
+  background-color: #5fcf80;
+  color: #ffffff;
+}
+
+.known-allergen .icon-box-active:hover {
+  cursor: pointer;
+  border-color: #ffffff;
+  color: #ffffff;
+}
