@@ -35,6 +35,8 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <script type="text/javascript" src="./assets/js/recipe-page/know-allergen.js"></script>
 </head>
 
 <body>
@@ -53,9 +55,9 @@
     <nav id="navbar" class="navbar order-last order-lg-0">
       <ul>
         <li><a href="/home"><i class="ri-home-heart-line"></i>Home</a></li>
-        <li><a class="active" href="/resources"><i class="ri-git-repository-line"></i>Resources</a></li>
+        <li><a href="/resources"><i class="ri-git-repository-line"></i>Resources</a></li>
         <li><a href="/quiz"><i class="ri-question-answer-line"></i>Quiz</a></li>
-        <li><a href="/recipe"><i class="ri-leaf-line"></i>Recipes</a></li>
+        <li><a class="active" href="/recipe"><i class="ri-leaf-line"></i>Recipes</a></li>
         <li><a href="events.html"><i class="ri-information-line"></i>Prevention</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
@@ -74,16 +76,16 @@
 
       <div class="row">
         <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-          <img src="./assets/img/resources-page/resources-page-img1.png" class="img-fluid" alt="">
+          <img src="./assets/img/recipe-page/lunchbox.png" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-          <h3>We are here for YOU!</h3>
-          <p>No more Fear!</p>
+          <h3>Build Healthy Lunchbox!</h3>
+          <p>No more Allergy!</p>
           <p>
             Living with allergies is tough and that’s why we bring to you interesting facts and articles to adapt to
             the situation. Migrating to a new country brings a new set of challenges and lifestyle issues.
             You are not alone.<br>
-            <a href="#resources-chart">Check for facts to know more.</a>
+            <a href="#lunchbox">Creat lunchbox</a>
           </p>
           <h3>Every Child is different. Don't blame them or their genetics.</h3>
         </div>
@@ -92,8 +94,110 @@
     </div>
   </section><!-- End About Section -->
 
+  <section id="know-allergens" class="known-allergen">
+    <div class="container" data-aos="fade-down">
+      <div class="row align-items-center">
+        <!--        <div class="col-lg-4">-->
+        <!--          <div class="content">-->
+        <!--            <h3>Known Allergens</h3>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--        <div class="col-lg-8">-->
+        <!--          <div class="row">-->
+        <!--            <div class="col-lg-3">-->
+        <!--              <input type="checkbox" value="test" id="allergen-egg">-->
+        <!--              <label for="allergen-egg">Egg</label>-->
+        <!--            </div>-->
+        <!--            <div class="col-lg-3">-->
+        <!--              <input type="checkbox" value="test" id="allergen-dairy-product">-->
+        <!--              <label for="allergen-dairy-product">Dairy Products</label>-->
+        <!--            </div>-->
+        <!--            <div class="col-lg-3">-->
+        <!--              <input type="checkbox" value="test" id="allergen-peanut">-->
+        <!--              <label for="allergen-peanut">Peanut</label>-->
+        <!--            </div>-->
+        <!--            <div class="col-lg-3">-->
+        <!--              <input type="checkbox" value="test" id="allergen-treenut">-->
+        <!--              <label for="allergen-treenut">Tree Nuts</label>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--          <div class="row">-->
+        <!--            <div class="col-lg-3">-->
+        <!--              <input type="checkbox" value="test" id="allergen-sesame">-->
+        <!--              <label for="allergen-sesame">Sesame</label>-->
+        <!--            </div>-->
+        <!--            <div class="col-lg-3">-->
+        <!--              <input type="checkbox" value="test" id="allergen-soy">-->
+        <!--              <label for="allergen-soy">Soy</label>-->
+        <!--            </div>-->
+        <!--            <div class="col-lg-3">-->
+        <!--              <input type="checkbox" value="test" id="allergen-wheat">-->
+        <!--              <label for="allergen-wheat">Wheat</label>-->
+        <!--            </div>-->
+        <!--            <div class="col-lg-3">-->
+        <!--              <input type="checkbox" value="test" id="allergen-fish">-->
+        <!--              <label for="allergen-fish">Fish</label>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+
+        <div class="col-lg-4">
+          <div class="content">
+            <h3>Known Allergens</h3>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-lg-3 col-md-4">
+              <div class="icon-box" id="allergen-egg" onclick="toggleKnownAllergen()">
+                <img src="assets/img/general/egg.svg" alt="" class="img-svg"/>Egg
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+              <div class="icon-box">
+                <img src="assets/img/general/dairy.svg" alt="" class="img-svg"/>Dairy Products
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+              <div class="icon-box">
+                <img src="assets/img/general/peanut.svg" alt="" class="img-svg"/>Peanut
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+              <div class="icon-box">
+                <img src="assets/img/general/treenut.svg" alt="" class="img-svg"/>Tree Nuts
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-4">
+              <div class="icon-box">
+                <img src="assets/img/general/sesame.svg" alt="" class="img-svg"/>Sesame
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+              <div class="icon-box">
+                <img src="assets/img/general/soy.svg" alt="" class="img-svg"/>Soy
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+              <div class="icon-box">
+                <img src="assets/img/general/wheat.svg" alt="" class="img-svg"/>Wheat
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+              <div class="icon-box">
+                <img src="assets/img/general/fish.svg" alt="" class="img-svg"/>Fish
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ======= Why Us Section ======= -->
-  <section id="resources-chart" class="why-us">
+  <section id="lunchbox" class="why-us">
     <div class="container" data-aos="fade-up">
 
       <div class="row">

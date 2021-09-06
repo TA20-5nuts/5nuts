@@ -1567,3 +1567,30 @@ p {
   font-size: 20px;
   text-align: justify;
 }
+
+/*--------------------------------------------------------------
+# known-allergen
+--------------------------------------------------------------*/
+.known-allergen .content {
+  padding: 30px;
+  background: #5fcf80;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+.known-allergen .icon-box {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  transition: 0.3s;
+  border: 2px solid #eef0ef;
+  border-radius: 4px;
+}
+
+.known-allergen .icon-box:hover {
+  cursor: pointer;
+  border-color: #5fcf80;
+  color: #5fcf80;
+}
+
+.known-allergen
