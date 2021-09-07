@@ -55,7 +55,6 @@ class Database:
             cur = self.connection.cursor()
             args = '%' + food_name + '%'
             cur.execute(query % args)
-<<<<<<< HEAD
             return cur.fetchall()
         except Error as e:
             print(e)
@@ -66,8 +65,6 @@ class Database:
             cur = self.connection.cursor()
             args = '%' + food_name + '%'
             cur.execute(query % args)
-=======
->>>>>>> 18022c8e6748c2b3c0204a3e2d48a458bddebf8c
             return cur.fetchall()
         except Error as e:
             print(e)
