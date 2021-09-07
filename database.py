@@ -58,3 +58,13 @@ class Database:
             return cur.fetchall()
         except Error as e:
             print(e)
+
+    def search_specific_nutrition(self, food_name):
+        query = "SELECT F.food_name, N.protein, N.fat, N.dietary_fibre, I.ingredient_name FROM food F LEFT JOIN ingredient I on F.public_food_key = I.public_food_key JOIN nutrition N on I.ingredient_public_food_key = N.public_food_key WHERE F.food_name LIKE '%s'"
+        try:
+            cur = self.connection.cursor()
+            args = '%' + food_name + '%'
+            cur.execute(query % args)
+            return cur.fetchall()
+        except Error as e:
+            print(e)

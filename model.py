@@ -32,6 +32,11 @@ class FoodData:
             result = Database().search_nutrition_by_food(self.food_name)
             return result
 
+    def get_speific_nutrition(self):
+        if self.food_name is not None:
+            result = Database().search_specific_nutrition(self.food_name)
+            return result
+
     def get_web_links(self):
         f = open("./.data/WebLinks.csv", "r", encoding='utf-8-sig')
         reader = csv.reader(f)
