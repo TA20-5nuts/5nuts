@@ -23,6 +23,16 @@ application = app = Flask(__name__, static_folder="templates/views/assets")
 #     return connection
 
 
+
+# def dbConnection():
+#     connection = None
+#     try:
+#         connection = sqlite3.connect('database\\nutsndairy.db')
+#     except sqlite3.error as e:
+#         print(e)
+#     return connection
+
+
 @application.route("/")
 def root():
     return redirect("/home", code=302)
