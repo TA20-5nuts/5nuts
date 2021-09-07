@@ -5,7 +5,7 @@ from sqlite3 import Error
 
 
 class Database:
-    def __init__(self, db_name = './database/nutsndairy.db'):
+    def __init__(self, db_name='./database/nutsndairy.db'):
         # connect
         connection = None
         try:
@@ -22,7 +22,7 @@ class Database:
         query = "SELECT * FROM %s"
         try:
             cur = self.connection.cursor()
-            cur.execute(query %table)
+            cur.execute(query % table)
             return cur.fetchall()
         except Error as e:
             print(e)
@@ -31,7 +31,7 @@ class Database:
         query = "SELECT %s FROM %s"
         try:
             cur = self.connection.cursor()
-            cur.execute(query %(attribute, table))
+            cur.execute(query % (attribute, table))
             return cur.fetchall()
         except Error as e:
             print(e)
@@ -54,7 +54,7 @@ class Database:
         try:
             cur = self.connection.cursor()
             args = '%' + food_name + '%'
-            cur.execute(query %args)
+            cur.execute(query % args)
             return cur.fetchall()
         except Error as e:
             print(e)
