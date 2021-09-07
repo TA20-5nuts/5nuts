@@ -1,5 +1,7 @@
 function getRootPageArticles() {
-  fetch("http://127.0.0.1:5000/api/web-link")
+  // fetch("http://127.0.0.1:5000/api/web-link") // development
+  // fetch("http://5nuts-env.eba-3b7dh5h5.ap-southeast-2.elasticbeanstalk.com/api/web-link") // production
+  fetch("https://5nuts.me/api/web-link")
   .then((res) => {
     return res.json();
   })
@@ -22,12 +24,15 @@ function parseData(list) {
   let theadData = list[0];
   let tbodyData = list.slice(1);
 
+  // let div = document.createElement("div");
+  // div.setAttribute("style", "width: 90%");
+
   let articleSection = document.getElementById("articles");
   let table = document.createElement("table");
   table.setAttribute("class", "table caption-top table-striped table-hover fade-in-down");
 
   let caption = table.createCaption();
-  caption.innerHTML = "<strong>Useful Articles</strong>";
+  caption.innerHTML = "<strong>Check out few blogs and articles to adapt to the new situation.</strong>";
   table.appendChild(caption);
 
   let thead = createTableHead(theadData);
@@ -36,6 +41,7 @@ function parseData(list) {
   let tbody = createTableBody(tbodyData);
   table.appendChild(tbody);
 
+  // div.appendChild(table);
   articleSection.appendChild(table);
 }
 

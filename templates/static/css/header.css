@@ -1,15 +1,16 @@
 #header {
-  margin-top: 3px;
   display: flex;
   align-items: center;
-  margin: 0.75rem;
+  /*margin: 0.75rem;*/
   vertical-align: middle;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .header-item-left {
   flex: 0.3;
   display: flex;
-  align-items: center;
+  flex-grow: 1;
+  margin-left: 1rem;
 }
 
 .logo {
@@ -21,11 +22,14 @@
 .header-item-center {
   flex: 0.2;
   display: flex;
+  flex-grow: 2;
 }
 
 .header-item-right {
   flex: 1;
   display: flex;
+  flex-grow: 2;
+  justify-content: space-evenly;
 }
 
 .header-item {
@@ -37,6 +41,7 @@
   text-decoration: none;
 }
 
-.header-link:active {
-  color: #000000;
+.current-active {
+  /*background-color: #f8cb74;*/
+  color: #fff !important;
 }

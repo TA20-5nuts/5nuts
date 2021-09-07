@@ -1,26 +1,43 @@
+import sqlite3
 import csv
+
+from database import Database
+
+
 class FoodData:
-    def __init__(self):
+    def __init__(self, food_name):
         self.weblinks_info = []
         self.food_avoided = []
-    #     self.food_name = food_name
-    #     self.food_info = food_info
-    #
-    # def set_food_name(self, food_name):
-    #     pass
-    #
-    # def get_food_info(self):
-    #     return self.food_info
-    #
-    # def get_stat_data(self):
-    #     return self.stat_data
+        self.food_name = food_name
+
+    def get_nutrition_info(self):
+        result = Database().search('nutrition')
+        return result
+
+    def get_food_info(self):
+        result = Database().search('food')
+        return result
+
+    def get_ingredients_info(self):
+        result = Database().search('ingredient')
+        return result
+
+    def get_ingredients_by_food(self):
+        if self.food_name is not None:
+            result = Database().search_ingredients_by_food(self.food_name)
+            return result
+
+    def get_nutrition_by_food(self):
+        if self.food_name is not None:
+            result = Database().search_nutrition_by_food(self.food_name)
+            return result
 
     def get_web_links(self):
         f = open("./.data/WebLinks.csv", "r", encoding='utf-8-sig')
         reader = csv.reader(f)
         for row in reader:
             self.weblinks_info.append(row)
-        f.close
+        f.close()
         return self.weblinks_info
 
     def get_food_avoided(self):
@@ -28,19 +45,15 @@ class FoodData:
         reader = csv.reader(f)
         for row in reader:
             self.food_avoided.append(row)
-        f.close
+        f.close()
         return self.food_avoided
 
-class QuizData:
+
+class Hospital:
 
     def __init__(self):
-        self.quiz_form = quiz_form
-
-    def set_quiz_form(self):
         pass
 
-    def get_quiz_form(self):
-        return self.quiz_form
-# def get_food_name(self):
-    #     return self.food_name
-
+    def get_hospital_data(self):
+        result = Database().search('hospitals')
+        return result

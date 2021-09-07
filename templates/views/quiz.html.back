@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="{{url_for('static', filename='js/Head.js')}}"></script>
+</head>
+<body>
+<!--<script src="{{url_for('static', filename='js/Header.js')}}"></script>-->
+<div id="header" class="sticky-top">
+  <div class="header-item-left">
+    <nav class="navbar">
+      <a class="navbar-brand" href="/home"
+         style="margin-right: 0 !important;">
+        <img src="../static/team-logo-transparent.png" alt="logo" class="logo d-inline-block align-text-top"/>
+      </a>
+      <a class="nav-link active" href="/home"
+         style="padding: 0 !important;"><h5>Nuts&Dairy</h5></a>
+    </nav>
+  </div>
+
+  <div class="header-item-center"></div>
+
+  <div class="header-item-right">
+    <nav class="navbar current-active">
+      <a class="nav-link" href="/home"
+         style="padding: 0 !important;"><h5>Home</h5></a>
+    </nav>
+    <nav class="navbar">
+      <a class="nav-link" href="/introduction"
+         style="padding: 0 !important;"><h5>Allergy</h5></a>
+    </nav>
+    <nav class="navbar">
+      <a class="nav-link" href="/resources"
+         style="padding: 0 !important;"><h5>Resource</h5></a>
+    </nav>
+  </div>
+</div>
+
+
+<script src="{{url_for('static', filename='js/Footer.js')}}"></script>
+</body>
+</html>
