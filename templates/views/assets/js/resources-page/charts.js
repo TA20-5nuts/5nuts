@@ -117,5 +117,5 @@ function drawBarChart() {
   option && barChart.setOption(option);
 }
 
-drawPieChart();
-// drawBarChart();
+// drawPieChart();
+drawBarChart();
