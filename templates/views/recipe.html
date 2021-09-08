@@ -152,23 +152,41 @@
     </div>
   </section>
 
-  <!-- ======= Why Us Section ======= -->
+  <!-- ======= lunchbox Section ======= -->
   <section id="lunchbox-section" class="why-us">
     <div class="container" data-aos="fade-up">
 
       <div class="row align-items-center">
         <div class="col-lg-4 d-flex align-items-stretch">
           <div class="content">
-            <h3>Nutrition</h3>
-            <p>
-              An adverse reaction by the immune system towards a certain type of food is termed as Food
-              Allergy. For many sensitive children, minute allergic reaction can be frightening and life-threatening. In
-              extreme cases it can lead to immediate hospitalisation or even death.
-            </p>
-            <div class="text-center">
-              <a href="#major-allergens" class="more-btn">Checkout 8 Major Food Allergens
-                <i class="ri-arrow-down-s-line"></i></a>
+            <h3>Tips</h3>
+            <div class="tips-item">
+              <p>Grain - Grain is the main food to provide energy</p>
             </div>
+            <div class="tips-item">
+              <p>Vegetable - Grain is the main food to provide energy</p>
+            </div>
+            <div class="tips-item">
+              <p>Dairy - Grain is the main food to provide energy</p>
+            </div>
+            <div class="tips-item">
+              <p>Protein - Grain is the main food to provide energy</p>
+            </div>
+            <div class="tips-item">
+              <p>Fruit - Grain is the main food to provide energy</p>
+            </div>
+            <div class="tips-item">
+              <p>Drink - Grain is the main food to provide energy</p>
+            </div>
+            <!--            <p>-->
+            <!--              An adverse reaction by the immune system towards a certain type of food is termed as Food-->
+            <!--              Allergy. For many sensitive children, minute allergic reaction can be frightening and life-threatening. In-->
+            <!--              extreme cases it can lead to immediate hospitalisation or even death.-->
+            <!--            </p>-->
+            <!--            <div class="text-center">-->
+            <!--              <a href="#major-allergens" class="more-btn">Checkout 8 Major Food Allergens-->
+            <!--                <i class="ri-arrow-down-s-line"></i></a>-->
+            <!--            </div>-->
           </div>
         </div>
         <div class="col-lg-8" data-aos="zoom-in" data-aos-delay="100">
@@ -180,31 +198,33 @@
               <div class="icon-box mt-4 mt-xl-0">
                 <!--                <div class="content-block-item content-block-item-center">-->
                 <div id="lunchbox" class="d-flex">
-                  <div class="d-flex flex-column-reverse lunchbox-item flex-grow-1 align-items-center">
+                  <div class="d-flex flex-column-reverse lunchbox-item flex-grow-1 align-items-center" id="grain"
+                       onclick="selectFood(this.id)">
                     Grain
                     <img src="./assets/img/recipe-page/bread.svg" alt="" class="food-icon"/>
                   </div>
                   <div class="d-flex flex-column flex-grow-1">
-                    <div class="lunchbox-item">
+                    <div class="lunchbox-item" id="vegetable" onclick="selectFood(this.id)">
                       <img src="./assets/img/recipe-page/vegetable.svg" alt="" class="food-icon"/>
                       Vegetable
                     </div>
-                    <div class="lunchbox-item">
+                    <div class="lunchbox-item" id="dairy" onclick="selectFood(this.id)">
                       <img src="./assets/img/recipe-page/dairy-product.svg" alt="" class="food-icon"/>
                       Dairy
                     </div>
                   </div>
                   <div class="d-flex flex-column flex-grow-1">
-                    <div class="lunchbox-item">
+                    <div class="lunchbox-item" id="protein" onclick="selectFood(this.id)">
                       <img src="./assets/img/recipe-page/protein.svg" alt="" class="food-icon"/>
                       Protein
                     </div>
-                    <div class="lunchbox-item">
+                    <div class="lunchbox-item" id="fruit" onclick="selectFood(this.id)">
                       <img src="./assets/img/recipe-page/fruit.svg" alt="" class="food-icon"/>
                       Fruit
                     </div>
                   </div>
-                  <div class="d-flex flex-column-reverse lunchbox-item flex-grow-1 align-items-center">
+                  <div class="d-flex flex-column-reverse lunchbox-item flex-grow-1 align-items-center" id="drink"
+                       onclick="selectFood(this.id)">
                     Drink
                     <img src="./assets/img/recipe-page/water.svg" alt="" class="food-icon"/>
                   </div>
@@ -219,6 +239,11 @@
     </div>
   </section><!-- End Why Us Section -->
 
+  <section id="food-option" style="display: none" onclick="hideFoodOptions()">
+    <div class="container">
+      <h3>Food Options</h3>
+    </div>
+  </section>
   <!-- ======= Features Section ======= -->
   <!--  <section id="major-allergens" class="features">-->
   <!--    <div class="container" data-aos="fade-up">-->

@@ -11,37 +11,13 @@ from model import Hospital
 
 # app = Flask(__name__)
 application = app = Flask(__name__, static_folder="templates/views/assets")
+
 # CORS(application)
-
-
-# def dbConnection():
-#     connection = None
-#     try:
-#         connection = sqlite3.connect('database\\nutsndairy.db')
-#     except sqlite3.error as e:
-#         print(e)
-#     return connection
-
-
-
-# def dbConnection():
-#     connection = None
-#     try:
-#         connection = sqlite3.connect('database\\nutsndairy.db')
-#     except sqlite3.error as e:
-#         print(e)
-#     return connection
 
 
 @application.route("/")
 def root():
     return redirect("/home", code=302)
-
-
-@application.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, "templates"), 'favicon.ico',
-                               mimetype='image/vnd.microsoft.icon')
 
 
 @application.route("/home")
@@ -88,20 +64,20 @@ def test():
 @application.route("/api/web-link", methods=['POST', 'GET'])
 def webLink():
     result = FoodData().get_web_links()
-    return jsonify({'articles_data': result})
+    return jsonify({'data': result})
 
 
 @application.route("/api/food-avoided", methods=['POST', 'GET'])
 def foodAvoided():
     result = FoodData().get_food_avoided()
-    return jsonify({'articles_data': result})
+    return jsonify({'data': result})
 
 
-@application.route("/api/food-info", methods=['POST', 'GET'])
-def foodInfo():
+@application.route("/api/food-info/<food_name>", methods=['POST', 'GET'])
+def foodInfo(food_name=None):
     with app.app_context():
-        result = FoodData().get_food_info()
-        return jsonify({'articles_data': result})
+        result = FoodData(food_name).get_food_info()
+        return jsonify({'data': result})
 
 
 @application.route("/api/ingredients-info", methods=['POST', 'GET'])
@@ -109,41 +85,42 @@ def ingredientsInfo():
     with app.app_context():
         result = FoodData().get_ingredients_info()
         print(result)
-        return jsonify({'articles_data': result})
+        return jsonify({'data': result})
 
 
 @application.route("/api/nutrition-info", methods=['POST', 'GET'])
 def nutritionInfo():
     with app.app_context():
         result = FoodData().get_nutrition_info()
-        return jsonify({'articles_data': result})
+        return jsonify({'data': result})
 
 
 @application.route("/api/hospitals-data", methods=['POST', 'GET'])
 def hospitalsData():
     with app.app_context():
         result = Hospital().get_hospital_data()
-        return jsonify({'articles_data': result})
+        return jsonify({'data': result})
 
 
 @application.route("/api/food-ingredients/<food_name>", methods=['POST', 'GET'])
 def foodIngredients(food_name=None):
     with app.app_context():
         result = FoodData(food_name).get_ingredients_by_food()
-        return jsonify({'articles_data': result})
+        return jsonify({'data': result})
 
 
 @application.route("/api/food-nutrition/<food_name>", methods=['POST', 'GET'])
 def foodNutrition(food_name=None):
     with app.app_context():
         result = FoodData(food_name).get_nutrition_by_food()
-        return jsonify({'articles_data': result})
+        return jsonify({'data': result})
+
 
 @application.route("/api/food-specific-nutrition/<food_name>", methods=['POST', 'GET'])
 def specificNutrition(food_name=None):
     with app.app_context():
-        result = FoodData(food_name).get_speific_nutrition()
-        return jsonify({'articles_data': result})
+        result = FoodData(food_name).get_specific_nutrition()
+        return jsonify({'data': result})
 
 
 if __name__ == "__main__":

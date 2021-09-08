@@ -1635,8 +1635,29 @@ p {
   color: #fff;
 }
 
+.lunchbox-item-warning {
+  background-color: yellow;
+  border-radius: 50px;
+  border: 1px dotted;
+  padding: 30px 0;
+}
+
 .food-icon {
   width: 32px;
   height: 32px;
   margin: 1rem 0;
+}
+
+.tips-item {
+  background: #3ac162;
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: .5rem;
+}
+
+.tips-item p {
+  margin: 0 !important;
+  text-align: justify;
+  font-size: 16px;
 }
