@@ -7,11 +7,21 @@ from flask import make_response, send_from_directory, redirect, jsonify
 from model import FoodData
 from model import Hospital
 
-from flask_cors import CORS
+# from flask_cors import CORS
 
 # app = Flask(__name__)
 application = app = Flask(__name__, static_folder="templates/views/assets")
-CORS(application)
+# CORS(application)
+
+
+# def dbConnection():
+#     connection = None
+#     try:
+#         connection = sqlite3.connect('database\\nutsndairy.db')
+#     except sqlite3.error as e:
+#         print(e)
+#     return connection
+
 
 
 # def dbConnection():
@@ -62,6 +72,11 @@ def recipe():
 @application.route("/game")
 def game():
     return render_template('views/game.html')
+
+
+@application.route("/prevention")
+def prevention():
+    return render_template('views/prevention.html')
 
 
 @application.route("/test")
@@ -122,6 +137,12 @@ def foodIngredients(food_name=None):
 def foodNutrition(food_name=None):
     with app.app_context():
         result = FoodData(food_name).get_nutrition_by_food()
+        return jsonify({'articles_data': result})
+
+@application.route("/api/food-specific-nutrition/<food_name>", methods=['POST', 'GET'])
+def specificNutrition(food_name=None):
+    with app.app_context():
+        result = FoodData(food_name).get_speific_nutrition()
         return jsonify({'articles_data': result})
 
 
