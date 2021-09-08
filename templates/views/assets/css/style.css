@@ -1620,5 +1620,23 @@ p {
 
 .lunchbox-item {
   cursor: pointer;
-  padding: 60px;
+  padding: 30px 0;
+  border-radius: 50px;
+  border: 1px dotted;
+}
+
+.lunchbox-item:hover {
+  background-color: #3ac162;
+  color: #fff;
+}
+
+.lunchbox-item-selected {
+  background-color: #5fcf80;
+  color: #fff;
+}
+
+.food-icon {
+  width: 32px;
+  height: 32px;
+  margin: 1rem 0;
 }
