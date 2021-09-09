@@ -61,23 +61,23 @@ class Database:
 
     def search_specific_nutrition(self, food_name):
         query = """
-        SELECT 
-        F.name, N.protein, N.fat, N.dietary_fibre, I.ingredient_name 
-        FROM food F 
-        LEFT JOIN ingredient I 
-        on F.public_food_key = I.public_food_key JOIN nutrition N on I.public_food_key = N.public_food_key 
+        SELECT F.name, sum(N.protein), sum(N.fat), sum(N.dietary_fibre) 
+        from food as F join ingredient as I on F.public_food_key = I.public_food_key 
+        join nutrition as N on I.ingredient_public_food_key = N.public_food_key
         WHERE F.name LIKE '%s'
+        group by F.name
         """
         try:
             cur = self.connection.cursor()
             args = '%' + food_name + '%'
             cur.execute(query % args)
             value = cur.fetchall()
+            print(value)
             result = []
             for i in value:
-                Key = ("Food name", "Protein", "Fat", "Dietary fibre", "Ingredient name")
+                Key = ("Food name", "Protein", "Fat", "Dietary fibre")
                 result.append(dict(zip(Key, i)))
-                # print(type(dict(zip(myKeys, i))))
+            print(result)
             return result
         except Error as e:
             print(e)
