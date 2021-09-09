@@ -1609,3 +1609,55 @@ p {
   border-color: #ffffff;
   color: #ffffff;
 }
+
+/*--------------------------------------------------------------
+# lunchbox
+--------------------------------------------------------------*/
+#lunchbox {
+  border: 2px solid #000;
+  border-radius: 50px;
+}
+
+.lunchbox-item {
+  cursor: pointer;
+  padding: 30px 0;
+  border-radius: 50px;
+  border: 1px dotted;
+}
+
+.lunchbox-item:hover {
+  background-color: #3ac162;
+  color: #fff;
+}
+
+.lunchbox-item-selected {
+  background-color: #5fcf80;
+  color: #fff;
+}
+
+.lunchbox-item-warning {
+  background-color: yellow;
+  border-radius: 50px;
+  border: 1px dotted;
+  padding: 30px 0;
+}
+
+.food-icon {
+  width: 32px;
+  height: 32px;
+  margin: 1rem 0;
+}
+
+.tips-item {
+  background: #3ac162;
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: .5rem;
+}
+
+.tips-item p {
+  margin: 0 !important;
+  text-align: justify;
+  font-size: 16px;
+}
