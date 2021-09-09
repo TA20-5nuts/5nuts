@@ -72,6 +72,15 @@ class Database:
             cur = self.connection.cursor()
             args = '%' + food_name + '%'
             cur.execute(query % args)
-            return cur.fetchall()
+            value = cur.fetchall()
+            result = []
+            for i in value:
+                Key = ("Food name", "Protein", "Fat", "Dietary fibre", "Ingredient name")
+                result.append(dict(zip(Key, i)))
+                # print(type(dict(zip(myKeys, i))))
+            return result
         except Error as e:
             print(e)
+
+
+Database().search_specific_nutrition("bread")
