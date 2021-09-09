@@ -72,12 +72,10 @@ class Database:
             args = '%' + food_name + '%'
             cur.execute(query % args)
             value = cur.fetchall()
-            print(value)
             result = []
             for i in value:
                 Key = ("Food name", "Protein", "Fat", "Dietary fibre")
                 result.append(dict(zip(Key, i)))
-            print(result)
             return result
         except Error as e:
             print(e)
