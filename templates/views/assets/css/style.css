@@ -1717,3 +1717,29 @@ p {
   padding: 20px;
   width: 100%;
 }
+
+/*--------------------------------------------------------------
+# Prevention
+--------------------------------------------------------------*/
+
+.prevention {
+  /*border: 1px solid #5fcf80;*/
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.prevention-img {
+  padding: 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.prevention-text {
+  border: 1px solid #5fcf80;
+  border-radius: 4px;
+  background-color: #5fcf80;
+  color: #fff;
+  padding: 10px;
+}
+
