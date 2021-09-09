@@ -15,8 +15,9 @@ class FoodData:
         return result
 
     def get_food_info(self):
-        result = Database().search('food')
-        return result
+        if self.food_name is not None:
+            result = Database().search_food_by_food(self.food_name)
+            return result
 
     def get_ingredients_info(self):
         result = Database().search('ingredient')

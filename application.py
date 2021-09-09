@@ -1,6 +1,6 @@
 import os
-# import sys
-# sys.path.append("c:/users/teres/appdata/local/programs/python/python39/lib/site-packages")
+import sys
+sys.path.append("c:/users/teres/appdata/local/programs/python/python39/lib/site-packages")
 
 from flask import Flask
 from flask import render_template

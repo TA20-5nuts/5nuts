@@ -18,23 +18,23 @@ class Database:
         if self.connection:
             self.connection.close()
 
-    def search(self, table):
-        query = "SELECT * FROM %s"
-        try:
-            cur = self.connection.cursor()
-            cur.execute(query % table)
-            return cur.fetchall()
-        except Error as e:
-            print(e)
-
-    def search_attribute(self, table, attribute):
-        query = "SELECT %s FROM %s"
-        try:
-            cur = self.connection.cursor()
-            cur.execute(query % (attribute, table))
-            return cur.fetchall()
-        except Error as e:
-            print(e)
+    # def search(self, table):
+    #     query = "SELECT * FROM %s"
+    #     try:
+    #         cur = self.connection.cursor()
+    #         cur.execute(query % table)
+    #         return cur.fetchall()
+    #     except Error as e:
+    #         print(e)
+    #
+    # def search_attribute(self, table, attribute):
+    #     query = "SELECT %s FROM %s"
+    #     try:
+    #         cur = self.connection.cursor()
+    #         cur.execute(query % (attribute, table))
+    #         return cur.fetchall()
+    #     except Error as e:
+    #         print(e)
 
     def search_ingredients_by_food(self, food_name):
         query_key = "SELECT public_food_key FROM food WHERE food_name LIKE '%s'"
@@ -56,6 +56,21 @@ class Database:
             args = '%' + food_name + '%'
             cur.execute(query % args)
             return cur.fetchall()
+        except Error as e:
+            print(e)
+
+    def search_food_by_food(self, food_name):
+        query = "SELECT name, desc FROM food WHERE name LIKE '%s'"
+        try:
+            cur = self.connection.cursor()
+            args = '%' + food_name + '%'
+            cur.execute(query % args)
+            value = cur.fetchall()
+            result = []
+            for i in value:
+                Key = ("Food name", "Description")
+                result.append(dict(zip(Key, i)))
+            return result
         except Error as e:
             print(e)
 
