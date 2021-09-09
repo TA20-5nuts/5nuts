@@ -134,9 +134,22 @@ function generateRow(rowFoods) {
 }
 
 function chooseFood(id) {
-  console.log(id);
-  console.log(currentFoodTypeId);
+  updateLunchbox(id);
   hideFoodOptions();
+}
+
+function updateLunchbox(foodName) {
+  console.log(currentFoodTypeId);
+  console.log(foodName);
+  let lunchboxPart = document.getElementById(currentFoodTypeId);
+  // console.log(lunchboxPart);
+  let lunchboxPartIcon = lunchboxPart.getElementsByTagName("img")[0];
+  console.log(lunchboxPartIcon);
+
+  let tempHTML = foodName;
+  console.log(tempHTML);
+  // tempHTML += lunchboxPartIcon;
+  lunchboxPart.innerHTML = tempHTML;
 }
 
 function hideFoodOptions() {
