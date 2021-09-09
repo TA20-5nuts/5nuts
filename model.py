@@ -5,7 +5,7 @@ from database import Database
 
 
 class FoodData:
-    def __init__(self, food_name):
+    def __init__(self, food_name=None):
         self.weblinks_info = []
         self.food_avoided = []
         self.food_name = food_name
@@ -15,8 +15,9 @@ class FoodData:
         return result
 
     def get_food_info(self):
-        result = Database().search('food')
-        return result
+        if self.food_name is not None:
+            result = Database().search_food_by_food(self.food_name)
+            return result
 
     def get_ingredients_info(self):
         result = Database().search('ingredient')
@@ -30,6 +31,11 @@ class FoodData:
     def get_nutrition_by_food(self):
         if self.food_name is not None:
             result = Database().search_nutrition_by_food(self.food_name)
+            return result
+
+    def get_specific_nutrition(self):
+        if self.food_name is not None:
+            result = Database().search_specific_nutrition(self.food_name)
             return result
 
     def get_web_links(self):
