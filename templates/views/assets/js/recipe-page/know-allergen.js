@@ -4,7 +4,7 @@ idFoodMapper.set("grain", "bread");
 idFoodMapper.set("vegetable", "carrot");
 idFoodMapper.set("dairy", "cheese");
 idFoodMapper.set("protein", "beef");
-idFoodMapper.set("fruit", "blueberry");
+idFoodMapper.set("fruit", "mandarin");
 idFoodMapper.set("drink", "juice");
 let currentFoodTypeId = ""; // 1 of the 6 type of foods in lunchbox
 
@@ -61,13 +61,12 @@ async function selectFood(id) {
  * @returns {Promise<any>}
  */
 async function sendRequest(food) {
-  // const foodInfoAPI = "https://nutsndairy.me/api/food-info/";
-  const foodInfoAPI = "http://localhost:5000/api/food-specific-nutrition/";
+  const foodInfoAPI = "https://nutsndairy.me/api/food-info/";
+  // const foodInfoAPI = "http://localhost:5000/api/food-info/";
   let tempApi = foodInfoAPI + food;
   console.log(tempApi);
   const response = await fetch(tempApi);
   const data = await response.json();
-  // console.log(data);
   return data;
 }
 
@@ -91,6 +90,7 @@ function showFoodOptions(foods, id) {
 }
 
 function generateHTMLCode(foods) {
+  // console.log(foods);
   const optionLimit = 9;
   const rowLimit = 3;
 
@@ -122,10 +122,12 @@ function generateRow(rowFoods) {
       break;
     }
     let tempFood = rowFoods[i];
-    rowHTML += openItemDiv + ` id="` + tempFood[1] + `"` + ` onclick="chooseFood(this.id)"` + closeArrow;
-    rowHTML += `<h3>` + tempFood[1] + `</h3>`;
+    // console.log(tempFood);
+    // console.log(typeof tempFood);
+    rowHTML += openItemDiv + ` id="` + tempFood["Food name"] + `"` + ` onclick="chooseFood(this.id)"` + closeArrow;
+    rowHTML += `<h3>` + tempFood["Food name"] + `</h3>`;
     rowHTML += hr;
-    rowHTML += `<p>` + tempFood[2] + `</p>`;
+    rowHTML += `<p>` + tempFood["Description"] + `</p>`;
     rowHTML += closeDiv;
   }
 
@@ -139,17 +141,18 @@ function chooseFood(id) {
 }
 
 function updateLunchbox(foodName) {
-  console.log(currentFoodTypeId);
-  console.log(foodName);
+  // console.log(currentFoodTypeId);
+  // console.log(foodName);
   let lunchboxPart = document.getElementById(currentFoodTypeId);
   // console.log(lunchboxPart);
-  let lunchboxPartIcon = lunchboxPart.getElementsByTagName("img")[0];
-  console.log(lunchboxPartIcon);
+  // let lunchboxPartIcon = lunchboxPart.getElementsByTagName("img")[0];
+  // console.log(lunchboxPartIcon);
 
   let tempHTML = foodName;
-  console.log(tempHTML);
+  // console.log(tempHTML);
   // tempHTML += lunchboxPartIcon;
   lunchboxPart.innerHTML = tempHTML;
+  document.getElementById(currentFoodTypeId).setAttribute("class", "lunchbox-item-selected");
 }
 
 function hideFoodOptions() {

@@ -185,63 +185,79 @@
               <p>Drink - Drink enough water to boost your child’s diet. Drink water regularly throughout the day to
                 flush waste from the body.</p>
             </div>
-            <!--            <p>-->
-            <!--              An adverse reaction by the immune system towards a certain type of food is termed as Food-->
-            <!--              Allergy. For many sensitive children, minute allergic reaction can be frightening and life-threatening. In-->
-            <!--              extreme cases it can lead to immediate hospitalisation or even death.-->
-            <!--            </p>-->
-            <!--            <div class="text-center">-->
-            <!--              <a href="#major-allergens" class="more-btn">Checkout 8 Major Food Allergens-->
-            <!--                <i class="ri-arrow-down-s-line"></i></a>-->
-            <!--            </div>-->
           </div>
         </div>
-        <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
-          <div class="icon-boxes justify-content-center">
-            <div class="row">
-              <div class="icon-box mb-2">
-                <h4 style="padding: 0; margin: 0;">Create Your Lunchbox!</h4>
-              </div>
-              <div class="icon-box mt-4 mt-xl-0">
-                <!--                <div class="content-block-item content-block-item-center">-->
-                <div id="lunchbox" class="d-flex">
-                  <div class="d-flex flex-column-reverse lunchbox-item flex-grow-1 align-items-center" id="grain"
-                       onclick="selectFood(this.id)">
 
-                    Grain
-                    <img src="./assets/img/recipe-page/bread.svg" alt="" class="food-icon"/>
-                  </div>
-                  <div class="d-flex flex-column flex-grow-1">
-                    <div class="lunchbox-item" id="vegetable" onclick="selectFood(this.id)">
-                      <img src="./assets/img/recipe-page/vegetable.svg" alt="" class="food-icon"/>
-                      Vegetable
-                    </div>
-                    <div class="lunchbox-item" id="dairy" onclick="selectFood(this.id)">
-                      <img src="./assets/img/recipe-page/dairy-product.svg" alt="" class="food-icon"/>
-                      Dairy
-                    </div>
-                  </div>
-                  <div class="d-flex flex-column flex-grow-1">
-                    <div class="lunchbox-item" id="protein" onclick="selectFood(this.id)">
-                      <img src="./assets/img/recipe-page/protein.svg" alt="" class="food-icon"/>
-                      Protein
-                    </div>
-                    <div class="lunchbox-item" id="fruit" onclick="selectFood(this.id)">
-                      <img src="./assets/img/recipe-page/fruit.svg" alt="" class="food-icon"/>
-                      Fruit
-                    </div>
-                  </div>
-                  <div class="d-flex flex-column-reverse lunchbox-item flex-grow-1 align-items-center" id="drink"
-                       onclick="selectFood(this.id)">
-                    Drink
-                    <img src="./assets/img/recipe-page/water.svg" alt="" class="food-icon"/>
-                  </div>
-                </div>
-              </div>
-              <!--              </div>-->
+        <div class="col-lg-6 d-flex align-items-stretch">
+          <div class="content">
+            <h3>Create Your Healthy Lunchbox!</h3>
+            <div class="lunchbox-item" id="grain" onclick="selectFood(this.id)">
+              <p><img src="./assets/img/recipe-page/bread.svg" alt="" class="food-icon"/> Grain</p>
             </div>
-          </div><!-- End .content-->
+            <div class="lunchbox-item" id="vegetable" onclick="selectFood(this.id)">
+              <p><img src="./assets/img/recipe-page/vegetable.svg" alt="" class="food-icon"/> Vegetable</p>
+            </div>
+            <div class="lunchbox-item" id="dairy" onclick="selectFood(this.id)">
+              <p><img src="./assets/img/recipe-page/dairy-product.svg" alt="" class="food-icon"/> Dairy</p>
+            </div>
+            <div class="lunchbox-item" id="protein" onclick="selectFood(this.id)">
+              <p><img src="./assets/img/recipe-page/protein.svg" alt="" class="food-icon"/> Protein</p>
+            </div>
+            <div class="lunchbox-item" id="fruit" onclick="selectFood(this.id)">
+              <p><img src="./assets/img/recipe-page/fruit.svg" alt="" class="food-icon"/> Fruit</p>
+            </div>
+            <div class="lunchbox-item" id="drink" onclick="selectFood(this.id)">
+              <p><img src="./assets/img/recipe-page/water.svg" alt="" class="food-icon"/> Drink</p>
+            </div>
+          </div>
         </div>
+
+        <!--        <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">-->
+        <!--          <div class="icon-boxes justify-content-center">-->
+        <!--            <div class="row">-->
+        <!--              <div class="icon-box mb-2">-->
+        <!--                <h4 style="padding: 0; margin: 0;">Create Your Lunchbox!</h4>-->
+        <!--              </div>-->
+        <!--              <div class="icon-box mt-4 mt-xl-0">-->
+        <!--                &lt;!&ndash;                <div class="content-block-item content-block-item-center">&ndash;&gt;-->
+        <!--                <div id="lunchbox" class="d-flex">-->
+        <!--                  <div class="d-flex flex-column-reverse lunchbox-item flex-grow-1 align-items-center" id="grain"-->
+        <!--                       onclick="selectFood(this.id)">-->
+
+        <!--                    Grain-->
+        <!--                    <img src="./assets/img/recipe-page/bread.svg" alt="" class="food-icon"/>-->
+        <!--                  </div>-->
+        <!--                  <div class="d-flex flex-column flex-grow-1">-->
+        <!--                    <div class="lunchbox-item" id="vegetable" onclick="selectFood(this.id)">-->
+        <!--                      <img src="./assets/img/recipe-page/vegetable.svg" alt="" class="food-icon"/>-->
+        <!--                      Vegetable-->
+        <!--                    </div>-->
+        <!--                    <div class="lunchbox-item" id="dairy" onclick="selectFood(this.id)">-->
+        <!--                      <img src="./assets/img/recipe-page/dairy-product.svg" alt="" class="food-icon"/>-->
+        <!--                      Dairy-->
+        <!--                    </div>-->
+        <!--                  </div>-->
+        <!--                  <div class="d-flex flex-column flex-grow-1">-->
+        <!--                    <div class="lunchbox-item" id="protein" onclick="selectFood(this.id)">-->
+        <!--                      <img src="./assets/img/recipe-page/protein.svg" alt="" class="food-icon"/>-->
+        <!--                      Protein-->
+        <!--                    </div>-->
+        <!--                    <div class="lunchbox-item" id="fruit" onclick="selectFood(this.id)">-->
+        <!--                      <img src="./assets/img/recipe-page/fruit.svg" alt="" class="food-icon"/>-->
+        <!--                      Fruit-->
+        <!--                    </div>-->
+        <!--                  </div>-->
+        <!--                  <div class="d-flex flex-column-reverse lunchbox-item flex-grow-1 align-items-center" id="drink"-->
+        <!--                       onclick="selectFood(this.id)">-->
+        <!--                    Drink-->
+        <!--                    <img src="./assets/img/recipe-page/water.svg" alt="" class="food-icon"/>-->
+        <!--                  </div>-->
+        <!--                </div>-->
+        <!--              </div>-->
+        <!--              &lt;!&ndash;              </div>&ndash;&gt;-->
+        <!--            </div>-->
+        <!--          </div>&lt;!&ndash; End .content&ndash;&gt;-->
+        <!--        </div>-->
       </div>
 
     </div>
