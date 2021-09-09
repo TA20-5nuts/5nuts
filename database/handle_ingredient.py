@@ -16,8 +16,8 @@ class Ingredient:
 
     def get_info(self):
         info = list()
-        info.append(self.ingredient_key)
         info.append(self.food_key)
+        info.append(self.ingredient_key)
         info.append(self.ingredient_name)
         info.append(self.ingredient_weight)
         info.append(self.retention_factor_id)

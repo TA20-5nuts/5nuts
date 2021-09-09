@@ -6,6 +6,7 @@ idFoodMapper.set("dairy", "cheese");
 idFoodMapper.set("protein", "beef");
 idFoodMapper.set("fruit", "blueberry");
 idFoodMapper.set("drink", "juice");
+let currentFoodTypeId = ""; // 1 of the 6 type of foods in lunchbox
 
 /**
  * toggle button from in-active to active or the other way around
@@ -46,11 +47,12 @@ function generateFoodType(id) {
  * @param selected if the item has been selected
  */
 async function selectFood(id) {
+  currentFoodTypeId = id;
   let foodName = generateFoodType(id);
 
   const response = await sendRequest(foodName);
   let foods = response.data;
-  showFoodOptions(foods);
+  showFoodOptions(foods, id);
 }
 
 /**
@@ -59,21 +61,82 @@ async function selectFood(id) {
  * @returns {Promise<any>}
  */
 async function sendRequest(food) {
-  // const foodDataApi = "https://nutsndairy.me/api/food-info";
-  const foodDataApi = "http://localhost:5000/api/food-info/";
-  let tempApi = foodDataApi + food;
+  // const foodInfoAPI = "https://nutsndairy.me/api/food-info/";
+  const foodInfoAPI = "http://localhost:5000/api/food-info/";
+  let tempApi = foodInfoAPI + food;
   console.log(tempApi);
   const response = await fetch(tempApi);
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
   return data;
 }
 
 // TODO: LUNCHBOX FEATURE
-function showFoodOptions(foods) {
-  console.log(foods);
+/**
+ * show food options for user to select
+ * @param foods available foods
+ * @param id associate food type in lunchbox, e.g. grain, vegetable etc.
+ */
+function showFoodOptions(foods, id) {
+  // console.log(foods);
+  // console.log(id);
   let foodOptionSection = document.getElementById("food-option");
+
+  // console.log(foodOptionSection);
+  let foodOptionSectionContainer = foodOptionSection.getElementsByClassName("container").item(0);
+  // console.log(foodOptionSectionContainer);
   foodOptionSection.style.display = "flex";
+
+  foodOptionSectionContainer.innerHTML = generateHTMLCode(foods);
+}
+
+function generateHTMLCode(foods) {
+  const optionLimit = 9;
+  const rowLimit = 3;
+
+  // foods = foods.slice(0, 5);
+  // console.log(foods);
+
+  let html = "";
+  for (let i = 0; i < optionLimit; i += 3) {
+    if (i >= foods.length) {
+      break;
+    }
+    html += generateRow(foods.slice(i, i + 3));
+  }
+
+  return html;
+}
+
+function generateRow(rowFoods) {
+  const optionLimit = 3;
+  const hr = `<hr>`;
+  const openRowDiv = `<div class="row">`;
+  const openItemDiv = `<div class="col-lg-4 food-item"`;
+  const closeArrow = `>`;
+  const closeDiv = `</div>`;
+
+  let rowHTML = openRowDiv;
+  for (let i = 0; i < optionLimit; i++) {
+    if (i >= rowFoods.length) {
+      break;
+    }
+    let tempFood = rowFoods[i];
+    rowHTML += openItemDiv + ` id="` + tempFood[1] + `"` + ` onclick="chooseFood(this.id)"` + closeArrow;
+    rowHTML += `<h3>` + tempFood[1] + `</h3>`;
+    rowHTML += hr;
+    rowHTML += `<p>` + tempFood[2] + `</p>`;
+    rowHTML += closeDiv;
+  }
+
+  rowHTML += closeDiv;
+  return rowHTML;
+}
+
+function chooseFood(id) {
+  console.log(id);
+  console.log(currentFoodTypeId);
+  hideFoodOptions();
 }
 
 function hideFoodOptions() {

@@ -9,14 +9,18 @@ CREATE TABLE IF NOT EXISTS recipe  (
 	food_name TEXT(50) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS ingredient (
+CREATE TABLE ingredient (
 	public_food_key TEXT(10) NOT NULL,
-	ingredient_public_food_key TEXT(10) NOT NULL PRIMARY KEY,
+	ingredient_public_food_key TEXT(10) NOT NULL,
 	ingredient_name TEXT(30) NOT NULL,
 	ingredient_weight INTEGER NOT NULL,
 	retention_factor_id INTEGER NOT NULL DEFAULT 0,
 
-	FOREIGN KEY(public_food_key) REFERENCES food(public_food_key)
+	FOREIGN KEY(public_food_key) REFERENCES food(public_food_key),
+	PRIMARY KEY (
+	public_food_key,
+	ingredient_public_food_key
+)
 );
 
 CREATE TABLE IF NOT EXISTS nutrition (
