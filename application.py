@@ -1,4 +1,6 @@
 import os
+# import sys
+# sys.path.append("c:/users/teres/appdata/local/programs/python/python39/lib/site-packages")
 
 from flask import Flask
 from flask import render_template
@@ -7,12 +9,12 @@ from flask import make_response, send_from_directory, redirect, jsonify
 from model import FoodData
 from model import Hospital
 
-# from flask_cors import CORS
+from flask_cors import CORS
 
 # app = Flask(__name__)
 application = app = Flask(__name__, static_folder="templates/views/assets")
 
-# CORS(application)
+CORS(application)
 
 
 @application.route("/")
