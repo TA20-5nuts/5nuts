@@ -111,8 +111,8 @@ function generateHTMLCode(foods) {
 function generateRow(rowFoods) {
   const optionLimit = 3;
   const hr = `<hr>`;
-  const openRowDiv = `<div class="row">`;
-  const openItemDiv = `<div class="col-lg-4 food-item"`;
+  const openRowDiv = `<div class="row" style="justify-content: space-evenly">`;
+  const openItemDiv = `<div class="col-lg-3 col-md-4 food-item"`;
   const closeArrow = `>`;
   const closeDiv = `</div>`;
 
