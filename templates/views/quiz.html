@@ -39,7 +39,7 @@
   <script src="assets/js/quiz-page/quiz.js"></script>
 </head>
 
-<body>
+<body onload="initPage()">
 
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top">
@@ -94,8 +94,8 @@
 
       <div id="quiz-form">
         <div class="row mb-3">
-          <div class="col-lg-12 d-flex align-items-stretch">
-            <div class="content" style="width: 100%">
+          <div class="col-lg-6 question">
+            <div class="content">
               <h4>1. Bring lunches from home can keep you kids stay away from food allergy?</h4>
               <div>
                 <input name="q1" type="radio" id="q1-true" value="true" required>
@@ -107,11 +107,20 @@
               </div>
             </div>
           </div>
+
+          <div class="col-lg-6 explanation">
+            <div class="content">
+              <h4>Explanation - Answer: False</h4>
+              <hr>
+              <p>When you pack your child’s lunch, you’ll know what's in it. But kids often share food. Your child may
+                not know what's in the cookie or sandwich their friend offers them a bite of.</p>
+            </div>
+          </div>
         </div>
 
         <div class="row mb-3">
-          <div class="col-lg-12 d-flex align-items-stretch">
-            <div class="content" style="width: 100%">
+          <div class="col-lg-6 question">
+            <div class="content">
               <h4>2. If your child has a peanut allergy, they should avoid tree nuts, too.</h4>
               <div>
                 <input name="q2" type="radio" id="q2-true" value="true" required>
@@ -123,11 +132,22 @@
               </div>
             </div>
           </div>
+
+          <div class="col-lg-6 explanation">
+            <div class="content">
+              <h4>Answer: True</h4>
+              <hr>
+              <p>Peanuts are related to peas and beans, some kids with peanut allergies can still eat
+                tree nuts like walnuts and almonds. But peanut proteins are like tree nuts. That means kids who are
+                allergic to peanuts are more likely to be allergic to tree nuts than other people. Talk to your doctor
+                about what else to avoid.</p>
+            </div>
+          </div>
         </div>
 
         <div class="row mb-3">
-          <div class="col-lg-12 d-flex align-items-stretch">
-            <div class="content" style="width: 100%">
+          <div class="col-lg-6 question">
+            <div class="content">
               <h4>3. It is okay to not reading ingredients list again if you have been purchased the food several
                 times.</h4>
               <div>
@@ -140,11 +160,19 @@
               </div>
             </div>
           </div>
+
+          <div class="col-lg-6 explanation">
+            <div class="content">
+              <h4>Answer: False</h4>
+              <hr>
+              <p>You should read the ingredients every time to make sure the food label hasn't changed.</p>
+            </div>
+          </div>
         </div>
 
         <div class="row mb-3">
-          <div class="col-lg-12 d-flex align-items-stretch">
-            <div class="content" style="width: 100%">
+          <div class="col-lg-6 question">
+            <div class="content">
               <h4>4. How quickly do most children develop a severe allergic reaction to food?</h4>
               <div>
                 <input name="q4" type="radio" id="q4-a" value="a" required>
@@ -160,11 +188,22 @@
               </div>
             </div>
           </div>
+
+          <div class="col-lg-6 explanation">
+            <div class="content">
+              <h4>Answer: 1 Hour</h4>
+              <hr>
+              <p>Symptoms of an anaphylactic reaction to food - rash, dizziness, swelling, trouble breathing - usually
+                show up within an hour. Or it could be anywhere from a few seconds to a few hours. Some people have a
+                second reaction hours later. That's why, even if your child seems to recover from a severe reaction,
+                they should still go to the hospital so the staff can observe them for 4 to 6 hours.</p>
+            </div>
+          </div>
         </div>
 
         <div class="row mb-3">
-          <div class="col-lg-12 d-flex align-items-stretch">
-            <div class="content" style="width: 100%">
+          <div class="col-lg-6 question">
+            <div class="content">
               <h4>5. Can your child be cured by over-the-counter medication if you child eats the foods and gets
                 hives?</h4>
               <div>
@@ -177,11 +216,20 @@
               </div>
             </div>
           </div>
+
+          <div class="col-lg-6 explanation">
+            <div class="content">
+              <h4>Answer: True</h4>
+              <hr>
+              <p>For a minor reaction to food, like a rash, most children can take a liquid antihistamine like
+                diphenhydramine. This over-the-counter product can relieve hives and itching.</p>
+            </div>
+          </div>
         </div>
 
         <div class="row mb-3">
-          <div class="col-lg-12 d-flex align-items-stretch">
-            <div class="content" style="width: 100%">
+          <div class="col-lg-6 question">
+            <div class="content">
               <h4>6. What should you do if your child has a swollen tongue and difficulty breathing after eating?</h4>
               <div>
                 <input name="q6" type="radio" id="q6-a" value="a" required>
@@ -197,11 +245,22 @@
               </div>
             </div>
           </div>
+
+          <div class="col-lg-6 explanation">
+            <div class="content">
+              <h4>Answer: Give them an epinephrine injection</h4>
+              <hr>
+              <p>Shortness of breath, swelling, and itching can be early symptoms of an anaphylactic reaction, which can
+                become life-threatening within minutes. If you have epinephrine, inject it first and then call 000. If
+                you don’t have epinephrine, call 000 immediately. The best way to prevent anaphylaxis is to help your
+                child avoid their food triggers.</p>
+            </div>
+          </div>
         </div>
 
         <div class="row mb-3">
-          <div class="col-lg-12 d-flex align-items-stretch">
-            <div class="content" style="width: 100%">
+          <div class="col-lg-6 question">
+            <div class="content">
               <h4>7. Which of the following foods are most likely to cause a severe allergic reaction?</h4>
               <div>
                 <input name="q7" type="radio" id="q7-a" value="a" required>
@@ -221,25 +280,29 @@
               </div>
             </div>
           </div>
+
+          <div class="col-lg-6 explanation">
+            <div class="content">
+              <h4>Answer: All of above</h4>
+              <hr>
+              <p>Shellfish include shrimp, lobsters, and oysters. An allergic reaction to either shellfish, tree nuts or
+                wheat is usually life-threatening.</p>
+            </div>
+          </div>
         </div>
 
         <div class="row mb-3">
           <div class="d-flex justify-content-between">
             <div>
-              <button onclick="getSelected()" class="btn btn-success" id="submit">Submit</button>
+              <button onclick="checkQuiz()" class="btn btn-success" id="submit">Submit</button>
+              <button class="btn btn-secondary" onclick="resetQuiz()" disabled id="reset">Reset</button>
             </div>
             <div>
               <h3 id="score">Score: <span id="userScore">0</span> / 7</h3>
             </div>
           </div>
         </div>
-        <div>
-          <button class="btn btn-secondary" onclick="resetQuiz()" disabled id="reset">Reset</button>
-        </div>
       </div>
-      <!--      <div class="text-center">-->
-      <!--        <a href="/resources" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>-->
-      <!--      </div>-->
 
     </div>
   </section><!-- End Why Us Section -->

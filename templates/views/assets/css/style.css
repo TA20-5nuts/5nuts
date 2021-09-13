@@ -630,6 +630,7 @@ section {
   background: #5fcf80;
   border-radius: 4px;
   color: #fff;
+  height: 100%;
 }
 
 .why-us .content h3 {
@@ -1721,7 +1722,6 @@ p {
 /*--------------------------------------------------------------
 # Prevention
 --------------------------------------------------------------*/
-
 .prevention {
   /*border: 1px solid #5fcf80;*/
   border-radius: 4px;
@@ -1743,3 +1743,18 @@ p {
   padding: 10px;
 }
 
+/*--------------------------------------------------------------
+# Quiz
+--------------------------------------------------------------*/
+#quiz .explanation p {
+  font-size: 16px;
+  margin: 0;
+}
+
+#quiz .explanation hr {
+  opacity: 0.75;
+}
+
+#quiz .wrong-ans {
+  background-color: #f00;
+}
