@@ -17,7 +17,16 @@ class FoodData:
     def get_food_info(self):
         if self.food_name is not None:
             result = Database().search_food_by_food(self.food_name)
-            return result
+            new_result = []
+            matches = ['raw', 'Dripping']
+            for i in result:
+                if any(x in i['Food name'] for x in matches):
+                    print(i['Food name'])
+                    result.remove(i)
+                else:
+                    print("Not a match")
+                    new_result.append(i)
+            return new_result
 
     def get_ingredients_info(self):
         result = Database().search('ingredient')
@@ -63,3 +72,6 @@ class Hospital:
     def get_hospital_data(self):
         result = Database().search('hospitals')
         return result
+
+
+# FoodData('beef').get_food_info()

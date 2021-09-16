@@ -62,7 +62,7 @@ async function selectFood(id) {
  */
 async function sendRequest(food) {
   const foodInfoAPI = "https://nutsndairy.me/api/food-info/";
-  // const foodInfoAPI = "http://localhost:5000/api/food-info/";
+//  const foodInfoAPI = "http://localhost:5000/api/food-info/";
   let tempApi = foodInfoAPI + food;
   console.log(tempApi);
   const response = await fetch(tempApi);
