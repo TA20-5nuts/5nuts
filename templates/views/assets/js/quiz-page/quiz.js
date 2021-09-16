@@ -1,3 +1,40 @@
+/**
+ * get all questions of the page
+ * @returns {HTMLCollectionOf<Element>}
+ */
+function getAllQuestions() {
+  return document.getElementsByClassName("question");
+}
+
+/**
+ * get all explanation of the page
+ * @returns {HTMLCollectionOf<Element>}
+ */
+function getAllExplanations() {
+  return document.getElementsByClassName("explanation");
+}
+
+/**
+ * initial page
+ */
+function initPage() {
+  let questions = getAllQuestions();
+  let explanations = getAllExplanations();
+
+  for (let q of questions) {
+    q.setAttribute("class", "col-lg-12 question");
+    q.getElementsByClassName("content")[0].setAttribute("class", "content");
+  }
+
+  for (let e of explanations) {
+    e.style.display = "none";
+  }
+}
+
+/**
+ * initial answers
+ * @returns {Map<any, any>} map with question number as key, answer as value
+ */
 function initAns() {
   let answer = new Map();
   answer.set("q1", "false");
@@ -20,7 +57,7 @@ function getInputNameSet() {
   return inputNameSet;
 }
 
-function getSelected() {
+function checkQuiz() {
   let inputNameSet = getInputNameSet();
 
   let userAnsMap = new Map();
@@ -40,16 +77,25 @@ function getSelected() {
     }
   }
 
+  // show explanation
+  showExplanation(userAnsMap);
+
   // check answer
   let totalCount = userAnsMap.size;
   // console.log(userAnsMap.size);
-  let correctCount = checkAnswer(userAnsMap);
+  let correctCount = 0;
+  for (let ans of userAnsMap) {
+    if (checkAnswer(ans)) {
+      correctCount++;
+    }
+  }
+
+  // disable all radio button
+  toggleRadioButtonActive(true);
 
   // display score
   displayScore(correctCount);
-
-  document.getElementById("submit").disabled = true;
-  document.getElementById("reset").disabled = false;
+  toggleButtonStatus(true);
 }
 
 /**
@@ -64,9 +110,14 @@ function resetQuiz() {
     }
   }
 
+  // reset question part
+  initPage();
+
   displayScore(0);
-  document.getElementById("submit").disabled = false;
-  document.getElementById("reset").disabled = true;
+  toggleButtonStatus(false);
+
+  // enable all radio buttons
+  toggleRadioButtonActive(false);
 }
 
 /**
@@ -77,27 +128,6 @@ function displayScore(score) {
   let scoreSection = document.getElementById("score");
   let userScore = document.getElementById("userScore");
   userScore.innerText = score;
-}
-
-/**
- * check user's ansswer
- * @param options user's answer
- * @returns {number} correct number
- */
-function checkAnswer(options) {
-  let answer = initAns();
-  let correctAns = 0;
-
-  for (let o of options) {
-    let userOptionKey = o[0];
-    let userOption = o[1];
-
-    if (answer.get(userOptionKey) === userOption) {
-      correctAns++;
-    }
-  }
-
-  return correctAns;
 }
 
 /**
@@ -112,4 +142,82 @@ function checkRequired(inputGroup) {
     }
   }
   return false;
+}
+
+/**
+ * toggle button status according to submit and reset is clicked
+ * @param toSubmit turn submit to disabled and reset to enabled if true, other round otherwise
+ */
+function toggleButtonStatus(toSubmit) {
+  let submitBtn = document.getElementById("submit");
+  let resetBtn = document.getElementById("reset");
+  const enabledClass = "btn btn-success";
+  const disabledClass = "btn btn-secondary";
+
+  if (toSubmit) {
+    submitBtn.disabled = true;
+    submitBtn.setAttribute("class", disabledClass);
+
+    resetBtn.disabled = false;
+    resetBtn.setAttribute("class", enabledClass);
+  } else {
+    submitBtn.disabled = false;
+    submitBtn.setAttribute("class", enabledClass);
+
+    resetBtn.disabled = true;
+    resetBtn.setAttribute("class", disabledClass);
+  }
+}
+
+/**
+ * show explanation
+ * @param userAns
+ */
+function showExplanation(userAns) {
+  let answer = initAns();
+  let questions = getAllQuestions();
+  let explanations = getAllExplanations();
+
+  const questionClass = "col-lg-6 question";
+  const questionClassWrongAns = "content wrong-ans";
+
+  let index = 0;
+  for (let ans of userAns) {
+    questions[index].setAttribute("class", questionClass);
+    if (!checkAnswer(ans)) {
+      questions[index].getElementsByClassName("content")[0].setAttribute("class", questionClassWrongAns);
+    }
+    explanations[index].style.display = "";
+    index++;
+  }
+}
+
+/**
+ * check if answer is correct
+ * @param option answer for a question
+ * @returns {boolean} true if correct, false otherwise
+ */
+function checkAnswer(option) {
+  let answer = initAns();
+  let key = option[0];
+  let value = option[1];
+
+  return answer.get(key) === value;
+}
+
+/**
+ * disalbe radio button
+ * @param submitting true if user is submitting form, false if reset is clicked
+ */
+function toggleRadioButtonActive(submitting) {
+  let radios = document.getElementsByTagName("input");
+  for (let r of radios) {
+    if (r.type === "radio") {
+      if (submitting) {
+        r.disabled = true;
+      } else {
+        r.disabled = false;
+      }
+    }
+  }
 }

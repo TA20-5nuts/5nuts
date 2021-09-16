@@ -1,0 +1,98 @@
+Search for food containing bread
+Select * from food WHERE food_name LIKE"%bread%";
+
+Query for getting bread and similar products
+
+
+#################Correct Query Chaitanya
+Select f.name, N.protein , N.fat, N.dietary_fibre, i.ingredient_name 
+from food as f
+LEFT JOIN  nutrition as N 
+on f.public_food_key =N.public_food_key
+JOIN ingredient i 
+on N.public_food_key =i.public_food_key 
+WHERE f.name LIKE "%bread%"
+ORDER BY f.public_food_key ;
+###################################
+Box code
+SELECT
+	F.FOOD_NAME,
+	N.PROTEIN,
+	N.FAT,
+	N.DIETARY_FIBRE
+FROM
+	FOOD AS F,
+	NUTRITION AS N
+WHERE
+	F.FOOD_NAME LIKE "%BREAD%"
+GROUP BY
+	F.PUBLIC_FOOD_KEY
+ORDER BY
+	F.PUBLIC_FOOD_KEY;
+--------------------------------------
+
+
+SQL for milk-----------
+Select f.name, N.protein, N.fat, N.dietary_fibre
+from food as f
+JOIN  nutrition as N 
+on f.public_food_key =N.public_food_key 
+WHERE f.name LIKE "%dairy%"
+ORDER BY f.public_food_key;
+
+SQL for chocolate---------
+
+Select f.name, N.protein , N.fat, N.dietary_fibre
+from food as f
+LEFT JOIN  nutrition as N 
+on f.public_food_key =N.public_food_key
+/*JOIN ingredient i 
+on N.public_food_key =i.public_food_key */
+WHERE f.name LIKE "%chocolate%"
+ORDER BY f.name;
+
+SQL code for chicken---------------------------
+Select f.name, N.protein , N.fat, N.dietary_fibre
+from food as f
+LEFT JOIN  nutrition as N 
+on f.public_food_key =N.public_food_key
+/*JOIN ingredient i 
+on N.public_food_key =i.public_food_key */
+WHERE f.name LIKE "%chicken%"
+ORDER BY f.name;
+
+SQL code for meat-------------------
+
+Select f.name, N.protein , N.fat, N.dietary_fibre
+from food as f
+LEFT JOIN  nutrition as N 
+on f.public_food_key =N.public_food_key
+/*JOIN ingredient i 
+on N.public_food_key =i.public_food_key */
+WHERE f.name LIKE "%meat%"
+ORDER BY f.name;
+
+
+SQL code for rice--------------------------
+Select f.name, N.protein , N.fat, N.dietary_fibre
+from food as f
+LEFT JOIN  nutrition as N 
+on f.public_food_key =N.public_food_key
+/*JOIN ingredient i 
+on N.public_food_key =i.public_food_key */
+WHERE f.name LIKE "%rice%"
+ORDER BY f.name;
+
+
+
+
+
+
+
+Dairy
+
+
+
+github token  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 
+
+personal token 2  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
