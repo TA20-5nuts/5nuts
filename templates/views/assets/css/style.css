@@ -576,6 +576,23 @@ section {
   color: #5fcf80;
 }
 
+.second-learn-more-btn {
+  background-color: #5fcf80 !important;
+  color: #fff !important;
+  border-radius: 50px;
+  padding: 8px 25px 9px 25px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.second-learn-more-btn:hover {
+  background-color: #fff !important;
+  color: #3ac162 !important;
+  border: 1px solid #3ac162 !important;
+}
+
 .about .content .learn-more-btn {
   background: #5fcf80;
   color: #fff;
@@ -1757,4 +1774,17 @@ p {
 
 #quiz .wrong-ans {
   background-color: #f00;
+}
+
+label {
+  font-size: 20px;
+  padding-left: .5rem;
+}
+
+/*--------------------------------------------------------------
+# Facts
+--------------------------------------------------------------*/
+.extra-link {
+  font-size: 12px !important;
+  font-weight: normal !important;
 }

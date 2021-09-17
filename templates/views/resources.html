@@ -55,7 +55,7 @@
         <li><a href="/home"><i class="ri-home-heart-line"></i>Home</a></li>
         <li><a class="active" href="/resources"><i class="ri-git-repository-line"></i>Facts</a></li>
         <li><a href="/quiz"><i class="ri-question-answer-line"></i>Quiz</a></li>
-        <li><a href="/recipe"><i class="ri-leaf-line"></i>Recipes</a></li>
+        <li><a href="/recipe"><i class="ri-leaf-line"></i>Lunchbox</a></li>
         <li><a href="/prevention"><i class="ri-information-line"></i>Prevention</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
@@ -214,11 +214,13 @@
       <div class="section-title">
         <h2>Learn</h2>
         <p>8 Major Food Allergens</p>
+        <p class="extra-link">For more Professional Information - Check <a href="https://www.healthdirect.gov.au/"
+                                                                           target="_blank">healthdirect</a></p>
       </div>
 
       <div class="row mb-4" data-aos="zoom-in" data-aos-delay="100" id="egg-section">
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-          <div class="course-item">
+          <div class="course-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on top">
             <div class="d-flex justify-content-center">
               <img src="assets/img/resources-page/egg.png" class="img-fluid" alt="...">
             </div>
@@ -631,6 +633,13 @@
 
 <!--&lt;!&ndash; charts.js &ndash;&gt;-->
 <!--<script src="./assets/js/resources-page/charts.js"></script>-->
+
+<script type="text/javascript">
+  let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  })
+</script>
 
 </body>
 
