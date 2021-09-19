@@ -186,6 +186,7 @@ function showExplanation(userAns) {
     questions[index].setAttribute("class", questionClass);
     if (!checkAnswer(ans)) {
       questions[index].getElementsByClassName("content")[0].setAttribute("class", questionClassWrongAns);
+      explanations[index].getElementsByClassName("content")[0].setAttribute("class", questionClassWrongAns);
     }
     explanations[index].style.display = "";
     index++;

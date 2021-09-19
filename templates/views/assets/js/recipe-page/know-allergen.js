@@ -61,8 +61,8 @@ async function selectFood(id) {
  * @returns {Promise<any>}
  */
 async function sendRequest(food) {
-  const foodInfoAPI = "https://nutsndairy.me/api/food-info/";
-//  const foodInfoAPI = "http://localhost:5000/api/food-info/";
+  // const foodInfoAPI = "https://allergyfree.me/api/food-info/";
+  const foodInfoAPI = "http://localhost:5000/api/food-info/";
   let tempApi = foodInfoAPI + food;
   console.log(tempApi);
   const response = await fetch(tempApi);
@@ -126,8 +126,8 @@ function generateRow(rowFoods) {
     // console.log(typeof tempFood);
     rowHTML += openItemDiv + ` id="` + tempFood["Food name"] + `"` + ` onclick="chooseFood(this.id)"` + closeArrow;
     rowHTML += `<h3>` + tempFood["Food name"] + `</h3>`;
-    rowHTML += hr;
-    rowHTML += `<p>` + tempFood["Description"] + `</p>`;
+    // rowHTML += hr;
+    // rowHTML += `<p>` + tempFood["Description"] + `</p>`;
     rowHTML += closeDiv;
   }
 

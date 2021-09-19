@@ -63,7 +63,7 @@ class Database:
         query = "SELECT name, desc FROM food WHERE name LIKE '%s'"
         try:
             cur = self.connection.cursor()
-            args = '%' + food_name + '%'
+            args = food_name + '%'
             cur.execute(query % args)
             value = cur.fetchall()
             result = []

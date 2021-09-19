@@ -1773,7 +1773,7 @@ p {
 }
 
 #quiz .wrong-ans {
-  background-color: #f00;
+  background-color: rgba(255, 0, 0, 0.7);
 }
 
 label {
