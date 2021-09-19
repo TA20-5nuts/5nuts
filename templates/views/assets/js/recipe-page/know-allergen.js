@@ -4,7 +4,7 @@ idFoodMapper.set("grain", "bread");
 idFoodMapper.set("vegetable", "carrot");
 idFoodMapper.set("dairy", "cheese");
 idFoodMapper.set("protein", "beef");
-idFoodMapper.set("fruit", "mandarin");
+idFoodMapper.set("fruit", "apple");
 idFoodMapper.set("drink", "juice");
 let currentFoodTypeId = ""; // 1 of the 6 type of foods in lunchbox
 
