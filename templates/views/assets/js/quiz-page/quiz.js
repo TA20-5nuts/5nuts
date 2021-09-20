@@ -118,6 +118,9 @@ function resetQuiz() {
 
   // enable all radio buttons
   toggleRadioButtonActive(false);
+
+  let feedbackSection = document.getElementById("ans-feedback");
+  feedbackSection.style.display = "none";
 }
 
 /**
@@ -128,6 +131,7 @@ function displayScore(score) {
   let scoreSection = document.getElementById("score");
   let userScore = document.getElementById("userScore");
   userScore.innerText = score;
+  displayFeedback(score);
 }
 
 /**
@@ -180,6 +184,7 @@ function showExplanation(userAns) {
 
   const questionClass = "col-lg-6 question";
   const questionClassWrongAns = "content wrong-ans";
+  const questionClassCorrectAns = "content";
 
   let index = 0;
   for (let ans of userAns) {
@@ -187,6 +192,9 @@ function showExplanation(userAns) {
     if (!checkAnswer(ans)) {
       questions[index].getElementsByClassName("content")[0].setAttribute("class", questionClassWrongAns);
       explanations[index].getElementsByClassName("content")[0].setAttribute("class", questionClassWrongAns);
+    } else {
+      questions[index].getElementsByClassName("content")[0].setAttribute("class", questionClassCorrectAns);
+      explanations[index].getElementsByClassName("content")[0].setAttribute("class", questionClassCorrectAns);
     }
     explanations[index].style.display = "";
     index++;
@@ -221,4 +229,20 @@ function toggleRadioButtonActive(submitting) {
       }
     }
   }
+}
+
+function displayFeedback(score) {
+  let feedbackSection = document.getElementById("ans-feedback");
+  let text = "";
+  let pTag = "<p>";
+  let closePTag = "</p>";
+  if (score >= 6) {
+    text = pTag + "Well Done! You are a Legend!" + closePTag;
+  } else if (score >= 4) {
+    text = pTag + "Don't worry, you are about to become an expert in avoiding food allergy!" + closePTag;
+  } else {
+    text = pTag + "Let's review questions, you can done better." + closePTag;
+  }
+  feedbackSection.innerHTML = text;
+  feedbackSection.style.display = "";
 }
