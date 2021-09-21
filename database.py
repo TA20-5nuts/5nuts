@@ -85,6 +85,9 @@ class Database:
                 cur.row_factory = lambda cursor, row: row[0]
                 cur.execute(query % args)
                 value = cur.fetchall()
+                if value[0] == 'Breakfast cereal':
+                    print(value)
+                    value[0] = 'Cereal'
                 new_food.append(value)
 
             list = []
@@ -92,9 +95,7 @@ class Database:
             merge_list = []
             new_value = []
             for i in range(0, len(new_food)):
-                print(i)
                 for j in new_food[i]:
-                    print(j)
                     matches = ['raw', 'Dripping', 'Breadcrumbs', 'Milkfish', 'crisp']
                     matches_exact = ['Bread']
                     if any(x in j for x in matches):
@@ -120,7 +121,7 @@ class Database:
                         value_others = cur.fetchone()
                         list.append(value_others)
                 # print(listist)
-                print(new_value)
+                # print(new_value)
 
             for i in range(len(list)):
                 new_list = []
@@ -156,4 +157,4 @@ class Database:
             print(e)
 
 
-Database().search_food_by_food("fruit")
+Database().search_food_by_food("grain")
