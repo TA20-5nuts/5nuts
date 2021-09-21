@@ -64,31 +64,39 @@ class Database:
         name = []
         new_food = []
         if food_name == "grain":
-            name = ["bread", "breakfast", "potato", "sweet potato", "oats", "bun"]
+            name = ["bread", "breakfast", "potato", "sweet potato", "pie"]
         elif food_name == "vegetable":
-            name = ["carrot", "kale", "lettuce", "cucumber", "zucchini"]
+            name = ["carrot", "lettuce", "cucumber", "zucchini", "corn", "tomato", "broccoli"]
         elif food_name == "dairy":
             name = ["cheese", "milk", "soy beverage", "yogurt"]
         elif food_name == "protein":
-            name = ["beef", "chicken", "lamb", "ham", "bacon", "salmon", "sausage", "egg", "chickpea"]
+            name = ["chicken", "ham", "bacon", "sausage", "egg", "chickpea", "tuna", "turkey"]
         elif food_name == "fruit":
-            name = ["apple", "banana", "grape", "mango", "strawberry", "orange" ]
+            name = ["apple", "banana", "grape", "mango", "berry", "orange", "sultana" ]
         else:
             name = ["juice", "water", "soft drink"]
 
-        query = "select distinct name from (SELECT substr(name, 1, instr(name, ',') -1) AS name FROM food WHERE name LIKE '%s')"
+        query = "select distinct name from (SELECT substr(name, 1, instr(name, ',') -1) AS name FROM food WHERE substr(name, 1, instr(name, ',') -1) LIKE '%s')"
         try:
 
             cur = self.connection.cursor()
             for i in name:
-                args = i + '%'
+                if i == 'berry':
+                    args = '%' + i + '%'
+                else:
+                    args = i + '%'
                 cur.row_factory = lambda cursor, row: row[0]
                 cur.execute(query % args)
                 value = cur.fetchall()
-                if value[0] == 'Breakfast cereal':
-                    print(value)
+                print(value)
+
+                if not value:
+                    pass
+                elif value[0] == 'Breakfast cereal':
                     value[0] = 'Cereal'
-                new_food.append(value)
+                    new_food.append(value)
+                else:
+                    new_food.append(value)
 
             list = []
             result = []
@@ -96,7 +104,7 @@ class Database:
             new_value = []
             for i in range(0, len(new_food)):
                 for j in new_food[i]:
-                    matches = ['raw', 'Dripping', 'Breadcrumbs', 'Milkfish', 'crisp']
+                    matches = ['raw', 'Dripping', 'Breadcrumbs', 'Milkfish', 'crisp', 'Hamburger', 'Grapefruit', 'Cranberry', 'Goji berry', 'Mulberry', 'Sausages & vegetables', 'Cornmeal', 'chips']
                     matches_exact = ['Bread']
                     if any(x in j for x in matches):
                         print("error")
