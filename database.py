@@ -61,41 +61,66 @@ class Database:
             print(e)
 
     def search_food_by_food(self, food_name):
+        name = []
+        new_food = []
+        if food_name == "grain":
+            name = ["bread", "breakfast", "potato", "sweet potato", "oats", "bun"]
+        elif food_name == "vegetable":
+            name = ["carrot", "kale", "lettuce", "cucumber", "zucchini"]
+        elif food_name == "dairy":
+            name = ["cheese", "milk", "soy beverage", "yogurt"]
+        elif food_name == "protein":
+            name = ["beef", "chicken", "lamb", "ham", "bacon", "salmon", "sausage", "egg", "chickpea"]
+        elif food_name == "fruit":
+            name = ["apple", "banana", "grape", "mango", "strawberry", "orange" ]
+        else:
+            name = ["juice", "water", "soft drink"]
+
         query = "select distinct name from (SELECT substr(name, 1, instr(name, ',') -1) AS name FROM food WHERE name LIKE '%s')"
         try:
+
             cur = self.connection.cursor()
-            args = food_name + '%'
-            cur.row_factory = lambda cursor, row: row[0]
-            cur.execute(query % args)
-            value = cur.fetchall()
+            for i in name:
+                args = i + '%'
+                cur.row_factory = lambda cursor, row: row[0]
+                cur.execute(query % args)
+                value = cur.fetchall()
+                new_food.append(value)
+
             list = []
             result = []
             merge_list = []
             new_value = []
-
-            for i in value:
-                matches = ['raw', 'Dripping', 'Breadcrumbs']
-                matches_exact = ['Bread']
-                if any(x in i for x in matches):
-                    print("error")
-                elif any(x in i for x in matches_exact):
-                    new_value.append(i)
-                    query_others = "SELECT desc FROM food WHERE substr(name, 1, instr(name, ',') -1) = '%s' limit 1"
-                    cur = self.connection.cursor()
-                    args = i
-                    cur.row_factory = lambda cursor, row: row[0]
-                    cur.execute(query_others % args)
-                    value_others = cur.fetchone()
-                    list.append(value_others)
-                else:
-                    new_value.append(i)
-                    query_others = "SELECT desc FROM food WHERE name LIKE '%s' limit 1"
-                    cur = self.connection.cursor()
-                    args = i + '%'
-                    cur.row_factory = lambda cursor, row: row[0]
-                    cur.execute(query_others % args)
-                    value_others = cur.fetchone()
-                    list.append(value_others)
+            for i in range(0, len(new_food)):
+                print(i)
+                for j in new_food[i]:
+                    print(j)
+                    matches = ['raw', 'Dripping', 'Breadcrumbs', 'Milkfish', 'crisp']
+                    matches_exact = ['Bread']
+                    if any(x in j for x in matches):
+                        print("error")
+                    elif any(x in j for x in matches_exact):
+                        new_value.append(j)
+                        query_others = "SELECT desc FROM food WHERE substr(name, 1, instr(name, ',') -1) = '%s' limit 1"
+                        cur = self.connection.cursor()
+                        args = j
+                        cur.row_factory = lambda cursor, row: row[0]
+                        cur.execute(query_others % args)
+                        value_others = cur.fetchone()
+                        list.append(value_others)
+                    else:
+                        new_value.append(j)
+                        query_others = "SELECT desc FROM food WHERE name LIKE '%s' and desc NOT LIKE '%s' and desc not like '%s' limit 1"
+                        cur = self.connection.cursor()
+                        args = j + '%'
+                        args_2 = '%raw%'
+                        args_3 = '%canned%'
+                        cur.row_factory = lambda cursor, row: row[0]
+                        cur.execute(query_others % (args, args_2, args_3))
+                        value_others = cur.fetchone()
+                        list.append(value_others)
+                # print(listist)
+                print(new_value)
 
             for i in range(len(list)):
                 new_list = []
@@ -131,4 +156,4 @@ class Database:
             print(e)
 
 
-# Database().search_food_by_food("bread")
+Database().search_food_by_food("fruit")
