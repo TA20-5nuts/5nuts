@@ -64,7 +64,7 @@ class Database:
         name = []
         new_food = []
         if food_name == "grain":
-            name = ["bread", "breakfast", "potato", "sweet potato", "pie"]
+            name = ["bread", "breakfast", "potato", "pie"]
         elif food_name == "vegetable":
             name = ["carrot", "lettuce", "cucumber", "zucchini", "corn", "tomato", "broccoli"]
         elif food_name == "dairy":
@@ -83,6 +83,8 @@ class Database:
             for i in name:
                 if i == 'berry':
                     args = '%' + i + '%'
+                elif i == 'egg':
+                    args = i
                 else:
                     args = i + '%'
                 cur.row_factory = lambda cursor, row: row[0]
@@ -104,7 +106,7 @@ class Database:
             new_value = []
             for i in range(0, len(new_food)):
                 for j in new_food[i]:
-                    matches = ['raw', 'Dripping', 'Breadcrumbs', 'Milkfish', 'crisp', 'Hamburger', 'Grapefruit', 'Cranberry', 'Goji berry', 'Mulberry', 'Sausages & vegetables', 'Cornmeal', 'chips']
+                    matches = ['raw', 'Dripping', 'Breadcrumbs', 'Milkfish', 'crisp', 'Hamburger', 'Grapefruit', 'Cranberry', 'Goji berry', 'Mulberry', 'Sausages & vegetables', 'Cornmeal', 'chips', 'Water chestnut', 'Watercress']
                     matches_exact = ['Bread']
                     if any(x in j for x in matches):
                         print("error")
@@ -165,4 +167,4 @@ class Database:
             print(e)
 
 
-Database().search_food_by_food("grain")
+Database().search_food_by_food("juice")
