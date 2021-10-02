@@ -131,7 +131,7 @@ function displayScore(score) {
   let scoreSection = document.getElementById("score");
   let userScore = document.getElementById("userScore");
   userScore.innerText = score;
-  displayFeedback(score);
+  // displayFeedback(score);
 }
 
 /**
@@ -241,7 +241,7 @@ function displayFeedback(score) {
   } else if (score >= 4) {
     text = pTag + "Don't worry, you are about to become an expert in avoiding food allergy!" + closePTag;
   } else {
-    text = pTag + "Let's review questions, you can done better." + closePTag;
+    text = pTag + "Let's review questions, you can do better." + closePTag;
   }
   feedbackSection.innerHTML = text;
   feedbackSection.style.display = "";

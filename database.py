@@ -14,7 +14,6 @@ class Database:
             print(e)
         self.connection = connection
 
-
     def __del__(self):
         if self.connection:
             self.connection.close()
@@ -72,7 +71,7 @@ class Database:
         elif food_name == "protein":
             name = ["chicken", "ham", "bacon", "sausage", "egg", "chickpea", "tuna", "turkey"]
         elif food_name == "fruit":
-            name = ["apple", "banana", "grape", "mango", "berry", "orange", "sultana" ]
+            name = ["apple", "banana", "grape", "mango", "berry", "orange", "sultana"]
         else:
             name = ["juice", "water", "soft drink"]
 
@@ -90,7 +89,7 @@ class Database:
                 cur.row_factory = lambda cursor, row: row[0]
                 cur.execute(query % args)
                 value = cur.fetchall()
-                print(value)
+                # print(value)
 
                 if not value:
                     pass
@@ -106,7 +105,9 @@ class Database:
             new_value = []
             for i in range(0, len(new_food)):
                 for j in new_food[i]:
-                    matches = ['raw', 'Dripping', 'Breadcrumbs', 'Milkfish', 'crisp', 'Hamburger', 'Grapefruit', 'Cranberry', 'Goji berry', 'Mulberry', 'Sausages & vegetables', 'Cornmeal', 'chips', 'Water chestnut', 'Watercress']
+                    matches = ['raw', 'Dripping', 'Breadcrumbs', 'Milkfish', 'crisp', 'Hamburger', 'Grapefruit',
+                               'Cranberry', 'Goji berry', 'Mulberry', 'Sausages & vegetables', 'Cornmeal', 'chips',
+                               'Water chestnut', 'Watercress']
                     matches_exact = ['Bread']
                     if any(x in j for x in matches):
                         print("error")
@@ -140,7 +141,7 @@ class Database:
                 merge_list.append(new_list)
                 Key = ("Food name", "Description")
                 result.append(dict(zip(Key, merge_list[i])))
-            print(result)
+            # print(result)
             return result
         except Error as e:
             print(e)
