@@ -58,6 +58,7 @@ function replaceImg(id) {
   const targetImgId = "prevention-img";
   let img = document.createElement('img');
   img.src = preventionMapper[id][0];
+  img.setAttribute("style", "width: 100%");
 
   let imgSection = document.getElementById(targetImgId);
   imgSection.innerHTML = "";
