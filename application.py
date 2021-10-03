@@ -58,6 +58,11 @@ def prevention():
     return render_template('views/prevention.html')
 
 
+@application.route("/hospital")
+def hospital():
+    return render_template('views/hospital.html')
+
+
 @application.route("/test")
 def test():
     response = {"result": "result data"}
