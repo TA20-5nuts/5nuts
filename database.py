@@ -167,5 +167,16 @@ class Database:
         except Error as e:
             print(e)
 
+    def search_hospital_data(self):
+        query = """
+        SELECT * FROM hospitals;
+        """
+        try:
+            cur = self.connection.cursor()
+            cur.execute(query)
+            return cur.fetchall()
+        except Error as e:
+            print(e)
+
 
 Database().search_food_by_food("juice")

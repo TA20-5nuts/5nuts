@@ -35,8 +35,10 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <script src="./assets/js/hospital-page/hospital.js"></script>
 </head>
-<body>
+<body onload="init()">
 
 <header id="header" class="fixed-top">
   <div class="container d-flex align-items-center">
@@ -81,7 +83,7 @@
     </div>
   </section><!-- End About Section -->
 
-  <section id="hospital" class="hospital">
+  <section id="hospital-search" class="hospital-search">
     <div class="container" data-aos="fade-up">
       <div class="row">
         <div class="col-lg-4">
@@ -136,6 +138,13 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hospital-list" class="hospital-list" style="padding-top: 0!important; margin-top: 0!important;">
+    <div class="container">
+      <div id="hospital-data">
       </div>
     </div>
   </section>

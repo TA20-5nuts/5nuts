@@ -64,7 +64,7 @@ async function sendRequest(food) {
   const foodInfoAPI = "https://allergyfree.me/api/food-info/";
   // const foodInfoAPI = "http://localhost:5000/api/food-info/";
   let tempApi = foodInfoAPI + food;
-  console.log(tempApi);
+  // console.log(tempApi);
   const response = await fetch(tempApi);
   const data = await response.json();
   return data;
