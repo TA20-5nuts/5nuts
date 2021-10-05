@@ -64,9 +64,9 @@ class Database:
         name = []
         new_food = []
         if food_name == "grain":
-            name = ["bread", "breakfast", "potato", "pie"]
+            name = ["bread", "breakfast", "potato", "popcorn"]
         elif food_name == "vegetable":
-            name = ["carrot", "lettuce", "cucumber", "zucchini", "corn", "tomato", "broccoli"]
+            name = ["carrot", "lettuce", "cucumber", "zucchini", "corn", "tomato"]
         elif food_name == "dairy":
             name = ["cheese", "milk", "soy beverage", "yogurt"]
         elif food_name == "protein":
