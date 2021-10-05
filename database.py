@@ -107,7 +107,7 @@ class Database:
                 for j in new_food[i]:
                     matches = ['raw', 'Dripping', 'Breadcrumbs', 'Milkfish', 'crisp', 'Hamburger', 'Grapefruit',
                                'Cranberry', 'Goji berry', 'Mulberry', 'Sausages & vegetables', 'Cornmeal', 'chips',
-                               'Water chestnut', 'Watercress']
+                               'Water chestnut', 'Watercress', 'Bread roll']
                     matches_exact = ['Bread']
                     if any(x in j for x in matches):
                         print("error")
