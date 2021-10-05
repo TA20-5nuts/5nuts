@@ -67,7 +67,7 @@ class Database:
         elif food_name == "vegetable":
             name = ["carrot", "lettuce", "cucumber", "corn", "tomato"]
         elif food_name == "dairy":
-            name = ["cheese", "milk", "soy beverage", "yogurt"]
+            name = ["cheese", "milk", "soy beverage", "yoghurt"]
         elif food_name == "protein":
             name = ["chicken", "ham", "bacon", "sausage", "egg", "chickpea", "tuna", "turkey"]
         elif food_name == "fruit":
@@ -179,4 +179,4 @@ class Database:
             print(e)
 
 
-Database().search_food_by_food("grain")
+Database().search_food_by_food("dairy")
