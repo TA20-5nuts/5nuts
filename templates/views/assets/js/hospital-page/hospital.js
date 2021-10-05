@@ -40,8 +40,8 @@ function search() {
  * @returns {Promise<any>}
  */
 async function getHospitalList() {
-  // const api = "https://allergyfree.me/api/hospitals-data";
-  const api = "http://localhost:5000/api/hospitals-data";
+  const api = "https://allergyfree.me/api/hospitals-data";
+  // const api = "http://localhost:5000/api/hospitals-data";
   const response = await fetch(api);
   const data = await response.json();
   return data;
