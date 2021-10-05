@@ -1760,6 +1760,69 @@ p {
   padding: 10px;
 }
 
+#timeline .title {
+  /*padding: 30px;*/
+  background-color: #5fcf80;
+  color: #fff;
+  border-radius: 4px;
+}
+
+#timeline h3 {
+  margin: 0;
+  padding: 20px 0;
+}
+
+#timeline p {
+  margin: 0;
+  padding: 20px 0;
+}
+
+#timeline .selection {
+  border: 2px solid #eef0ef;
+  border-radius: 4px;
+}
+
+#timeline .selection:hover {
+  border: 2px solid #5fcf80;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #5fcf80;
+  transition: 0.3s;
+}
+
+#timeline .selection p {
+  text-align: center !important;
+}
+
+#timeline .selection-active {
+  border: 2px solid #5fcf80;
+  border-radius: 4px;
+  background-color: #5fcf80;
+  color: #fff;
+}
+
+#timeline .selection-active p {
+  text-align: center !important;
+}
+
+@keyframes animatedFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animatedFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /*--------------------------------------------------------------
 # Quiz
 --------------------------------------------------------------*/

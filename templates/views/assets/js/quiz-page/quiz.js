@@ -37,13 +37,15 @@ function initPage() {
  */
 function initAns() {
   let answer = new Map();
-  answer.set("q1", "false");
-  answer.set("q2", "true");
+  answer.set("q1", "true");
+  answer.set("q2", "false");
   answer.set("q3", "false");
   answer.set("q4", "a");
   answer.set("q5", "true");
-  answer.set("q6", "c");
+  answer.set("q6", "true");
   answer.set("q7", "d");
+  answer.set("q8", "false");
+  answer.set("q9", "true");
   return answer;
 }
 
@@ -131,7 +133,7 @@ function displayScore(score) {
   let scoreSection = document.getElementById("score");
   let userScore = document.getElementById("userScore");
   userScore.innerText = score;
-  displayFeedback(score);
+  // displayFeedback(score);
 }
 
 /**
@@ -241,7 +243,7 @@ function displayFeedback(score) {
   } else if (score >= 4) {
     text = pTag + "Don't worry, you are about to become an expert in avoiding food allergy!" + closePTag;
   } else {
-    text = pTag + "Let's review questions, you can done better." + closePTag;
+    text = pTag + "Let's review questions, you can do better." + closePTag;
   }
   feedbackSection.innerHTML = text;
   feedbackSection.style.display = "";

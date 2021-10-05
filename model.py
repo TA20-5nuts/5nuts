@@ -61,8 +61,7 @@ class Hospital:
         pass
 
     def get_hospital_data(self):
-        result = Database().search('hospitals')
+        result = Database().search_hospital_data()
         return result
-
 
 # FoodData('bread').get_food_info()

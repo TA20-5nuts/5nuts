@@ -1,11 +1,11 @@
 let knownAllergens = []; // a list to store all selected known allergens
 let idFoodMapper = new Map();
-idFoodMapper.set("grain", "bread");
-idFoodMapper.set("vegetable", "carrot");
-idFoodMapper.set("dairy", "cheese");
-idFoodMapper.set("protein", "beef");
-idFoodMapper.set("fruit", "apple");
-idFoodMapper.set("drink", "juice");
+idFoodMapper.set("grain", "grain");
+idFoodMapper.set("vegetable", "vegetable");
+idFoodMapper.set("dairy", "dairy");
+idFoodMapper.set("protein", "protein");
+idFoodMapper.set("fruit", "fruit");
+idFoodMapper.set("drink", "drink");
 let currentFoodTypeId = ""; // 1 of the 6 type of foods in lunchbox
 
 /**
@@ -61,10 +61,10 @@ async function selectFood(id) {
  * @returns {Promise<any>}
  */
 async function sendRequest(food) {
-  // const foodInfoAPI = "https://allergyfree.me/api/food-info/";
-  const foodInfoAPI = "http://localhost:5000/api/food-info/";
+  const foodInfoAPI = "https://allergyfree.me/api/food-info/";
+  // const foodInfoAPI = "http://localhost:5000/api/food-info/";
   let tempApi = foodInfoAPI + food;
-  console.log(tempApi);
+  // console.log(tempApi);
   const response = await fetch(tempApi);
   const data = await response.json();
   return data;

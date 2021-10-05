@@ -59,6 +59,7 @@
         <li><a class="active" href="/quiz"><i class="ri-question-answer-line"></i>Quiz</a></li>
         <li><a href="/recipe"><i class="ri-leaf-line"></i>Lunchbox</a></li>
         <li><a href="/prevention"><i class="ri-information-line"></i>Prevention</a></li>
+        <li><a href="/hospital"><i class="ri-hospital-line"></i>Hospital</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
@@ -90,13 +91,38 @@
 
   <!-- ======= Why Us Section ======= -->
   <section id="quiz" class="why-us">
-    <div class="container" data-aos="fade-up">
+    <div class="container" data-aos="fade-up" data-aos-time="100" id="quiz-container">
 
       <div id="quiz-form">
+        <!--        <div class="row mb-3">-->
+        <!--          <div class="col-lg-6 question">-->
+        <!--            <div class="content">-->
+        <!--              <h4>1. Bring lunches from home can keep you kids stay away from food allergy?</h4>-->
+        <!--              <div>-->
+        <!--                <input name="q1" type="radio" id="q1-true" value="true" required>-->
+        <!--                <label for="q1-true">True</label>-->
+        <!--              </div>-->
+        <!--              <div>-->
+        <!--                <input name="q1" type="radio" id="q1-false" value="false">-->
+        <!--                <label for="q1-false">False</label>-->
+        <!--              </div>-->
+        <!--            </div>-->
+        <!--          </div>-->
+
+        <!--          <div class="col-lg-6 explanation">-->
+        <!--            <div class="content">-->
+        <!--              <h4>Answer: False</h4>-->
+        <!--              <hr>-->
+        <!--              <p>When you pack your child’s lunch, you’ll know what's in it. But kids often share food. Your child may-->
+        <!--                not know what's in the cookie or sandwich their friend offers them a bite of.</p>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+
         <div class="row mb-3">
           <div class="col-lg-6 question">
             <div class="content">
-              <h4>1. Bring lunches from home can keep you kids stay away from food allergy?</h4>
+              <h4>1. If your child has a peanut allergy, they should avoid tree nuts, too.</h4>
               <div>
                 <input name="q1" type="radio" id="q1-true" value="true" required>
                 <label for="q1-true">True</label>
@@ -110,10 +136,12 @@
 
           <div class="col-lg-6 explanation">
             <div class="content">
-              <h4>Answer: False</h4>
+              <h4>Answer: True</h4>
               <hr>
-              <p>When you pack your child’s lunch, you’ll know what's in it. But kids often share food. Your child may
-                not know what's in the cookie or sandwich their friend offers them a bite of.</p>
+              <p>Peanuts are related to peas and beans, some kids with peanut allergies can still eat
+                tree nuts like walnuts and almonds. But peanut proteins are like tree nuts. That means kids who are
+                allergic to peanuts are more likely to be allergic to tree nuts than other people. Talk to your doctor
+                about what else to avoid.</p>
             </div>
           </div>
         </div>
@@ -121,7 +149,7 @@
         <div class="row mb-3">
           <div class="col-lg-6 question">
             <div class="content">
-              <h4>2. If your child has a peanut allergy, they should avoid tree nuts, too.</h4>
+              <h4>2. Milk allergy and lactose intolerance are the same thing.</h4>
               <div>
                 <input name="q2" type="radio" id="q2-true" value="true" required>
                 <label for="q2-true">True</label>
@@ -137,10 +165,10 @@
             <div class="content">
               <h4>Answer: True</h4>
               <hr>
-              <p>Peanuts are related to peas and beans, some kids with peanut allergies can still eat
-                tree nuts like walnuts and almonds. But peanut proteins are like tree nuts. That means kids who are
-                allergic to peanuts are more likely to be allergic to tree nuts than other people. Talk to your doctor
-                about what else to avoid.</p>
+              <p>Lactose intolerance is the inability to digest the sugar in milk and other dairy products. On the flip
+                side with the milk allergy, the symptoms are not only seen along just the digestive system but other
+                parts of the body as well. These symptoms can seem as they both cause vomiting and stomach ache within
+                about 30 minutes. Your pediatrician can help you figure out which one your child has.</p>
             </div>
           </div>
         </div>
@@ -230,30 +258,26 @@
         <div class="row mb-3">
           <div class="col-lg-6 question">
             <div class="content">
-              <h4>6. What should you do if your child has a swollen tongue and difficulty breathing after eating?</h4>
+              <h4>6. Kids can outgrow some food allergies.</h4>
               <div>
-                <input name="q6" type="radio" id="q6-a" value="a" required>
-                <label for="q6-a">Drive them to the hospital</label>
+                <input name="q6" type="radio" id="q6-true" value="true" required>
+                <label for="q6-true">True</label>
               </div>
               <div>
-                <input name="q6" type="radio" id="q6-b" value="b">
-                <label for="q6-b">Call 000</label>
-              </div>
-              <div>
-                <input name="q6" type="radio" id="q6-c" value="c">
-                <label for="q6-c">Give them an epinephrine injection</label>
+                <input name="q6" type="radio" id="q6-false" value="false" required>
+                <label for="q6-false">False</label>
               </div>
             </div>
           </div>
 
           <div class="col-lg-6 explanation">
             <div class="content">
-              <h4>Answer: Give them an epinephrine injection</h4>
+              <h4>Answer: True</h4>
               <hr>
-              <p>Shortness of breath, swelling, and itching can be early symptoms of an anaphylactic reaction, which can
-                become life-threatening within minutes. If you have epinephrine, inject it first and then call 000. If
-                you don’t have epinephrine, call 000 immediately. The best way to prevent anaphylaxis is to help your
-                child avoid their food triggers.</p>
+              <p>Most children outgrow milk, soy, egg, and wheat allergies by the end of their teen years. Many kids
+                outgrow them by the time they're 5 years old. On the other hand, kids with peanut, tree nut, or seafood
+                allergies usually have them for life. Your pediatrician or allergist can do tests to see if your child's
+                allergy has gone away.</p>
             </div>
           </div>
         </div>
@@ -292,16 +316,69 @@
         </div>
 
         <div class="row mb-3">
+          <div class="col-lg-6 question">
+            <div class="content">
+              <h4>8. Allergy shots can cure food allergies.</h4>
+              <div>
+                <input name="q8" type="radio" id="q8-true" value="true" required>
+                <label for="q8-true">True</label>
+              </div>
+              <div>
+                <input name="q8" type="radio" id="q8-false" value="false">
+                <label for="q8-false">False</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 explanation">
+            <div class="content">
+              <h4>Answer: False</h4>
+              <hr>
+              <p>Allergy shots, also known as immunotherapy, may help if they are allergic to things you inhale, like
+                pollen or mold. But they don't really work for food allergies. Allergies cannot be cured by medications,
+                medications only treat minor or major symptoms. Your child's doctor can help manage their allergy
+                symptoms and come up with a plan to treat severe reactions</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-lg-6 question">
+            <div class="content">
+              <h4>9. Food allergies that cause anaphylaxis are on the rise.</h4>
+              <div>
+                <input name="q9" type="radio" id="q9-true" value="true" required>
+                <label for="q9-true">True</label>
+              </div>
+              <div>
+                <input name="q9" type="radio" id="q9-false" value="false">
+                <label for="q9-false">False</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 explanation">
+            <div class="content">
+              <h4>Answer: True</h4>
+              <hr>
+              <p>If your child has had an anaphylactic reaction, have an emergency plan in place. Read labels carefully
+                for food ingredients. If their doctor has prescribed epinephrine, keep it handy wherever they spend time
+                alone. Teach family, friends, caregivers, and school staff what to do in an emergency.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
           <div class="d-flex justify-content-between">
             <div>
               <button onclick="checkQuiz()" class="btn btn-success" id="submit">Submit</button>
               <button class="btn btn-secondary" onclick="resetQuiz()" disabled id="reset">Reset</button>
             </div>
-            <div id="ans-feedback" style="display: none">
-              <p>Well Done! You are a Legend!</p>
-            </div>
+            <!--            <div id="ans-feedback" style="display: none">-->
+            <!--              <p>Well Done! You are a Legend!</p>-->
+            <!--            </div>-->
             <div>
-              <h3 id="score">Score: <span id="userScore">0</span> / 7</h3>
+              <h3 id="score">Score: <span id="userScore">0</span> / 9</h3>
             </div>
           </div>
         </div>
