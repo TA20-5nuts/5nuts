@@ -141,7 +141,7 @@ class Database:
                 merge_list.append(new_list)
                 Key = ("Food name", "Description")
                 result.append(dict(zip(Key, merge_list[i])))
-            # print(result)
+            print(result)
             return result
         except Error as e:
             print(e)
@@ -179,4 +179,4 @@ class Database:
             print(e)
 
 
-Database().search_food_by_food("juice")
+Database().search_food_by_food("grain")
