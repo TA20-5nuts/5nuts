@@ -1,6 +1,11 @@
 let totalPage = 0;
 let currentPage = 1;
 let pageSize = 20;
+
+/* global variable for search function */
+let suburb = "";
+let postcode = "";
+let hospitalName = "";
 let emergency;
 let publicHospital;
 let privateHospital;
@@ -20,8 +25,14 @@ async function init() {
   createTable(hospitals);
 }
 
-function search() {
+function updateSuburb(newSuburb) {
+  suburb = newSuburb;
+  console.log(newSuburb);
+}
 
+function search() {
+  // let suburb = document.getElementById("suburb");
+  // console.log(suburb.value);
 }
 
 /**
