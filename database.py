@@ -59,9 +59,12 @@ class Database:
         except Error as e:
             print(e)
 
+    # Get food information from database
     def search_food_by_food(self, food_name):
         name = []
         new_food = []
+
+        # Set conditions
         if food_name == "grain":
             name = ["bread", "breakfast", "potato", "popcorn"]
         elif food_name == "vegetable":
@@ -75,6 +78,7 @@ class Database:
         else:
             name = ["juice", "water", "soft drink"]
 
+        # First query, using food name
         query = "select distinct name from (SELECT substr(name, 1, instr(name, ',') -1) AS name FROM food WHERE substr(name, 1, instr(name, ',') -1) LIKE '%s')"
         try:
 
@@ -89,7 +93,7 @@ class Database:
                 cur.row_factory = lambda cursor, row: row[0]
                 cur.execute(query % args)
                 value = cur.fetchall()
-                # print(value)
+                print(value)
 
                 if not value:
                     pass
@@ -103,13 +107,16 @@ class Database:
             result = []
             merge_list = []
             new_value = []
+
+            # Avoid some key words and second query to get description
             for i in range(0, len(new_food)):
                 for j in new_food[i]:
-                    matches = ['raw', 'Dripping', 'Breadcrumbs', 'Milkfish', 'crisp', 'Hamburger', 'Grapefruit',
+                    matches = ['Dripping', 'Breadcrumbs', 'Milkfish', 'crisp', 'Hamburger', 'Grapefruit',
                                'Cranberry', 'Goji berry', 'Mulberry', 'Sausages & vegetables', 'Cornmeal', 'chips',
-                               'Water chestnut', 'Watercress', 'Bread roll']
+                               'Water chestnut', 'Watercress', 'Bread roll', 'Blackberry']
                     matches_exact = ['Bread']
                     if any(x in j for x in matches):
+                        # print(j)
                         print("error")
                     elif any(x in j for x in matches_exact):
                         new_value.append(j)
@@ -131,9 +138,10 @@ class Database:
                         cur.execute(query_others % (args, args_2, args_3))
                         value_others = cur.fetchone()
                         list.append(value_others)
-                # print(listist)
+                # print(list)
                 # print(new_value)
 
+            # Merge query result with key into a dict
             for i in range(len(list)):
                 new_list = []
                 new_list.append(new_value[i])
@@ -179,4 +187,4 @@ class Database:
             print(e)
 
 
-Database().search_food_by_food("dairy")
+Database().search_food_by_food("fruit")

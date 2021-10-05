@@ -80,7 +80,7 @@ def foodAvoided():
     result = FoodData().get_food_avoided()
     return jsonify({'data': result})
 
-
+# API path, get data from model.py
 @application.route("/api/food-info/<food_name>", methods=['POST', 'GET'])
 def foodInfo(food_name=None):
     with app.app_context():
