@@ -96,25 +96,28 @@
         <div class="col-lg-4">
           <div class="input-group mb-3">
             <label for="postcode"><span class="input-group-text">Postcode</span></label>
-            <input type="text" class="form-control" placeholder="3000" id="postcode">
+            <input type="text" class="form-control" placeholder="3000" id="postcode"
+                   onchange="updatePostcode(this.value)">
           </div>
         </div>
         <div class="col-lg-4">
           <div class="input-group mb-3">
             <label for="hospital-name"><span class="input-group-text">Hospital Name</span></label>
-            <input type="text" class="form-control" placeholder="The Royal Melbourne Hospital" id="hospital-name">
+            <input type="text" class="form-control" placeholder="The Royal Melbourne Hospital" id="hospital-name"
+                   onchange="updateHospitalName(this.value)">
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-5"></div>
         <div class="col-lg-7">
-          <div class="row" style="text-align: right">
+          <div class="row align-items-center" style="text-align: right">
             <div class="col-lg-4" style="vertical-align: center">
               <div class="form-switch">
                 <div>
                   <label for="emergency-capability"></label><input class="form-check-input" type="checkbox"
-                                                                   id="emergency-capability" checked>
+                                                                   id="emergency-capability" checked
+                                                                   onchange="toggleEmergency()">
                   <span>Emergency Capability</span>
                 </div>
               </div>
@@ -122,18 +125,17 @@
             <div class="col-lg-4">
               <div class="form-switch">
                 <div>
-                  <label for="public-hospital"></label><input class="form-check-input" type="checkbox"
-                                                              id="public-hospital" checked>
-                  <span>Public Hospital</span>
+                  <label for="private-hospital"></label><input class="form-check-input" type="checkbox"
+                                                               id="private-hospital" checked
+                                                               onchange="togglePrivateHospital()">
+                  <span>Include Private Hospital</span>
                 </div>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-switch">
                 <div>
-                  <label for="private-hospital"></label><input class="form-check-input" type="checkbox"
-                                                               id="private-hospital" checked>
-                  <span>Private Hospital</span>
+                  <button class="btn btn-primary" onclick="resetSearch()">Reset Search</button>
                 </div>
               </div>
             </div>
@@ -147,7 +149,7 @@
     <div class="container">
       <div id="hospital-data">
       </div>
-      <div class="row">
+      <div class="row" id="pagination">
         <nav>
           <ul class="pagination justify-content-end">
             <li class="page-link page-item page-btn" onclick="previousPage()">&lt;&lt;

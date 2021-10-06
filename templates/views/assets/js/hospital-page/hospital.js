@@ -3,12 +3,11 @@ let currentPage = 1;
 let pageSize = 20;
 
 /* global variable for search function */
-let suburb = "";
-let postcode = "";
-let hospitalName = "";
-let emergency;
-let publicHospital;
-let privateHospital;
+let suburbFilter;
+let postcodeFilter;
+let hospitalNameFilter;
+let emergencyFilter;
+let privateHospitalFilter;
 
 let hospitals = []; // all hospitals
 let tempHospitals = []; // hospitals on current page
@@ -21,33 +20,168 @@ async function init() {
   hospitals = response.data;
   tempHospitals = getTempHospitalList(currentPage, pageSize, hospitals);
 
-  emergency = document.getElementById("emergency-capability").checked;
-  publicHospital = document.getElementById("public-hospital").checked;
-  privateHospital = document.getElementById("private-hospital").checked;
+  emergencyFilter = document.getElementById("emergency-capability").checked;
+  privateHospitalFilter = document.getElementById("private-hospital").checked;
+
+  console.log(emergencyFilter);
+  console.log(privateHospitalFilter);
 
   calTotalPage(pageSize, hospitals);
   createTable(tempHospitals);
 }
 
+/**
+ * update suburb search keyword
+ * @param newSuburb
+ */
 function updateSuburb(newSuburb) {
-  suburb = newSuburb;
+  suburbFilter = newSuburb;
   search();
 }
 
+/**
+ * update postcode search keyword
+ * @param newPostcode
+ */
 function updatePostcode(newPostcode) {
-  postcode = newPostcode;
+  postcodeFilter = newPostcode;
   search();
 }
 
+/**
+ * update hospital name search keyword
+ * @param newHospitalName
+ */
 function updateHospitalName(newHospitalName) {
-  hospitalName = newHospitalName;
+  hospitalNameFilter = newHospitalName;
   search();
 }
 
+/**
+ * toggle emergency capability
+ */
+function toggleEmergency() {
+  emergencyFilter = document.getElementById("emergency-capability").checked;
+  search();
+}
+
+/**
+ * toggle search for private hospital
+ */
+function togglePrivateHospital() {
+  privateHospitalFilter = document.getElementById("private-hospital").checked;
+  search();
+}
+
+/**
+ * search function
+ */
 function search() {
-  console.log("searching");
-  // let suburb = document.getElementById("suburb");
-  // console.log(suburb.value);
+  let resultHospitals = [];
+  let counter = 0;
+  for (let h of hospitals) {
+    let satifyResult = true;
+    if (hospitalNameFilter != null) {
+      satifyResult = searchHospitalName(h);
+      if (!satifyResult) {
+        continue;
+      }
+    }
+    if (suburbFilter != null) {
+      satifyResult = searchSuburb(h);
+      if (!satifyResult) {
+        continue;
+      }
+    }
+    if (postcodeFilter != null) {
+      satifyResult = searchPostcode(h);
+      if (!satifyResult) {
+        continue;
+      }
+    }
+    satifyResult = searchEmergency(h);
+    if (!satifyResult) {
+      continue;
+    }
+    satifyResult = searchPrivateHospital(h);
+    if (!satifyResult) {
+      continue;
+    }
+
+    if (satifyResult) {
+      resultHospitals.push(h);
+      if (resultHospitals.length === pageSize) {
+        break;
+      }
+    }
+  }
+  createTable(resultHospitals);
+  document.getElementById("pagination").style.display = "none";
+}
+
+/**
+ * search for hospital name
+ * @param hospital
+ * @returns {*}
+ */
+function searchHospitalName(hospital) {
+  return hospital[1].includes(hospitalNameFilter);
+}
+
+/**
+ * search for suburb
+ * @param hospital
+ * @returns {boolean}
+ */
+function searchSuburb(hospital) {
+  return hospital[5] == suburbFilter;
+}
+
+/**
+ * search for postcode
+ * @param hospital
+ * @returns {boolean}
+ */
+function searchPostcode(hospital) {
+  return hospital[6] == postcodeFilter;
+}
+
+/**
+ * filter emergency capability
+ * @param hospital
+ * @returns {boolean}
+ */
+function searchEmergency(hospital) {
+  if (emergencyFilter) {
+    return true;
+  }
+  return hospital[3] === 0; // return hospitals can't deal with emergency
+}
+
+/**
+ * filter private hospitals
+ * @param hospital
+ * @returns {boolean}
+ */
+function searchPrivateHospital(hospital) {
+  if (privateHospitalFilter) {
+    return true;
+  }
+  return hospital[7] === "PUBLIC"; // return only public hospitals
+}
+
+/**
+ * reset search filter
+ */
+function resetSearch() {
+  document.getElementById("suburb").value = "";
+  document.getElementById("postcode").value = "";
+  document.getElementById("hospital-name").value = "";
+
+  document.getElementById("emergency-capability").checked = true;
+  document.getElementById("private-hospital").checked = true;
+  document.getElementById("pagination").style.display = "";
+  init();
 }
 
 /**
