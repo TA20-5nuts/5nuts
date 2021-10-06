@@ -10,29 +10,77 @@ let emergency;
 let publicHospital;
 let privateHospital;
 
+let hospitals = []; // all hospitals
+let tempHospitals = []; // hospitals on current page
+
 /**
  * init page
  */
 async function init() {
   const response = await getHospitalList();
-  let hospitals = response.data;
+  hospitals = response.data;
+  tempHospitals = getTempHospitalList(currentPage, pageSize, hospitals);
 
   emergency = document.getElementById("emergency-capability").checked;
   publicHospital = document.getElementById("public-hospital").checked;
   privateHospital = document.getElementById("private-hospital").checked;
 
   calTotalPage(pageSize, hospitals);
-  createTable(hospitals);
+  createTable(tempHospitals);
 }
 
 function updateSuburb(newSuburb) {
   suburb = newSuburb;
-  console.log(newSuburb);
+  search();
+}
+
+function updatePostcode(newPostcode) {
+  postcode = newPostcode;
+  search();
+}
+
+function updateHospitalName(newHospitalName) {
+  hospitalName = newHospitalName;
+  search();
 }
 
 function search() {
+  console.log("searching");
   // let suburb = document.getElementById("suburb");
   // console.log(suburb.value);
+}
+
+/**
+ * display previous page
+ */
+function previousPage() {
+  if (currentPage === 1) {
+    return;
+  }
+  currentPage--;
+  tempHospitals = getTempHospitalList(currentPage, pageSize, hospitals);
+  createTable(tempHospitals);
+  updastePageNum();
+}
+
+/**
+ * display next page
+ */
+function nextPage() {
+  if (currentPage === totalPage) {
+    return;
+  }
+  currentPage++;
+  tempHospitals = getTempHospitalList(currentPage, pageSize, hospitals);
+  createTable(tempHospitals);
+  updastePageNum();
+}
+
+/**
+ * update current page number
+ */
+function updastePageNum() {
+  document.getElementById("currentPageNum").innerText = currentPage;
 }
 
 /**
@@ -49,12 +97,12 @@ async function getHospitalList() {
 
 /**
  * create the table
- * @param hospitals
+ * @param tempHospitals
  */
-function createTable(hospitals) {
+function createTable(tempHospitals) {
   let table = generateTableTag();
   let tableHead = generateTableHeadTag();
-  let tableBody = generateTableBodyTag(getTempHospitalList(currentPage, pageSize, hospitals));
+  let tableBody = generateTableBodyTag(tempHospitals);
 
   table.appendChild(tableHead);
   table.appendChild(tableBody);
@@ -69,6 +117,7 @@ function generateTableTag() {
   let table = document.createElement("table");
   table.setAttribute("class", "table table-striped table-hover")
 
+  parentNode.innerHTML = "";
   parentNode.appendChild(table);
   return table;
 }
@@ -140,9 +189,9 @@ function generateTDTags(info) {
   tds.push(generateTDTag(info[1]));
   tds.push(generateTDTag(info[3]));
   if (tds[tds.length - 1].innerText === "1") {
-    tds[tds.length - 1].innerText = "True";
+    tds[tds.length - 1].innerText = "Yes";
   } else {
-    tds[tds.length - 1].innerText = "False";
+    tds[tds.length - 1].innerText = "No";
   }
   tds.push(generateTDTag(info[4]));
   tds.push(generateTDTag(info[5]));
@@ -214,4 +263,5 @@ function calTotalPage(pageSize, data) {
   if (data.length % pageSize !== 0) {
     totalPage++;
   }
+  document.getElementById("totalPageNum").innerText = totalPage;
 }

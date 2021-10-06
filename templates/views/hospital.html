@@ -75,8 +75,8 @@
           <img src="./assets/img/hospital-page/visit_gp.png" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" style="font-size: 24px;">
-          <h3>Need to visit a GP?</h3>
-          <p>Search for GP</p>
+          <h3>Need to visit a Health Service?</h3>
+          <p>Search for Health Services</p>
         </div>
       </div>
 
@@ -146,6 +146,18 @@
   <section id="hospital-list" class="hospital-list" style="padding-top: 0!important; margin-top: 0!important;">
     <div class="container">
       <div id="hospital-data">
+      </div>
+      <div class="row">
+        <nav>
+          <ul class="pagination justify-content-end">
+            <li class="page-link page-item page-btn" onclick="previousPage()">&lt;&lt;
+            </li>
+            <li class="page-link page-item page-no-hover" id="currentPageNum">1</li>
+            <li class="page-link page-item page-no-hover">/</li>
+            <li class="page-link page-item page-no-hover" id="totalPageNum">1</li>
+            <li class="page-link page-item page-btn" onclick="nextPage()">&gt;&gt;</li>
+          </ul>
+        </nav>
       </div>
     </div>
   </section>

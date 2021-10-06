@@ -1851,3 +1851,16 @@ label {
   font-size: 12px !important;
   font-weight: normal !important;
 }
+
+/*--------------------------------------------------------------
+# Hospital
+--------------------------------------------------------------*/
+.page-btn {
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.page-no-hover {
+  pointer-events: none;
+  color: #000;
+}
