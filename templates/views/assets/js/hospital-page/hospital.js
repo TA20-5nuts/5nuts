@@ -194,7 +194,7 @@ function previousPage() {
   currentPage--;
   tempHospitals = getTempHospitalList(currentPage, pageSize, hospitals);
   createTable(tempHospitals);
-  updastePageNum();
+  updatePageNum();
 }
 
 /**
@@ -207,13 +207,13 @@ function nextPage() {
   currentPage++;
   tempHospitals = getTempHospitalList(currentPage, pageSize, hospitals);
   createTable(tempHospitals);
-  updastePageNum();
+  updatePageNum();
 }
 
 /**
  * update current page number
  */
-function updastePageNum() {
+function updatePageNum() {
   document.getElementById("currentPageNum").innerText = currentPage;
 }
 
