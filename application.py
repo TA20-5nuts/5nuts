@@ -80,6 +80,7 @@ def foodAvoided():
     result = FoodData().get_food_avoided()
     return jsonify({'data': result})
 
+
 # API path, get data from model.py
 @application.route("/api/food-info/<food_name>", methods=['POST', 'GET'])
 def foodInfo(food_name=None):
@@ -92,7 +93,7 @@ def foodInfo(food_name=None):
 def ingredientsInfo():
     with app.app_context():
         result = FoodData().get_ingredients_info()
-        print(result)
+        # print(result)
         return jsonify({'data': result})
 
 
@@ -132,4 +133,5 @@ def specificNutrition(food_name=None):
 
 
 if __name__ == "__main__":
-    application.run(debug=True)
+    # application.run(debug=True)
+    application.run()
