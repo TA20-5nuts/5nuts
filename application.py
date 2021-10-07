@@ -28,14 +28,9 @@ def home():
     return render_template('views/index.html')
 
 
-@application.route("/introduction")
-def introduction():
-    return render_template('views/introduction.html')
-
-
-@application.route("/resources")
-def resources():
-    return render_template('views/resources.html')
+@application.route("/facts")
+def facts():
+    return render_template('views/facts.html')
 
 
 @application.route("/quiz")
@@ -43,9 +38,9 @@ def quiz():
     return render_template('views/quiz.html')
 
 
-@application.route("/recipe")
-def recipe():
-    return render_template('views/recipe.html')
+@application.route("/lunchbox")
+def lunchbox():
+    return render_template('views/lunchbox.html')
 
 
 @application.route("/game")
@@ -133,5 +128,5 @@ def specificNutrition(food_name=None):
 
 
 if __name__ == "__main__":
-    # application.run(debug=True)  # development
-    application.run()  # deployment
+    application.run(debug=True)  # development
+    # application.run()  # deployment
