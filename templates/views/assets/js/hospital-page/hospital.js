@@ -23,8 +23,9 @@ async function init() {
   emergencyFilter = document.getElementById("emergency-capability").checked;
   privateHospitalFilter = document.getElementById("private-hospital").checked;
 
-  console.log(emergencyFilter);
-  console.log(privateHospitalFilter);
+  suburbFilter = null;
+  postcodeFilter = null;
+  hospitalNameFilter = null;
 
   calTotalPage(pageSize, hospitals);
   createTable(tempHospitals);
@@ -35,6 +36,14 @@ async function init() {
  * @param newSuburb
  */
 function updateSuburb(newSuburb) {
+  let toReset = false;
+  if (newSuburb == "") {
+    suburbFilter = null;
+    if ((postcodeFilter == null || postcodeFilter == "") && (hospitalNameFilter == null || hospitalNameFilter == "")) {
+      resetSearch();
+      return;
+    }
+  }
   suburbFilter = newSuburb;
   search();
 }
@@ -44,6 +53,13 @@ function updateSuburb(newSuburb) {
  * @param newPostcode
  */
 function updatePostcode(newPostcode) {
+  if (newPostcode == "") {
+    postcodeFilter = null;
+    if ((suburbFilter == null || suburbFilter == "") && (hospitalNameFilter == null || hospitalNameFilter == "")) {
+      resetSearch();
+      return;
+    }
+  }
   postcodeFilter = newPostcode;
   search();
 }
@@ -53,6 +69,14 @@ function updatePostcode(newPostcode) {
  * @param newHospitalName
  */
 function updateHospitalName(newHospitalName) {
+  if (newHospitalName == "") {
+    hospitalNameFilter = null;
+    if ((suburbFilter == null || suburbFilter == "") && (postcodeFilter == null || postcodeFilter == "")) {
+      console.log("HERE");
+      resetSearch();
+      return;
+    }
+  }
   hospitalNameFilter = newHospitalName;
   search();
 }
@@ -125,7 +149,7 @@ function search() {
  * @returns {*}
  */
 function searchHospitalName(hospital) {
-  return hospital[1].includes(hospitalNameFilter);
+  return hospital[1].toLowerCase().includes(hospitalNameFilter.toLowerCase());
 }
 
 /**
@@ -134,7 +158,7 @@ function searchHospitalName(hospital) {
  * @returns {boolean}
  */
 function searchSuburb(hospital) {
-  return hospital[5] == suburbFilter;
+  return hospital[5].toLowerCase().includes(suburbFilter.toLowerCase());
 }
 
 /**
@@ -143,7 +167,10 @@ function searchSuburb(hospital) {
  * @returns {boolean}
  */
 function searchPostcode(hospital) {
-  return hospital[6] == postcodeFilter;
+  let tempPostcode = hospital[6].toString();
+  let tempPostcodeFilter = postcodeFilter.toString();
+
+  return tempPostcode.includes(tempPostcodeFilter);
 }
 
 /**
