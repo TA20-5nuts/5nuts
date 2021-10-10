@@ -1876,3 +1876,14 @@ label {
   pointer-events: none;
   color: #000;
 }
+
+/*--------------------------------------------------------------
+# Login Button
+--------------------------------------------------------------*/
+.btn-text {
+  color: #fff !important;
+}
+
+.arrow-vertical-align-center {
+  vertical-align: middle;
+}

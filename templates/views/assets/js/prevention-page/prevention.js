@@ -15,10 +15,10 @@ const preventionMapper = {
   "solid-foods": ["./assets/img/prevention-page/infants-solid_foods.png", ["For infant - solid foods",
     "Should be introduced after four months.",
     "Do not introduce seafood items to the baby early on as it might lead to a serious case of food allergy or food poisoning.",
-    "Introduce foods according to what the family usually eats, no matter the food is a common food allergen or not.",
+    "Introduce foods according to what the family usually eats",
     "Common food allergens should be introduced in around 12 months and in an age-appropriate form.",
-    "Only introduced one common food allergen in once.",
-    "Avoid the food allergen that already known for infant.",
+    "Only introduce one common food allergen in once.",
+    "Avoid food allergens that the parents already know about the newborn child.",
     "If dairy products or soy are tolerated, they can be cooked with other foods.",
     "Smear food on the skin can not help to identify possible food allergies."]]
 };
