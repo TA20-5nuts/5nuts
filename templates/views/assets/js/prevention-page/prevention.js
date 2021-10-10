@@ -2,6 +2,7 @@ const selection = "selection";
 const selectionActive = "selection-active";
 const ids = ['pregnant', 'solid-foods'];
 
+// prevention information data
 const preventionMapper = {
   "pregnant": ["./assets/img/prevention-page/pregnant.png", ["For pregnant",
     "Introduce the concept of a balanced diet which includes all the vitamins and minerals need for the mother and the baby.",
@@ -40,20 +41,36 @@ function switchActive(id) {
   }
 }
 
+/**
+ * disable click event
+ * @param el
+ */
 function disableOnClick(el) {
   el.setAttribute("onclick", "");
 }
 
+/**
+ * enable click event
+ * @param el
+ */
 function enableOnClick(el) {
   el.setAttribute("onclick", "switchPrevention(this.id)");
 }
 
+/**
+ * switch prevention information after click event
+ * @param id
+ */
 function switchPrevention(id) {
   replaceImg(id);
   replaceText(id);
   switchActive(id);
 }
 
+/**
+ * replace image
+ * @param id
+ */
 function replaceImg(id) {
   const targetImgId = "prevention-img";
   let img = document.createElement('img');
@@ -66,6 +83,10 @@ function replaceImg(id) {
   imgSection.appendChild(img);
 }
 
+/**
+ * replace text
+ * @param id
+ */
 function replaceText(id) {
   const targetTextId = "prevention-text";
   let texts = preventionMapper[id][1];
@@ -78,7 +99,7 @@ function replaceText(id) {
   div.appendChild(h4);
   let ol = document.createElement("ol");
 
-  for (let text of mainText) {
+  for (let text of mainText) { // for loop to create ordered list item
     let li = document.createElement("li");
     let h5 = document.createElement("h5");
     h5.innerText = text;
@@ -88,6 +109,6 @@ function replaceText(id) {
   div.appendChild(ol);
 
   let textSection = document.getElementById(targetTextId);
-  textSection.innerHTML = "";
+  textSection.innerHTML = ""; // clear text secton
   textSection.appendChild(div);
 }

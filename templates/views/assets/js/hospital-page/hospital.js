@@ -29,6 +29,8 @@ async function init() {
 
   calTotalPage(pageSize, hospitals);
   createTable(tempHospitals);
+
+  showResults(); // hide no result message
 }
 
 /**
@@ -141,6 +143,11 @@ function search() {
   }
   createTable(resultHospitals);
   document.getElementById("pagination").style.display = "none";
+  if (resultHospitals.length == 0) {
+    noResultCondition();
+  } else {
+    showResults();
+  }
 }
 
 /**
@@ -381,7 +388,7 @@ function generateLinkToGoogleMap(name, address, suburb, postcode) {
 
   anchor.href = link;
   anchor.setAttribute("target", "_blank");
-  anchor.appendChild(document.createTextNode("Google Maps"));
+  anchor.appendChild(document.createTextNode("Google Maps "));
   let i = document.createElement("i");
   i.setAttribute("class", "ri-external-link-line");
   i.setAttribute("style", "vertical-align: middle");
@@ -425,4 +432,37 @@ function calTotalPage(pageSize, data) {
     totalPage++;
   }
   document.getElementById("totalPageNum").innerText = totalPage;
+}
+
+const noSearchResultMsgSecId = "no-result-msg";
+const hospitalListSecId = "hospital-list";
+
+/**
+ * when user's input match 0 records, hide table and display a msg to users
+ * to request to re-enter search keyword
+ */
+function noResultCondition() {
+  let noResultMsgSec = getSectionById(noSearchResultMsgSecId);
+  let hospitalList = getSectionById(hospitalListSecId);
+  noResultMsgSec.style.display = "";
+  hospitalList.style.display = "none";
+}
+
+/**
+ * when user's input match any record, display search results in a table format
+ */
+function showResults() {
+  let noResultMsgSec = getSectionById(noSearchResultMsgSecId);
+  let hospitalList = getSectionById(hospitalListSecId);
+  noResultMsgSec.style.display = "none";
+  hospitalList.style.display = "";
+}
+
+/**
+ * get section in HTML element by ID
+ * @param id id for required HTML node
+ * @returns {HTMLElement}
+ */
+function getSectionById(id) {
+  return document.getElementById(id);
 }
