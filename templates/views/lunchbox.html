@@ -36,7 +36,7 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-  <script type="text/javascript" src="./assets/js/recipe-page/know-allergen.js"></script>
+  <script type="text/javascript" src="./assets/js/lunchbox-page/lunchbox.js"></script>
 </head>
 
 <body>
@@ -55,16 +55,14 @@
     <nav id="navbar" class="navbar order-last order-lg-0">
       <ul>
         <li><a href="/home"><i class="ri-home-heart-line"></i>Home</a></li>
-        <li><a href="/resources"><i class="ri-git-repository-line"></i>Facts</a></li>
+        <li><a href="/facts"><i class="ri-git-repository-line"></i>Facts</a></li>
         <li><a href="/quiz"><i class="ri-question-answer-line"></i>Quiz</a></li>
-        <li><a class="active" href="/recipe"><i class="ri-leaf-line"></i>Lunchbox</a></li>
+        <li><a class="active" href="/lunchbox"><i class="ri-leaf-line"></i>Lunchbox</a></li>
         <li><a href="/prevention"><i class="ri-information-line"></i>Prevention</a></li>
         <li><a href="/hospital"><i class="ri-hospital-line"></i>Hospital</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
-
-    <!--    <a href="courses.html" class="get-started-btn">Get Started</a>-->
 
   </div>
 </header><!-- End Header -->
@@ -82,12 +80,12 @@
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
           <h3>Healthy Lunchbox</h3>
           <p>
-            Living with allergies is tough and that’s why we bring to you interesting facts and articles to adapt to
-            the situation. Migrating to a new country brings a new set of challenges and lifestyle issues.
-            You are not alone.<br>
-            <a href="#know-allergens">Creat lunchbox</a>
+            The Allergy Free Lunchbox Builder is designed to assist the parents with packing their children’s lunchboxes
+            by providing various healthy and nutritious food items which can be consumed by the children and which are
+            free of allergies.
+            <br>
+            <a href="#know-allergens">Create lunchbox</a>
           </p>
-          <!--          <h3>Every Child is different. Don't blame them or their genetics.</h3>-->
         </div>
       </div>
 
@@ -99,50 +97,50 @@
       <div class="row align-items-center">
         <div class="col-lg-4">
           <div class="content">
-            <h3>Known Allergens</h3>
+            <h3>Major Allergens</h3>
           </div>
         </div>
         <div class="col-lg-8">
           <div class="row mb-1">
             <div class="col-lg-3 col-md-4">
-              <div class="icon-box" id="allergen-egg" onclick="toggleKnownAllergen(this.id)">
+              <div class="icon-box no-hover-effect" id="allergen-egg">
                 <img src="assets/img/general/egg.svg" alt="" class="img-svg"/>Egg
               </div>
             </div>
             <div class="col-lg-3 col-md-4">
-              <div class="icon-box" id="allergen-dairy-product" onclick="toggleKnownAllergen(this.id)">
+              <div class="icon-box no-hover-effect" id="allergen-dairy-product">
                 <img src="assets/img/general/dairy.svg" alt="" class="img-svg"/>Dairy Products
               </div>
             </div>
             <div class="col-lg-3 col-md-4">
-              <div class="icon-box" id="allergen-peanut" onclick="toggleKnownAllergen(this.id)">
+              <div class="icon-box no-hover-effect" id="allergen-peanut">
                 <img src="assets/img/general/peanut.svg" alt="" class="img-svg"/>Peanut
               </div>
             </div>
             <div class="col-lg-3 col-md-4">
-              <div class="icon-box" id="allergen-treenut" onclick="toggleKnownAllergen(this.id)">
+              <div class="icon-box no-hover-effect" id="allergen-treenut">
                 <img src="assets/img/general/treenut.svg" alt="" class="img-svg"/>Tree Nuts
               </div>
             </div>
           </div>
           <div class="row mt-1">
             <div class="col-lg-3 col-md-4">
-              <div class="icon-box" id="allergen-sesame" onclick="toggleKnownAllergen(this.id)">
+              <div class="icon-box no-hover-effect" id="allergen-sesame">
                 <img src="assets/img/general/sesame.svg" alt="" class="img-svg"/>Sesame
               </div>
             </div>
             <div class="col-lg-3 col-md-4">
-              <div class="icon-box" id="allergen-soy" onclick="toggleKnownAllergen(this.id)">
+              <div class="icon-box no-hover-effect" id="allergen-soy">
                 <img src="assets/img/general/soy.svg" alt="" class="img-svg"/>Soy
               </div>
             </div>
             <div class="col-lg-3 col-md-4">
-              <div class="icon-box" id="allergen-wheat" onclick="toggleKnownAllergen(this.id)">
+              <div class="icon-box no-hover-effect" id="allergen-wheat">
                 <img src="assets/img/general/wheat.svg" alt="" class="img-svg"/>Wheat
               </div>
             </div>
             <div class="col-lg-3 col-md-4">
-              <div class="icon-box" id="allergen-fish" onclick="toggleKnownAllergen(this.id)">
+              <div class="icon-box no-hover-effect" id="allergen-fish">
                 <img src="assets/img/general/fish.svg" alt="" class="img-svg"/>Fish
               </div>
             </div>
@@ -155,68 +153,6 @@
   <!-- ======= lunchbox Section ======= -->
   <section id="lunchbox-section" class="why-us">
     <div class="container" data-aos="fade-up">
-
-      <!--      <div class="row mb-2">-->
-      <!--        <div class="col-lg-12">-->
-      <!--          <div class="content">-->
-      <!--            <h3>Create Your Lunchbox</h3>-->
-      <!--            <div class="row align-items-stretch">-->
-      <!--              <div class="col-lg-4">-->
-      <!--                &lt;!&ndash;                <h3>Create Your Lunchbox</h3>&ndash;&gt;-->
-      <!--                <div class="lunchbox-item">-->
-      <!--                  <p><strong>Grain</strong> - Grains are high in natural fiber and are an important source of many-->
-      <!--                    nutrients. Eating grains-->
-      <!--                    reduces the risk of chronic disease.</p>-->
-      <!--                </div>-->
-      <!--              </div>-->
-
-      <!--              <div class="col-lg-4">-->
-      <!--                &lt;!&ndash;                <h3>Create Your Lunchbox</h3>&ndash;&gt;-->
-      <!--                <div class="lunchbox-item">-->
-      <!--                  <p><strong>Vegetable</strong> - Eating more vegetables can increase your intake of fiber and-->
-      <!--                    potassium, which may help prevent some types of cancer.</p>-->
-      <!--                </div>-->
-      <!--              </div>-->
-
-      <!--              <div class="col-lg-4">-->
-      <!--                &lt;!&ndash;                <h3>Create Your Lunchbox</h3>&ndash;&gt;-->
-      <!--                <div class="lunchbox-item">-->
-      <!--                  <p><strong>Dairy</strong> - Dairy products can provide calcium and vitamin D, which improves skeletal-->
-      <!--                    health in children as they grow up.</p>-->
-      <!--                </div>-->
-      <!--              </div>-->
-      <!--            </div>-->
-
-      <!--            <div class="row">-->
-      <!--              <div class="col-lg-4">-->
-      <!--                &lt;!&ndash;                <h3>Create Your Lunchbox</h3>&ndash;&gt;-->
-      <!--                <div class="lunchbox-item">-->
-      <!--                  <p><strong>Protein</strong> - Protein is an important part of a healthy diet. It is an energy source-->
-      <!--                    necessary for the growth and repair of cells in children’s bodies.</p>-->
-      <!--                </div>-->
-      <!--              </div>-->
-
-      <!--              <div class="col-lg-4">-->
-      <!--                &lt;!&ndash;                <h3>Create Your Lunchbox</h3>&ndash;&gt;-->
-      <!--                <div class="lunchbox-item">-->
-      <!--                  <p><strong>Fruit</strong> - The fiber in fruit can help to lower cholesterol. Eating fruits containing-->
-      <!--                    high vitamin C, such as oranges and strawberries, can improve your child’s immune system.-->
-      <!--                  </p>-->
-      <!--                </div>-->
-      <!--              </div>-->
-
-      <!--              <div class="col-lg-4">-->
-      <!--                &lt;!&ndash;                <h3>Create Your Lunchbox</h3>&ndash;&gt;-->
-      <!--                <div class="lunchbox-item">-->
-      <!--                  <p><strong>Drink</strong> - Drink enough water to boost your child’s diet. Drink water regularly-->
-      <!--                    throughout the day to flush waste from the body.</p>-->
-      <!--                </div>-->
-      <!--              </div>-->
-      <!--            </div>-->
-      <!--          </div>-->
-      <!--        </div>-->
-      <!--      </div>-->
-
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="">
@@ -240,16 +176,21 @@
             </div>
             <div class="lunchbox-item" id="dairy" onclick="selectFood(this.id)">
               <p><img src="./assets/img/recipe-page/dairy-product.svg" alt="" class="food-icon"/> Dairy - Calcium,
-                Vitamins D</p>
+                Vitamin D</p>
             </div>
             <div class="lunchbox-item" id="protein" onclick="selectFood(this.id)">
               <p><img src="./assets/img/recipe-page/protein.svg" alt="" class="food-icon"/> Protein - Energy source</p>
             </div>
             <div class="lunchbox-item" id="fruit" onclick="selectFood(this.id)">
-              <p><img src="./assets/img/recipe-page/fruit.svg" alt="" class="food-icon"/> Fruit - Vitamins C</p>
+              <p><img src="./assets/img/recipe-page/fruit.svg" alt="" class="food-icon"/> Fruit - Vitamin C</p>
             </div>
             <div class="lunchbox-item" id="drink" onclick="selectFood(this.id)">
               <p><img src="./assets/img/recipe-page/water.svg" alt="" class="food-icon"/> Drink - Keep hydrated</p>
+            </div>
+
+            <div>
+              <em>* Disclaimer:
+                <span>This is only recommendation, please refer to your doctor if you have further doubts.</span></em>
             </div>
           </div>
         </div>
@@ -272,6 +213,18 @@
         href="https://www.foodstandards.gov.au/science/monitoringnutrients/afcd/Pages/default.aspx">
         Food Standards Australia New Zealand (FSANZ)</a></span> - <span><i><a
       href="https://www.foodstandards.gov.au/pages/copyright.aspx">Copyright</a></i></span>
+    </div>
+  </section>
+
+  <section id="login-button" style="padding-top: 0 !important;" data-aos="zoom-in" data-aos-delay="100">
+    <div class="container">
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-success"><a href="/facts" class="btn-text"><i
+          class="ri-arrow-left-s-line arrow-vertical-align-center"></i> Learn Some Fun Facts</a></button>
+        <button class="btn btn-success"><a href="/prevention" class="btn-text">Check Some Prevention Tips <i
+          class="ri-arrow-right-s-line arrow-vertical-align-center"></i></a>
+        </button>
+      </div>
     </div>
   </section>
 </main><!-- End #main -->

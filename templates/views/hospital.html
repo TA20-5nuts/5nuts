@@ -53,9 +53,9 @@
     <nav id="navbar" class="navbar order-last order-lg-0">
       <ul>
         <li><a href="/home"><i class="ri-home-heart-line"></i>Home</a></li>
-        <li><a href="/resources"><i class="ri-git-repository-line"></i>Facts</a></li>
+        <li><a href="/facts"><i class="ri-git-repository-line"></i>Facts</a></li>
         <li><a href="/quiz"><i class="ri-question-answer-line"></i>Quiz</a></li>
-        <li><a href="/recipe"><i class="ri-leaf-line"></i>Lunchbox</a></li>
+        <li><a href="/lunchbox"><i class="ri-leaf-line"></i>Lunchbox</a></li>
         <li><a href="/prevention"><i class="ri-information-line"></i>Prevention</a></li>
         <li><a class="active" href="/hospital"><i class="ri-hospital-line"></i>Hospital</a></li>
       </ul>
@@ -75,8 +75,8 @@
           <img src="./assets/img/hospital-page/visit_gp.png" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" style="font-size: 24px;">
-          <h3>Need to visit a GP?</h3>
-          <p>Search for GP</p>
+          <h3>Need to visit a Health Service?</h3>
+          <p>Search for Health Services</p>
         </div>
       </div>
 
@@ -90,31 +90,34 @@
           <div class="input-group mb-3">
             <label for="suburb"><span class="input-group-text">Suburb</span></label>
             <input type="text" class="form-control" placeholder="Melbourne" id="suburb"
-                   onchange="updateSuburb(this.value)">
+                   onkeyup="updateSuburb(this.value)">
           </div>
         </div>
         <div class="col-lg-4">
           <div class="input-group mb-3">
             <label for="postcode"><span class="input-group-text">Postcode</span></label>
-            <input type="text" class="form-control" placeholder="3000" id="postcode">
+            <input type="text" class="form-control" placeholder="3000" id="postcode"
+                   onkeyup="updatePostcode(this.value)">
           </div>
         </div>
         <div class="col-lg-4">
           <div class="input-group mb-3">
             <label for="hospital-name"><span class="input-group-text">Hospital Name</span></label>
-            <input type="text" class="form-control" placeholder="The Royal Melbourne Hospital" id="hospital-name">
+            <input type="text" class="form-control" placeholder="The Royal Melbourne Hospital" id="hospital-name"
+                   onkeyup="updateHospitalName(this.value)">
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-5"></div>
         <div class="col-lg-7">
-          <div class="row" style="text-align: right">
+          <div class="row align-items-center" style="text-align: right">
             <div class="col-lg-4" style="vertical-align: center">
               <div class="form-switch">
                 <div>
                   <label for="emergency-capability"></label><input class="form-check-input" type="checkbox"
-                                                                   id="emergency-capability" checked>
+                                                                   id="emergency-capability" checked
+                                                                   onchange="toggleEmergency()">
                   <span>Emergency Capability</span>
                 </div>
               </div>
@@ -122,18 +125,17 @@
             <div class="col-lg-4">
               <div class="form-switch">
                 <div>
-                  <label for="public-hospital"></label><input class="form-check-input" type="checkbox"
-                                                              id="public-hospital" checked>
-                  <span>Public Hospital</span>
+                  <label for="private-hospital"></label><input class="form-check-input" type="checkbox"
+                                                               id="private-hospital" checked
+                                                               onchange="togglePrivateHospital()">
+                  <span>Include Private Hospital</span>
                 </div>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-switch">
                 <div>
-                  <label for="private-hospital"></label><input class="form-check-input" type="checkbox"
-                                                               id="private-hospital" checked>
-                  <span>Private Hospital</span>
+                  <button class="btn btn-primary" onclick="resetSearch()">Clear</button>
                 </div>
               </div>
             </div>
@@ -146,6 +148,27 @@
   <section id="hospital-list" class="hospital-list" style="padding-top: 0!important; margin-top: 0!important;">
     <div class="container">
       <div id="hospital-data">
+      </div>
+      <div class="row" id="pagination">
+        <nav>
+          <ul class="pagination justify-content-end">
+            <li class="page-link page-item page-btn" onclick="previousPage()">&lt;&lt;
+            </li>
+            <li class="page-link page-item page-no-hover" id="currentPageNum">1</li>
+            <li class="page-link page-item page-no-hover">/</li>
+            <li class="page-link page-item page-no-hover" id="totalPageNum">1</li>
+            <li class="page-link page-item page-btn" onclick="nextPage()">&gt;&gt;</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section id="no-result-msg" style="padding-top: 0;">
+    <div class="container">
+      <div class="row text-center" style="color: #ff0000;">
+        <h3>Sorry, we can't find any information according to your input.</h3>
+        <h3>Please redefine your search keyword.</h3>
       </div>
     </div>
   </section>
@@ -171,13 +194,6 @@
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
-    <!--    <div class="social-links text-center text-md-right pt-3 pt-md-0">-->
-    <!--      <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>-->
-    <!--      <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>-->
-    <!--      <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>-->
-    <!--      <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>-->
-    <!--      <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>-->
-    <!--    </div>-->
   </div>
 </footer><!-- End Footer -->
 

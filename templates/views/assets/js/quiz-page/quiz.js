@@ -65,14 +65,13 @@ function checkQuiz() {
   let userAnsMap = new Map();
   for (let tempName of inputNameSet) {
     let tempInput = document.getElementsByName(tempName);
-    // console.log(tempInput);
     if (!checkRequired(tempInput)) { // check all questions are answered
       alert("Please answer all questions!");
       return;
     }
 
     for (let i = 0; i < tempInput.length; i++) {
-      if (tempInput[i].checked) {
+      if (tempInput[i].checked) { // get user's answer
         userAnsMap.set(tempName, tempInput[i].value);
         break;
       }
@@ -120,9 +119,6 @@ function resetQuiz() {
 
   // enable all radio buttons
   toggleRadioButtonActive(false);
-
-  let feedbackSection = document.getElementById("ans-feedback");
-  feedbackSection.style.display = "none";
 }
 
 /**
@@ -133,7 +129,6 @@ function displayScore(score) {
   let scoreSection = document.getElementById("score");
   let userScore = document.getElementById("userScore");
   userScore.innerText = score;
-  // displayFeedback(score);
 }
 
 /**
@@ -231,20 +226,4 @@ function toggleRadioButtonActive(submitting) {
       }
     }
   }
-}
-
-function displayFeedback(score) {
-  let feedbackSection = document.getElementById("ans-feedback");
-  let text = "";
-  let pTag = "<p>";
-  let closePTag = "</p>";
-  if (score >= 6) {
-    text = pTag + "Well Done! You are a Legend!" + closePTag;
-  } else if (score >= 4) {
-    text = pTag + "Don't worry, you are about to become an expert in avoiding food allergy!" + closePTag;
-  } else {
-    text = pTag + "Let's review questions, you can do better." + closePTag;
-  }
-  feedbackSection.innerHTML = text;
-  feedbackSection.style.display = "";
 }

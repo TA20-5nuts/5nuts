@@ -3,36 +3,252 @@ let currentPage = 1;
 let pageSize = 20;
 
 /* global variable for search function */
-let suburb = "";
-let postcode = "";
-let hospitalName = "";
-let emergency;
-let publicHospital;
-let privateHospital;
+let suburbFilter;
+let postcodeFilter;
+let hospitalNameFilter;
+let emergencyFilter;
+let privateHospitalFilter;
+
+let hospitals = []; // all hospitals
+let tempHospitals = []; // hospitals on current page
 
 /**
  * init page
  */
 async function init() {
   const response = await getHospitalList();
-  let hospitals = response.data;
+  hospitals = response.data;
+  tempHospitals = getTempHospitalList(currentPage, pageSize, hospitals);
 
-  emergency = document.getElementById("emergency-capability").checked;
-  publicHospital = document.getElementById("public-hospital").checked;
-  privateHospital = document.getElementById("private-hospital").checked;
+  emergencyFilter = document.getElementById("emergency-capability").checked;
+  privateHospitalFilter = document.getElementById("private-hospital").checked;
+
+  suburbFilter = null;
+  postcodeFilter = null;
+  hospitalNameFilter = null;
 
   calTotalPage(pageSize, hospitals);
-  createTable(hospitals);
+  createTable(tempHospitals);
+
+  showResults(); // hide no result message
 }
 
+/**
+ * update suburb search keyword
+ * @param newSuburb
+ */
 function updateSuburb(newSuburb) {
-  suburb = newSuburb;
-  console.log(newSuburb);
+  let toReset = false;
+  if (newSuburb == "") {
+    suburbFilter = null;
+    if ((postcodeFilter == null || postcodeFilter == "") && (hospitalNameFilter == null || hospitalNameFilter == "")) {
+      resetSearch();
+      return;
+    }
+  }
+  suburbFilter = newSuburb;
+  search();
 }
 
+/**
+ * update postcode search keyword
+ * @param newPostcode
+ */
+function updatePostcode(newPostcode) {
+  if (newPostcode == "") {
+    postcodeFilter = null;
+    if ((suburbFilter == null || suburbFilter == "") && (hospitalNameFilter == null || hospitalNameFilter == "")) {
+      resetSearch();
+      return;
+    }
+  }
+  postcodeFilter = newPostcode;
+  search();
+}
+
+/**
+ * update hospital name search keyword
+ * @param newHospitalName
+ */
+function updateHospitalName(newHospitalName) {
+  if (newHospitalName == "") {
+    hospitalNameFilter = null;
+    if ((suburbFilter == null || suburbFilter == "") && (postcodeFilter == null || postcodeFilter == "")) {
+      console.log("HERE");
+      resetSearch();
+      return;
+    }
+  }
+  hospitalNameFilter = newHospitalName;
+  search();
+}
+
+/**
+ * toggle emergency capability
+ */
+function toggleEmergency() {
+  emergencyFilter = document.getElementById("emergency-capability").checked;
+  search();
+}
+
+/**
+ * toggle search for private hospital
+ */
+function togglePrivateHospital() {
+  privateHospitalFilter = document.getElementById("private-hospital").checked;
+  search();
+}
+
+/**
+ * search function
+ */
 function search() {
-  // let suburb = document.getElementById("suburb");
-  // console.log(suburb.value);
+  let resultHospitals = [];
+  let counter = 0;
+  for (let h of hospitals) {
+    let satifyResult = true;
+    if (hospitalNameFilter != null) {
+      satifyResult = searchHospitalName(h);
+      if (!satifyResult) {
+        continue;
+      }
+    }
+    if (suburbFilter != null) {
+      satifyResult = searchSuburb(h);
+      if (!satifyResult) {
+        continue;
+      }
+    }
+    if (postcodeFilter != null) {
+      satifyResult = searchPostcode(h);
+      if (!satifyResult) {
+        continue;
+      }
+    }
+    satifyResult = searchEmergency(h);
+    if (!satifyResult) {
+      continue;
+    }
+    satifyResult = searchPrivateHospital(h);
+    if (!satifyResult) {
+      continue;
+    }
+
+    if (satifyResult) {
+      resultHospitals.push(h);
+      if (resultHospitals.length === pageSize) {
+        break;
+      }
+    }
+  }
+  createTable(resultHospitals);
+  document.getElementById("pagination").style.display = "none";
+  if (resultHospitals.length == 0) {
+    noResultCondition();
+  } else {
+    showResults();
+  }
+}
+
+/**
+ * search for hospital name
+ * @param hospital
+ * @returns {*}
+ */
+function searchHospitalName(hospital) {
+  return hospital[1].toLowerCase().includes(hospitalNameFilter.toLowerCase());
+}
+
+/**
+ * search for suburb
+ * @param hospital
+ * @returns {boolean}
+ */
+function searchSuburb(hospital) {
+  return hospital[5].toLowerCase().includes(suburbFilter.toLowerCase());
+}
+
+/**
+ * search for postcode
+ * @param hospital
+ * @returns {boolean}
+ */
+function searchPostcode(hospital) {
+  let tempPostcode = hospital[6].toString();
+  let tempPostcodeFilter = postcodeFilter.toString();
+
+  return tempPostcode.includes(tempPostcodeFilter);
+}
+
+/**
+ * filter emergency capability
+ * @param hospital
+ * @returns {boolean}
+ */
+function searchEmergency(hospital) {
+  if (emergencyFilter) {
+    return true;
+  }
+  return hospital[3] === 0; // return hospitals can't deal with emergency
+}
+
+/**
+ * filter private hospitals
+ * @param hospital
+ * @returns {boolean}
+ */
+function searchPrivateHospital(hospital) {
+  if (privateHospitalFilter) {
+    return true;
+  }
+  return hospital[7] === "PUBLIC"; // return only public hospitals
+}
+
+/**
+ * reset search filter
+ */
+function resetSearch() {
+  document.getElementById("suburb").value = "";
+  document.getElementById("postcode").value = "";
+  document.getElementById("hospital-name").value = "";
+
+  document.getElementById("emergency-capability").checked = true;
+  document.getElementById("private-hospital").checked = true;
+  document.getElementById("pagination").style.display = "";
+  init();
+}
+
+/**
+ * display previous page
+ */
+function previousPage() {
+  if (currentPage === 1) {
+    return;
+  }
+  currentPage--;
+  tempHospitals = getTempHospitalList(currentPage, pageSize, hospitals);
+  createTable(tempHospitals);
+  updatePageNum();
+}
+
+/**
+ * display next page
+ */
+function nextPage() {
+  if (currentPage === totalPage) {
+    return;
+  }
+  currentPage++;
+  tempHospitals = getTempHospitalList(currentPage, pageSize, hospitals);
+  createTable(tempHospitals);
+  updatePageNum();
+}
+
+/**
+ * update current page number
+ */
+function updatePageNum() {
+  document.getElementById("currentPageNum").innerText = currentPage;
 }
 
 /**
@@ -49,12 +265,12 @@ async function getHospitalList() {
 
 /**
  * create the table
- * @param hospitals
+ * @param tempHospitals
  */
-function createTable(hospitals) {
+function createTable(tempHospitals) {
   let table = generateTableTag();
   let tableHead = generateTableHeadTag();
-  let tableBody = generateTableBodyTag(getTempHospitalList(currentPage, pageSize, hospitals));
+  let tableBody = generateTableBodyTag(tempHospitals);
 
   table.appendChild(tableHead);
   table.appendChild(tableBody);
@@ -69,6 +285,7 @@ function generateTableTag() {
   let table = document.createElement("table");
   table.setAttribute("class", "table table-striped table-hover")
 
+  parentNode.innerHTML = "";
   parentNode.appendChild(table);
   return table;
 }
@@ -140,9 +357,9 @@ function generateTDTags(info) {
   tds.push(generateTDTag(info[1]));
   tds.push(generateTDTag(info[3]));
   if (tds[tds.length - 1].innerText === "1") {
-    tds[tds.length - 1].innerText = "True";
+    tds[tds.length - 1].innerText = "Yes";
   } else {
-    tds[tds.length - 1].innerText = "False";
+    tds[tds.length - 1].innerText = "No";
   }
   tds.push(generateTDTag(info[4]));
   tds.push(generateTDTag(info[5]));
@@ -171,7 +388,7 @@ function generateLinkToGoogleMap(name, address, suburb, postcode) {
 
   anchor.href = link;
   anchor.setAttribute("target", "_blank");
-  anchor.appendChild(document.createTextNode("Google Maps"));
+  anchor.appendChild(document.createTextNode("Google Maps "));
   let i = document.createElement("i");
   i.setAttribute("class", "ri-external-link-line");
   i.setAttribute("style", "vertical-align: middle");
@@ -214,4 +431,38 @@ function calTotalPage(pageSize, data) {
   if (data.length % pageSize !== 0) {
     totalPage++;
   }
+  document.getElementById("totalPageNum").innerText = totalPage;
+}
+
+const noSearchResultMsgSecId = "no-result-msg";
+const hospitalListSecId = "hospital-list";
+
+/**
+ * when user's input match 0 records, hide table and display a msg to users
+ * to request to re-enter search keyword
+ */
+function noResultCondition() {
+  let noResultMsgSec = getSectionById(noSearchResultMsgSecId);
+  let hospitalList = getSectionById(hospitalListSecId);
+  noResultMsgSec.style.display = "";
+  hospitalList.style.display = "none";
+}
+
+/**
+ * when user's input match any record, display search results in a table format
+ */
+function showResults() {
+  let noResultMsgSec = getSectionById(noSearchResultMsgSecId);
+  let hospitalList = getSectionById(hospitalListSecId);
+  noResultMsgSec.style.display = "none";
+  hospitalList.style.display = "";
+}
+
+/**
+ * get section in HTML element by ID
+ * @param id id for required HTML node
+ * @returns {HTMLElement}
+ */
+function getSectionById(id) {
+  return document.getElementById(id);
 }

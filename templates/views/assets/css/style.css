@@ -1736,6 +1736,10 @@ p {
   width: 100%;
 }
 
+.no-hover-effect {
+  cursor: text !important;
+}
+
 /*--------------------------------------------------------------
 # Prevention
 --------------------------------------------------------------*/
@@ -1850,4 +1854,36 @@ label {
 .extra-link {
   font-size: 12px !important;
   font-weight: normal !important;
+}
+
+.icon-box-text {
+  color: #000;
+}
+
+.icon-box-text:hover {
+  color: #5fcf80;
+}
+
+/*--------------------------------------------------------------
+# Hospital
+--------------------------------------------------------------*/
+.page-btn {
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.page-no-hover {
+  pointer-events: none;
+  color: #000;
+}
+
+/*--------------------------------------------------------------
+# Login Button
+--------------------------------------------------------------*/
+.btn-text {
+  color: #fff !important;
+}
+
+.arrow-vertical-align-center {
+  vertical-align: middle;
 }

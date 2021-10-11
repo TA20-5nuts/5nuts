@@ -93,7 +93,7 @@ class Database:
                 cur.row_factory = lambda cursor, row: row[0]
                 cur.execute(query % args)
                 value = cur.fetchall()
-                print(value)
+                # print(value)
 
                 if not value:
                     pass
@@ -117,7 +117,8 @@ class Database:
                     matches_exact = ['Bread']
                     if any(x in j for x in matches):
                         # print(j)
-                        print("error")
+                        # print("error")
+                        pass
                     elif any(x in j for x in matches_exact):
                         new_value.append(j)
                         query_others = "SELECT desc FROM food WHERE substr(name, 1, instr(name, ',') -1) = '%s' limit 1"
@@ -149,7 +150,7 @@ class Database:
                 merge_list.append(new_list)
                 Key = ("Food name", "Description")
                 result.append(dict(zip(Key, merge_list[i])))
-            print(result)
+            # print(result)
             return result
         except Error as e:
             print(e)
@@ -186,5 +187,9 @@ class Database:
         except Error as e:
             print(e)
 
+<<<<<<< HEAD
 
 Database().search_food_by_food("grain")
+=======
+# Database().search_food_by_food("fruit")
+>>>>>>> 0a832590984e01b3c040a2d1a0bf32b98d40603b

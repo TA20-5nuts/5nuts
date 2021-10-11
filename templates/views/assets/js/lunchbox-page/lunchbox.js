@@ -64,38 +64,28 @@ async function sendRequest(food) {
   const foodInfoAPI = "https://allergyfree.me/api/food-info/";
   // const foodInfoAPI = "http://localhost:5000/api/food-info/";
   let tempApi = foodInfoAPI + food;
-  // console.log(tempApi);
   const response = await fetch(tempApi);
   const data = await response.json();
   return data;
 }
 
-// TODO: LUNCHBOX FEATURE
 /**
  * show food options for user to select
  * @param foods available foods
  * @param id associate food type in lunchbox, e.g. grain, vegetable etc.
  */
 function showFoodOptions(foods, id) {
-  // console.log(foods);
-  // console.log(id);
   let foodOptionSection = document.getElementById("food-option");
 
-  // console.log(foodOptionSection);
   let foodOptionSectionContainer = foodOptionSection.getElementsByClassName("container").item(0);
-  // console.log(foodOptionSectionContainer);
   foodOptionSection.style.display = "flex";
 
   foodOptionSectionContainer.innerHTML = generateHTMLCode(foods);
 }
 
 function generateHTMLCode(foods) {
-  // console.log(foods);
   const optionLimit = 9;
   const rowLimit = 3;
-
-  // foods = foods.slice(0, 5);
-  // console.log(foods);
 
   let html = "";
   for (let i = 0; i < optionLimit; i += 3) {
@@ -122,12 +112,8 @@ function generateRow(rowFoods) {
       break;
     }
     let tempFood = rowFoods[i];
-    // console.log(tempFood);
-    // console.log(typeof tempFood);
     rowHTML += openItemDiv + ` id="` + tempFood["Food name"] + `"` + ` onclick="chooseFood(this.id)"` + closeArrow;
     rowHTML += `<h3>` + tempFood["Food name"] + `</h3>`;
-    // rowHTML += hr;
-    // rowHTML += `<p>` + tempFood["Description"] + `</p>`;
     rowHTML += closeDiv;
   }
 
@@ -141,16 +127,9 @@ function chooseFood(id) {
 }
 
 function updateLunchbox(foodName) {
-  // console.log(currentFoodTypeId);
-  // console.log(foodName);
   let lunchboxPart = document.getElementById(currentFoodTypeId);
-  // console.log(lunchboxPart);
-  // let lunchboxPartIcon = lunchboxPart.getElementsByTagName("img")[0];
-  // console.log(lunchboxPartIcon);
+  let tempHTML = `<p class="text-center">` + foodName + `</p>`;
 
-  let tempHTML = foodName;
-  // console.log(tempHTML);
-  // tempHTML += lunchboxPartIcon;
   lunchboxPart.innerHTML = tempHTML;
   document.getElementById(currentFoodTypeId).setAttribute("class", "lunchbox-item-selected");
 }
