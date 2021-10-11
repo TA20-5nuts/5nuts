@@ -304,7 +304,7 @@ function generateTableHeadTag() {
   tr.appendChild(generateTHTag("Suburb"));
   tr.appendChild(generateTHTag("Postcode"));
   tr.appendChild(generateTHTag("Category"));
-  tr.appendChild(generateTHTag("Google Maps"));
+  tr.appendChild(generateTHTag("Direction"));
 
   thead.appendChild(tr);
   return thead;
