@@ -113,7 +113,7 @@ class Database:
                 for j in new_food[i]:
                     matches = ['Dripping', 'Breadcrumbs', 'Milkfish', 'crisp', 'Hamburger', 'Grapefruit',
                                'Cranberry', 'Goji berry', 'Mulberry', 'Sausages & vegetables', 'Cornmeal', 'chips',
-                               'Water chestnut', 'Watercress', 'Bread roll', 'Blackberry']
+                               'Water chestnut', 'Watercress', 'Bread roll', 'Blackberry', 'Potato straws']
                     matches_exact = ['Bread']
                     if any(x in j for x in matches):
                         # print(j)
@@ -187,4 +187,4 @@ class Database:
             print(e)
 
 
-Database().search_food_by_food("fruit")
+Database().search_food_by_food("grain")
