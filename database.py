@@ -186,10 +186,3 @@ class Database:
             return cur.fetchall()
         except Error as e:
             print(e)
-
-<<<<<<< HEAD
-
-Database().search_food_by_food("grain")
-=======
-# Database().search_food_by_food("fruit")
->>>>>>> 0a832590984e01b3c040a2d1a0bf32b98d40603b
