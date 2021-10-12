@@ -282,11 +282,14 @@ function createTable(tempHospitals) {
  */
 function generateTableTag() {
   let parentNode = document.getElementById("hospital-data");
+  let responsiveDiv = document.createElement("div");
+  responsiveDiv.setAttribute("class", "table-responsive");
   let table = document.createElement("table");
   table.setAttribute("class", "table table-striped table-hover")
 
   parentNode.innerHTML = "";
-  parentNode.appendChild(table);
+  responsiveDiv.appendChild(table);
+  parentNode.appendChild(responsiveDiv);
   return table;
 }
 
